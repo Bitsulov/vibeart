@@ -1,0 +1,18 @@
+.posts__albums {
+    display: flex;
+	position: relative;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* .swiperAlbums:active {
+	cursor: e-resize;
+}
+
+.swiperAlbums:active :hover {
+	cursor: e-resize;
+} */
+
+.slideAlbum {
+	width: auto;
+}

@@ -1,0 +1,107 @@
+.posts__post {
+	display: flex;
+	flex-direction: column;
+    background-color: var(--background-el);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.postImg {
+    width: 100%;
+	max-height: 275px;
+    object-fit: cover;
+}
+
+.postName {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.postImgParent {
+	transition: var(--main-transition);
+}
+
+.postNameParent {
+	transition: var(--main-transition);
+}
+
+.postImgParent:hover ~ .postNameParent,
+.postNameParent:hover {
+    color: var(--active-color);
+    transform: translateX(3px) scale(1.02);
+    text-shadow: 1px 1px 3px rgba(42, 64, 102, 0.2); /* Мягкая тень */
+}
+
+.postActions {
+	display: flex;
+	align-items: center;
+    padding: 0 10px 5px 5px;
+    font-size: 14px;
+    color: #666;
+	margin-top: auto;
+}
+
+.postStats {
+	display: flex;
+	align-items: center;
+}
+
+.postLikes {
+	transform: translateY(-1px);
+	padding: 5px;
+	transition: var(--main-transition);
+}
+
+.likeImg {
+	margin-right: 0.25em;
+	transition: var(--main-transition);
+}
+
+.likeImg path {
+	transition: var(--main-transition);
+}
+
+.postLikes:hover .likeImg path {
+    stroke: var(--like-color);
+}
+
+.likeActive {
+	fill: var(--like-color);
+	animation: bounce 0.25s ease-out;
+}
+
+.likeActive > path {
+	transition: var(--main-transition);
+	stroke: var(--like-color);
+}
+
+.postComments {
+	padding: 5px;
+	transition: var(--main-transition);
+}
+
+.commentImg {
+	margin-right: 0.25em;
+	transition: var(--main-transition);
+}
+
+.postComments:hover .commentImg path {
+	stroke: #7e5acc;
+	box-shadow: 0 2px 4px rgba(42, 64, 102, 0.3);
+}
+
+.commentImg path {
+	transition: var(--main-transition);
+    stroke: var(--main-text);
+}
+
+.statsNumber {
+	
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}

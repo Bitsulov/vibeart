@@ -1,0 +1,222 @@
+main {
+    display: flex;
+	align-items: flex-start;
+	min-height: calc(100vh - 150px);
+    margin-top: 70px;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Блок информации об художнике */
+.info {
+	float: left;
+	display: flex;
+	flex-direction: column;
+    width: 30%;
+    background-color: var(--background-el);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: var(--main-transition);
+}
+
+.info__avatar {
+	align-self: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.info__username {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.info__usertag {
+	margin-right: 1em;
+	position: relative;
+    font-size: 16px;
+	font-weight: 800;
+    color: #666;
+}
+
+.copyImg {
+	top: -2px;
+	position: absolute;
+	margin-left: 0.3em;
+	width: auto;
+	height: 1.5em;
+	cursor: pointer;
+}
+
+.copyImg g {
+	fill: rgb(102, 102, 102);
+	transition: var(--main-transition);
+}
+
+.copyImg:hover g {
+	fill: var(--active-color);
+}
+
+.info__buttons {
+    margin: 15px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.info__buttonsButton {
+	font-size: 14px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+	transition: var(--main-transition), padding 0s;
+}
+
+.info__buttonsButton:hover {
+    box-shadow: 0 4px 8px rgba(42, 64, 102, 0.3);
+    transform: scale(1.05);
+}
+
+.info__subscribeBtn {
+    background-color: var(--active-color);
+    color: #fff;
+}
+
+.info__unscribeBtn {
+	padding: 8px 20px 8px 19px;
+    background-color: #a52a2a;
+    color: #fff;
+}
+
+.info__messageBtn {
+    background-color: #ccc;
+    color: #333;
+}
+
+.info__messageBtn:hover {
+	color: white;
+	background-color: var(--active-color);
+}
+
+.info__description {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.info__stats {
+    font-size: 12px;
+    color: #666;
+}
+
+.statsSubscribers {
+	cursor: help;
+}
+
+.statsSubscribes {
+	cursor: help;
+}
+
+.statsWorks {
+	cursor: help;
+}
+
+/* Блок постов */
+.posts {
+    width: 70%;
+}
+
+@media (max-width: 1800px) {
+	.info {
+		width: 25%;
+	}
+
+	.info__description {
+		text-align: justify;
+	}
+}
+
+@media (max-width: 1300px) {
+	.info__buttons {
+		justify-content: center;
+	}
+
+	.info__username {
+		margin-top: 0;
+	}
+
+	.info__stats {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.spliter {
+		display: none;
+	}
+}
+
+@media (max-width: 1200px) {
+	main {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.info {
+		width: 50%;
+		align-items: center;
+	}
+
+	.info__description {
+		text-align: center;
+	}
+
+	.info__stats {
+		display: inline;
+		flex-direction: row;
+	}
+
+	.spliter {
+		display: inline;
+	}
+
+	.posts {
+		width: 100%;
+	}
+}
+
+@media (max-width: 1100px) {
+	.info {
+		width: 75%;
+	}
+}
+
+@media (max-width: 768px) {
+	.main {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .info {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .posts {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+	.info__description {
+		font-size: 12px;
+	}
+
+	.info__username {
+		font-size: 20px;
+	}
+
+	.info__stats {
+		font-size: 10px;
+	}
+}
