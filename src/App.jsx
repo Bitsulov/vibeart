@@ -21,8 +21,8 @@ function App() {
 
 	return (
 		<Router>
-			<Header />
 			<Notice message={noticeText} newNotice={gotNotice} setNewNotice={setGotNotice} />
+			<Header />
 			<Routes>
 				{/* Инфо и регистрация/вход */}
 				<Route path="/" element={<Home setNoticeText={setNoticeText} setGotNotice={setGotNotice} />} />

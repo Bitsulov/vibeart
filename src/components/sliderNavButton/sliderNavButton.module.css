@@ -8,7 +8,7 @@
 }
 
 .arrowImg:hover {
-	background-color: #6b4eaa;
+	background-color: var(--active-hover);
 	transform: scale(1.05);
 	transition: var(--main-transition);
 	box-shadow: 0 0 10px rgba(42, 64, 102, 0.3);

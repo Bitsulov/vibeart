@@ -18,14 +18,14 @@ header {
     align-items: center;
     font-size: 20px;
     font-weight: bold;
-    color: var(--active-color);
+    color: var(--active-hover);
 	cursor: pointer;
 	transition: var(--main-transition);
 }
 
 .header__logo:hover {
     transform: scale(1.02);
-    color: #6b4eaa;
+    color: var(--active-hover);
 }
 
 .header__logoImg {
@@ -58,15 +58,15 @@ header {
 }
 
 .header__search:focus {
-	border-color: #6b4eaa;
+	border-color: var(--active-hover);
 }
 
 .header__search:focus {
-	border-color: #6b4eaa;
+	border-color: var(--active-hover);
 }
 
 .header__search:focus + .header__submit {
-	background-color: #6b4eaa;
+	background-color: var(--active-hover);
 }
 
 .header__search::placeholder {
@@ -91,11 +91,11 @@ header {
 }
 
 .header__submit:hover {
-    background-color: #6b4eaa;
+    background-color: var(--active-hover);
 }
 
 .header__submit:focus {
-	background-color: #6b4eaa;
+	background-color: var(--active-hover);
 }
 
 .header__submitImg {

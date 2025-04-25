@@ -1,7 +1,8 @@
 :root {
 	--background: #f5f5f5;
 	--background-el: #fff;
-	--active-color: #2a4066;
+	--active-color: #007bff;
+	--active-hover: #0056b3;
 	--main-text: #333;
 	--like-color: #ff4040;
 	--main-transition: 0.2s;

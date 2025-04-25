@@ -10,7 +10,7 @@
 }
 
 .albumsAlbum:hover {
-    background-color: var(--active-color);
+    background-color: var(--active-hover);
     color: #fff;
     box-shadow: 0 4px 8px rgba(42, 64, 102, 0.2);
 }
@@ -19,6 +19,10 @@
     background-color: var(--active-color);
     color: #fff;
 	cursor: default;
+}
+
+.albumActive:hover {
+	background-color: var(--active-color);
 }
 
 @media (max-width: 400px) {
