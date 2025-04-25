@@ -87,7 +87,7 @@
 }
 
 .postComments:hover .commentImg path {
-	stroke: #7e5acc;
+	stroke: var(--active-hover);
 	box-shadow: 0 2px 4px rgba(42, 64, 102, 0.3);
 }
 
