@@ -12,7 +12,7 @@
 }
 
 .burgerEl {
-	background-color: #2a4066;
+	background-color: var(--active-hover);
 	width: 60%;
 	height: 2px;
 	border-radius: 2px;
