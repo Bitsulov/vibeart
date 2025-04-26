@@ -4,7 +4,7 @@ import PostList from '../components/postList/postList';
 import AlbumList from '../components/albumList/albumList';
 import parseNumber from '../utils/parseNumber';
 
-const profile = ({setNoticeText, getNewNotice}) => {
+const profile = ({getNewNotice}) => {
 	const [profileAvatar, setProfileAvatar] = useState("/images/ava-person.jpg");
 	const [firstName, setFirstName] = useState("Анна");
 	const [secondName, setSecondName] = useState("Иванова");
@@ -140,19 +140,16 @@ const profile = ({setNoticeText, getNewNotice}) => {
 
 	const copyUserName = () => {
 		navigator.clipboard.writeText(`@${username}`);
-		setNoticeText("Скопировано");
-		getNewNotice();
+		getNewNotice("Скопировано");
 	}
 
 	const setSubscribe = () => {
 		if(isSubscribe) {
 			setIsSubscribe(false);
-			setNoticeText(`Вы отписались от пользователя ${username}`);
-			getNewNotice();
+			getNewNotice(`Вы отписались от пользователя ${username}`);
 		} else {
 			setIsSubscribe(true);
-			setNoticeText(`Вы подписались на пользователя ${username}`);
-			getNewNotice();
+			getNewNotice(`Вы подписались на пользователя ${username}`);
 		}
 	}
 

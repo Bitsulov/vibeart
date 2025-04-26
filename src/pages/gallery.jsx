@@ -2,7 +2,7 @@ import React from 'react';
 import "../styles/gallery.css";
 import InDevelopment from '../components/inDevelopment/inDevelopment';
 
-const Gallery = ({setNoticeText, getNewNotice}) => {
+const Gallery = ({getNewNotice}) => {
 	return (
 		<main>
 			<InDevelopment />

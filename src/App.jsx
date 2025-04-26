@@ -19,7 +19,8 @@ function App() {
 	const [noticeText, setNoticeText] = useState("");
 	const [gotNotice, setGotNotice] = useState(false);
 
-	const getNewNotice = () => {
+	const getNewNotice = (noticeText) => {
+		setNoticeText(noticeText);
 		setGotNotice(true);
 	}
 
@@ -29,25 +30,25 @@ function App() {
 			<Header />
 			<Routes>
 				{/* Инфо и регистрация/вход */}
-				<Route path="/" element={<Home setNoticeText={setNoticeText} getNewNotice={getNewNotice} />} />
+				<Route path="/" element={<Home getNewNotice={getNewNotice} />} />
 				{/* "Лента" */}
-				<Route path="/gallery" element={<Gallery setNoticeText={setNoticeText} getNewNotice={getNewNotice} />} />
+				<Route path="/gallery" element={<Gallery getNewNotice={getNewNotice} />} />
 				{/* Профиль (свой или чужой) */}
-				<Route path="/profile/:profileId" element={<Profile setNoticeText={setNoticeText} getNewNotice={getNewNotice} />} />
+				<Route path="/profile/:profileId" element={<Profile getNewNotice={getNewNotice} />} />
 				{/* Пост */}
-				<Route path="/post/:postId" element={<Post setNoticeText={setNoticeText} getNewNotice={getNewNotice} />} />
+				<Route path="/post/:postId" element={<Post getNewNotice={getNewNotice} />} />
 				{/* Сообщения */}
-				<Route path="/messages" element={<Messages setNoticeText={setNoticeText} getNewNotice={getNewNotice} />} />
+				<Route path="/messages" element={<Messages getNewNotice={getNewNotice} />} />
 				{/* Чат */}
-				<Route path="/messages/:chatId" element={<Chat setNoticeText={setNoticeText} getNewNotice={getNewNotice} />} />
+				<Route path="/messages/:chatId" element={<Chat getNewNotice={getNewNotice} />} />
 				{/* Уведомления */}
-				<Route path="/notifications" element={<Notifications setNoticeText={setNoticeText} getNewNotice={getNewNotice} />} />
+				<Route path="/notifications" element={<Notifications getNewNotice={getNewNotice} />} />
 				{/* (экспериментально) форма, связь с нами */}
-				<Route path="/contact" element={<Contact setNoticeText={setNoticeText} getNewNotice={getNewNotice} />} />
+				<Route path="/contact" element={<Contact getNewNotice={getNewNotice} />} />
 				{/* Информация */}
-				<Route path="/about" element={<About setNoticeText={setNoticeText} getNewNotice={getNewNotice} />} />
+				<Route path="/about" element={<About getNewNotice={getNewNotice} />} />
 				{/* Ошибка */}
-				<Route path="*" element={<Error setNoticeText={setNoticeText} getNewNotice={getNewNotice} />} />
+				<Route path="*" element={<Error getNewNotice={getNewNotice} />} />
 			</Routes>
 			<Footer />
 		</Router>

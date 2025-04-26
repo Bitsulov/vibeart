@@ -2,7 +2,7 @@ import React from 'react';
 import "../styles/about.css";
 import InDevelopment from '../components/inDevelopment/inDevelopment';
 
-const About = ({setNoticeText, getNewNotice}) => {
+const About = ({getNewNotice}) => {
 	return (
 		<main>
 			<InDevelopment />

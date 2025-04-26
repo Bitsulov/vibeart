@@ -2,7 +2,7 @@ import React from 'react';
 import "../styles/messages.css";
 import InDevelopment from '../components/inDevelopment/inDevelopment';
 
-const Messages = ({setNoticeText, getNewNotice}) => {
+const Messages = ({getNewNotice}) => {
 	return (
 		<main>
 			<InDevelopment />

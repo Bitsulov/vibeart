@@ -2,7 +2,7 @@ import React from 'react';
 import "../styles/contact.css";
 import InDevelopment from '../components/inDevelopment/inDevelopment';
 
-const Сontact = ({setNoticeText, getNewNotice}) => {
+const Сontact = ({getNewNotice}) => {
 	return (
 		<main>
 			<InDevelopment />
