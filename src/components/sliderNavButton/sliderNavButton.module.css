@@ -2,7 +2,7 @@
 	background-color: var(--active-color);
 	border-radius: 8px;
 	width: 30px;
-	height: 30px;
+	height: 32px;
 	cursor: pointer;
 	z-index: 1;
 }

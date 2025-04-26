@@ -1,4 +1,4 @@
-main {
+main.profile {
     display: flex;
 	align-items: flex-start;
 	min-height: calc(100vh - 150px);
@@ -157,7 +157,7 @@ main {
 }
 
 @media (max-width: 1200px) {
-	main {
+	main.profile {
 		flex-direction: column;
 		align-items: center;
 	}
@@ -192,7 +192,7 @@ main {
 }
 
 @media (max-width: 768px) {
-	.main {
+	.main.profile {
         flex-direction: column;
         padding: 10px;
     }

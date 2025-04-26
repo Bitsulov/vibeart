@@ -23,7 +23,7 @@ footer {
 
 .footer__logo:hover {
 	transform: scale(1.02);
-	color: #a175ff;
+	color: var(--active-color);
 }
 
 .footer__logoImg {

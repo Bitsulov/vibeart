@@ -1,9 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import classes from "./modalWindow.module.css";
 
-const ModalWindow = ({children, ...props}) => {
+const ModalWindow = ({children, showModal, setShowModal, ...props}) => {
+	const [modalClasses, setModalClasses] = useState(classes.modal__overlay);
+	const [loaded, setLoaded] = useState(false);
+
+	useEffect(() => {
+		if(loaded)
+			if(showModal) {
+				setModalClasses(`${classes.modal__overlay} ${classes.show}`);
+			} else {
+				setModalClasses(`${classes.modal__overlay} ${classes.hide}`);
+				setTimeout(() => {
+					setModalClasses(classes.modal__overlay);
+				}, 300);
+			}
+		else {
+			setLoaded(true);
+		}
+	}, [showModal])
+
 	return (
-		<div {...props}>
-			{children}
+		<div
+			className={modalClasses}
+			onClick={() => setShowModal(false)}
+		>
+			<div
+				className={classes.modal}
+				onClick={(e) => {e.stopPropagation()}}
+				{...props}
+			>
+				{children}
+			</div>
+			<div
+				className={classes.modal__close}
+				onClick={() => setShowModal(false)}
+			>×</div>
 		</div>
 	)
 }

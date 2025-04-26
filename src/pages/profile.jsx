@@ -4,7 +4,7 @@ import PostList from '../components/postList/postList';
 import AlbumList from '../components/albumList/albumList';
 import parseNumber from '../utils/parseNumber';
 
-const profile = ({getNewNotice}) => {
+const profile = ({getNewNotice, showModalContent}) => {
 	const [profileAvatar, setProfileAvatar] = useState("/images/ava-person.jpg");
 	const [firstName, setFirstName] = useState("Анна");
 	const [secondName, setSecondName] = useState("Иванова");
@@ -154,7 +154,7 @@ const profile = ({getNewNotice}) => {
 	}
 
   	return (
-		<main>
+		<main className="profile">
 			<section className="info">
 				<img src={profileAvatar} alt="Person Avatar" className="info__avatar"></img>
 				<h1 className="info__username">{firstName} {secondName}</h1>

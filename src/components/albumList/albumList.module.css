@@ -5,6 +5,12 @@
     margin-bottom: 20px;
 }
 
+.swiperAlbums {
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+}
+
 /* .swiperAlbums:active {
 	cursor: e-resize;
 }

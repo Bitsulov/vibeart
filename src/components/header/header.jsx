@@ -13,7 +13,7 @@ const Header = () => {
 		<header>
 			<a className={classes.header__logo} href="#">
 				<img src={logoBlack} alt="logo" className={classes.header__logoImg}></img>
-				<span>VibeArt</span>
+				<span className={classes.header__title}>VibeArt</span>
 			</a>
 			<form className={classes.header__form} action="#" method="get">
 				<input className={classes.header__search} type="text" placeholder="Художник, пост или тег..."></input>

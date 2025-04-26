@@ -8,7 +8,7 @@ header {
     padding: 10px 20px;
     background-color: var(--background-el);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    z-index: 997;
 }
 
 /* Лево */
@@ -19,6 +19,7 @@ header {
     font-size: 20px;
     font-weight: bold;
     color: var(--active-hover);
+	padding-right: 10px;
 	cursor: pointer;
 	transition: var(--main-transition);
 }
@@ -26,6 +27,14 @@ header {
 .header__logo:hover {
     transform: scale(1.02);
     color: var(--active-hover);
+}
+
+.header__title {
+	transition: var(--main-transition);
+}
+
+.header__logo:hover .header__title {
+	filter: drop-shadow(0 0 6px var(--active-color));
 }
 
 .header__logoImg {
@@ -125,7 +134,7 @@ header {
 }
 
 .header__link:hover svg g {
-    fill: var(--active-color);
+    fill: var(--active-hover);
 }
 
 .header__linksNotice {
