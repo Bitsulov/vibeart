@@ -1,0 +1,54 @@
+.inputWrapper {
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.input {
+	width: 100%;
+	padding: 12px 10px;
+	border: 2px solid #ccc;
+	border-radius: 8px;
+	font-size: 16px;
+}
+
+.placeholder {
+	position: absolute;
+	top: 14px;
+	left: 12px;
+	font-size: 16px;
+	color: var(--placeholder-color);
+	transition: var(--main-transition);
+	user-select: none;
+	cursor: text;
+}
+
+.input:focus {
+	padding: 15px 10px 9px;
+	border: 2px solid black;
+	outline: none;
+}
+
+.input:focus ~ .placeholder {
+	font-size: 10px;
+	transform: translateY(-8px);
+}
+
+.input:active {
+	padding: 15px 10px 9px;
+	border: 2px solid black;
+	outline: none;
+}
+
+.input:active ~ .placeholder {
+	font-size: 10px;
+	transform: translateY(-8px);
+}
+
+.input.focus {
+	padding: 15px 10px 9px;
+}
+
+.placeholder.focus {
+	font-size: 10px;
+	transform: translateY(-8px);
+}

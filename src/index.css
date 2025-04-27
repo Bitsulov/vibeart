@@ -5,6 +5,7 @@
 	--active-hover: #0056b3;
 	--main-text: #333;
 	--like-color: #ff4040;
+	--placeholder-color: rgb(131, 131, 131);
 	--main-transition: 0.2s;
 	display: flex;
 	flex-direction: column;

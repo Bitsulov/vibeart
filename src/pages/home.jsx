@@ -1,5 +1,6 @@
 import React from 'react';
 import "../styles/home.css";
+import InputForm from '../components/inputForm/inputForm';
 
 const Home = ({getNewNotice, showModalContent}) => {
 	
@@ -8,8 +9,8 @@ const Home = ({getNewNotice, showModalContent}) => {
 			<section className="authentication">
 				<h2 className="authentication__title">Войти</h2>
 				<form className="authentication__form">
-					<input className="authentication__input" type="email" placeholder="Email" required></input>
-					<input className="authentication__input" type="password" placeholder="Пароль" required></input>
+					<InputForm id="emailAuthentication" type="email" placeholder="Email" required ></InputForm>
+					<InputForm id="passwordAuthentication" type="password" placeholder="Пароль" required ></InputForm>
 					<button className="authentication__submit" type="submit">Отправить</button>
 				</form>
 			</section>
@@ -21,8 +22,9 @@ const Home = ({getNewNotice, showModalContent}) => {
 			<section className="authentication">
 				<h2 className="authentication__title">Зарегистрироваться</h2>
 				<form className="authentication__form">
-					<input className="authentication__input" type="email" placeholder="Email" required></input>
-					<input className="authentication__input" type="password" placeholder="Пароль" required></input>
+					<InputForm id="emailAuthentication" type="email" placeholder="Email" required ></InputForm>
+					<InputForm id="passwordAuthentication" type="password" placeholder="Пароль" required ></InputForm>
+					<InputForm id="passwordAgainAuthentication" type="password" placeholder="Повторите пароль" required ></InputForm>
 					<button className="authentication__submit" type="submit">Отправить</button>
 				</form>
 			</section>
