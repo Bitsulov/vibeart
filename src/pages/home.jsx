@@ -5,12 +5,12 @@ import InputForm from '../components/inputForm/inputForm';
 const Home = ({getNewNotice, showModalContent}) => {
 	
 	const openSign = () => {
-		showModalContent(
+		showModalContent (
 			<section className="authentication">
 				<h2 className="authentication__title">Войти</h2>
 				<form className="authentication__form">
-					<InputForm id="emailAuthentication" type="email" placeholder="Email" required ></InputForm>
-					<InputForm id="passwordAuthentication" type="password" placeholder="Пароль" required ></InputForm>
+					<InputForm id="emailAuthentication" type="email" placeholder="Email" minLength={6} value='' required ></InputForm>
+					<InputForm id="passwordAuthentication" type="password" placeholder="Пароль" minLength={6} value='' required ></InputForm>
 					<button className="authentication__submit" type="submit">Отправить</button>
 				</form>
 			</section>
@@ -18,13 +18,13 @@ const Home = ({getNewNotice, showModalContent}) => {
 	}
 
 	const openRegister = () => {
-		showModalContent(
+		showModalContent (
 			<section className="authentication">
 				<h2 className="authentication__title">Зарегистрироваться</h2>
 				<form className="authentication__form">
-					<InputForm id="emailAuthentication" type="email" placeholder="Email" required ></InputForm>
-					<InputForm id="passwordAuthentication" type="password" placeholder="Пароль" required ></InputForm>
-					<InputForm id="passwordAgainAuthentication" type="password" placeholder="Повторите пароль" required ></InputForm>
+					<InputForm id="emailAuthentication" type="email" placeholder="Email" value='' required />
+					<InputForm id="passwordAuthentication" type="password" placeholder="Пароль" minLength={6} value='' required />
+					<InputForm id="passwordAgainAuthentication" type="password" placeholder="Повторите пароль" minLength={6} required />
 					<button className="authentication__submit" type="submit">Отправить</button>
 				</form>
 			</section>

@@ -1,7 +1,6 @@
 main.home {
 	display: flex;
 	min-height: calc(100vh - 80px);
-	/* font-family: 'Inter', sans-serif; */
 	background-color: #f8f9fa;
 	color: #333;
 }
@@ -86,9 +85,10 @@ main.home {
 	font-size: 16px;
 	user-select: none;
 	cursor: pointer;
+	transition: var(--main-transition);
 }
 
-.authentication__button:hover {
+.authentication__submit:hover {
 	background: #218838;
 }
 
@@ -140,6 +140,10 @@ main.home {
 	.welcome__button {
 		font-size: 20px;
 		padding: 12px 30px;
+	}
+
+	.authentication__title {
+		font-size: 22px;
 	}
 }
 
