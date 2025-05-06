@@ -1,34 +1,81 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "../styles/home.css";
-import InputForm from '../components/inputForm/inputForm';
+import SignForm from '../components/signForm/signForm';
+import RegForm from '../components/regForm/regForm';
 
 const Home = ({getNewNotice, showModalContent}) => {
+	const [valueEmailSign, setValueEmailSign] = useState("");
+	const [valuePasswordSign, setValuePasswordSign] = useState("");
+	const [valueEmailReg, setValueEmailReg] = useState("");
+	const [valuePasswordReg, setValuePasswordReg] = useState("");
+	const [valuePasswordAgainReg, setValuePasswordAgainReg] = useState("");
+	const [error, setError] = useState(false);
+	const [errorText, setErrorText] = useState("");
+
+	const onSubmitSign = (e) => {
+		e.preventDefault();
+
+	}
+
+	const onSubmitReg = (e) => {
+		e.preventDefault();
+		console.log(valuePasswordReg.trim());
+		console.log(valuePasswordAgainReg.trim())
+		if(valuePasswordReg !== valuePasswordAgainReg) {
+			setErrorText("Пароли не совпадают");
+			setError(true);
+		}
+	}
 	
 	const openSign = () => {
-		showModalContent (
-			<section className="authentication">
-				<h2 className="authentication__title">Войти</h2>
-				<form className="authentication__form">
-					<InputForm id="emailAuthentication" type="email" placeholder="Email" minLength={6} value='' required ></InputForm>
-					<InputForm id="passwordAuthentication" type="password" placeholder="Пароль" minLength={6} value='' required ></InputForm>
-					<button className="authentication__submit" type="submit">Отправить</button>
-				</form>
-			</section>
-		)
+		showModalContent(SignForm, {
+			errorState: error,
+			errorText: errorText,
+			onSubmit: onSubmitSign,
+			emailInputProps: {
+				value: valueEmailSign,
+				onChange(e) {
+					setValueEmailSign(e.target.value);
+				},
+				placeholder: "Email"
+			},
+			passwordInputProps: {
+				value: valuePasswordSign,
+				onChange(e) {
+					setValuePasswordSign(e.target.value);
+				},
+				placeholder: "Пароль"
+			},
+		});
 	}
 
 	const openRegister = () => {
-		showModalContent (
-			<section className="authentication">
-				<h2 className="authentication__title">Зарегистрироваться</h2>
-				<form className="authentication__form">
-					<InputForm id="emailAuthentication" type="email" placeholder="Email" value='' required />
-					<InputForm id="passwordAuthentication" type="password" placeholder="Пароль" minLength={6} value='' required />
-					<InputForm id="passwordAgainAuthentication" type="password" placeholder="Повторите пароль" minLength={6} required />
-					<button className="authentication__submit" type="submit">Отправить</button>
-				</form>
-			</section>
-		)
+		showModalContent(RegForm, {
+			errorState: error,
+			errorText: errorText,
+			onSubmit: onSubmitReg,
+			emailInputProps: {
+				value: valueEmailReg,
+				onChange(e) {
+					setValueEmailReg(e.target.value);
+				},
+				placeholder: "Email"
+			},
+			passwordInputProps: {
+				value: valuePasswordReg,
+				onChange(e) {
+					setValuePasswordReg(e.target.value);
+				},
+				placeholder: "Пароль"
+			},
+			passwordAgainInputProps: {
+				value: valuePasswordAgainReg,
+				onChange(e) {
+					setValuePasswordAgainReg(e.target.value);
+				},
+				placeholder: "Повторите пароль"
+			}
+		});
 	}
 
 	return (

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
@@ -19,7 +19,8 @@ import './App.css';
 function App() {
 	const [noticeText, setNoticeText] = useState("");
 	const [gotNotice, setGotNotice] = useState(false);
-	const [modalChildren, setModalChildren] = useState(<div></div>);
+	const [modalContent, setModalContent] = useState(null);
+	const [propsModalContent, setPropsModalContent] = useState({});
 	const [showModal, setShowModal] = useState(false);
 
 	const getNewNotice = (noticeText) => {
@@ -27,14 +28,15 @@ function App() {
 		setGotNotice(true);
 	}
 
-	const showModalContent = (content) => {
-		setModalChildren(content);
+	const showModalContent = (link, props) => {
+		setPropsModalContent({ ...props });
+		setModalContent(() => link);
 		setShowModal(true);
 	}
 
 	return (
 		<Router>
-			<ModalWindow children={modalChildren} showModal={showModal} setShowModal={setShowModal} />
+			<ModalWindow Component={modalContent} propsModalContent={propsModalContent} showModal={showModal} setShowModal={setShowModal} />
 			<Notice message={noticeText} newNotice={gotNotice} setNewNotice={setGotNotice} />
 			<Header />
 			<Routes>
@@ -57,7 +59,7 @@ function App() {
 				{/* Информация */}
 				<Route path="/about" element={<About getNewNotice={getNewNotice} showModalContent={showModalContent} />} />
 				{/* Ошибка */}
-				<Route path="*" element={<Error getNewNotice={getNewNotice} />} showModalContent={showModalContent} />
+				<Route path="*" element={<Error getNewNotice={getNewNotice} showModalContent={showModalContent} />} />
 			</Routes>
 			<Footer />
 		</Router>

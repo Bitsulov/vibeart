@@ -74,6 +74,19 @@ main.home {
 	transform: translateY(-15px);
 } */
 
+.errorInput {
+	border: 2px solid red;
+}
+
+.authentication__error-text {
+	color: red;
+	transition: var(--main-transition);
+}
+
+.authentication__error-hide {
+	color: transparent;
+}
+
 .authentication__submit {
 	width: 100%;
 	background: #28a745;

@@ -1,27 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classes from "./inputForm.module.css";
 
-const InputForm = ({placeholder="", type="text", id="", value="", className="", placeholderClassName="", onChange, minLength, ...props}) => {
+const InputForm = ({placeholder="", type="text", id="", value="", className="", placeholderClassName="", onChange, ...props}) => {
 	// id is required
-	const [inputValue, setInputValue] = useState(value);
 	const [inputClasses, setInputClasses] = useState([classes.input, className].join(" "));
 	const [placeholderClasses, setPlaceholderClasses] = useState([classes.placeholder, placeholderClassName].join(" "));
-	const [isPassword, setIsPassword] = useState(false);
+	const [isPassword, setIsPassword] = useState(null);
 	const [isShowPassword, setIsShowPassword] = useState(false);
 	const [currentType, setCurrentType] = useState(null);
-
-	const onChangeValue = (e) => {
-		setInputValue(e.target.value);
-		let defaultClass = isPassword ? classes.inputLeft : classes.input;
-		if(e.target.value === "") {
-			setInputClasses([defaultClass, className].join(" "));
-			setPlaceholderClasses([classes.placeholder, placeholderClassName].join(" "));
-		} else {
-			setInputClasses([defaultClass, className, classes.focus].join(" "));
-			setPlaceholderClasses([classes.placeholder, placeholderClassName, classes.focus].join(" "));
-		}
-		onChange?.();
-	}
 
 	useEffect(() => {
 		if(currentType) {
@@ -31,26 +17,50 @@ const InputForm = ({placeholder="", type="text", id="", value="", className="", 
 				setCurrentType("password");
 			}
 		} else {
+			let isPasswordLocal;
 			setCurrentType(type);
 			if(type === "password") {
+				isPasswordLocal = true;
 				setIsPassword(true);
 				setInputClasses([classes.inputLeft, className].join(" "));
 			} else {
+				setIsPassword(false);
 				setInputClasses([classes.input, className].join(" "));
+			}
+			if(value !== "") {
+				let defaultClass = isPasswordLocal ? classes.inputLeft : classes.input;
+				setInputClasses([defaultClass, className, classes.focus].join(" "));
+				setPlaceholderClasses([classes.placeholder, placeholderClassName, classes.focus].join(" "));
 			}
 		}
 	}, [type, isShowPassword])
+
+	useEffect(() => {
+		let defaultClass;
+		if(isPassword === null) {
+			defaultClass = type === "password" ? classes.inputLeft : classes.input;
+		} else {
+			defaultClass = isPassword ? classes.inputLeft : classes.input;
+		}
+		if(value === "") {
+			setInputClasses([defaultClass, className].join(" "));
+			setPlaceholderClasses([classes.placeholder, placeholderClassName].join(" "));
+		} else {
+			setInputClasses([defaultClass, className, classes.focus].join(" "));
+			setPlaceholderClasses([classes.placeholder, placeholderClassName, classes.focus].join(" "));
+		}
+	}, [value])
 
 	return (
 		<div className={classes.generalWrapper}>
 			<div className={classes.inputWrapper}>
 				<input
+					key={Date.now()}
+					value={value}
 					type={currentType}
 					id={id}
 					className={inputClasses}
-					value={inputValue}
-					minLength={minLength ?? ""}
-					onChange={onChangeValue}
+					onChange={onChange}
 					{...props}
 				></input>
 				{isPassword ? 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import classes from "./modalWindow.module.css";
 
-const ModalWindow = ({children, showModal, setShowModal, ...props}) => {
+const ModalWindow = ({Component, propsModalContent, showModal, setShowModal, ...props}) => {
 	const [modalClasses, setModalClasses] = useState(classes.modal__overlay);
 	const [loaded, setLoaded] = useState(false);
 
@@ -30,7 +30,7 @@ const ModalWindow = ({children, showModal, setShowModal, ...props}) => {
 				onClick={(e) => {e.stopPropagation()}}
 				{...props}
 			>
-				{children}
+				{Component && <Component {...propsModalContent} />}
 			</div>
 			<div
 				className={classes.modal__close}
