@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import classes from "./inputForm.module.css";
 
-const InputForm = ({placeholder="", type="text", id="", value="", className="", placeholderClassName="", onChange, minLength, ...props}) => {
+const InputForm = ({placeholder="", type="text", id="", value, className="", placeholderClassName="", onChange, minLength, ...props}) => {
 	// id is required
-	const [inputValue, setInputValue] = useState(value);
 	const [inputClasses, setInputClasses] = useState([classes.input, className].join(" "));
 	const [placeholderClasses, setPlaceholderClasses] = useState([classes.placeholder, placeholderClassName].join(" "));
 	const [isPassword, setIsPassword] = useState(false);
@@ -11,7 +10,6 @@ const InputForm = ({placeholder="", type="text", id="", value="", className="", 
 	const [currentType, setCurrentType] = useState(null);
 
 	const onChangeValue = (e) => {
-		setInputValue(e.target.value);
 		let defaultClass = isPassword ? classes.inputLeft : classes.input;
 		if(e.target.value === "") {
 			setInputClasses([defaultClass, className].join(" "));
@@ -20,7 +18,7 @@ const InputForm = ({placeholder="", type="text", id="", value="", className="", 
 			setInputClasses([defaultClass, className, classes.focus].join(" "));
 			setPlaceholderClasses([classes.placeholder, placeholderClassName, classes.focus].join(" "));
 		}
-		onChange?.();
+		onChange?.(e);
 	}
 
 	useEffect(() => {
@@ -41,6 +39,25 @@ const InputForm = ({placeholder="", type="text", id="", value="", className="", 
 		}
 	}, [type, isShowPassword])
 
+	useEffect(() => {
+		let defaultClass = type === "password" ? classes.inputLeft : classes.input;
+		if(value || props.defaultValue) {
+			setInputClasses([defaultClass, className, classes.focus].join(" "));
+			setPlaceholderClasses([classes.placeholder, placeholderClassName, classes.focus].join(" "));
+		} else {
+			setInputClasses([defaultClass, className].join(" "));
+			setPlaceholderClasses([classes.placeholder, placeholderClassName].join(" "));
+		}
+	}, [className, ])
+
+	useEffect(() => {
+		if(value || props.defaultValue) {
+			let defaultClass = type === "password" ? classes.inputLeft : classes.input;
+			setInputClasses([defaultClass, className, classes.focus].join(" "));
+			setPlaceholderClasses([classes.placeholder, placeholderClassName, classes.focus].join(" "));
+		}
+	}, [])
+
 	return (
 		<div className={classes.generalWrapper}>
 			<div className={classes.inputWrapper}>
@@ -48,7 +65,7 @@ const InputForm = ({placeholder="", type="text", id="", value="", className="", 
 					type={currentType}
 					id={id}
 					className={inputClasses}
-					value={inputValue}
+					value={value}
 					minLength={minLength ?? ""}
 					onChange={onChangeValue}
 					{...props}

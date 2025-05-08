@@ -92,6 +92,49 @@ main.home {
 	background: #218838;
 }
 
+.errorInput {
+	border: 2px solid red !important;
+}
+
+.errorInput:focus {
+	border: 2px solid rgb(145, 0, 0) !important;
+}
+
+.errorInputLeft {
+	border: 2px solid red !important;
+	border-right: 0 !important;
+}
+
+.errorInputLeft:focus {
+	border: 2px solid rgb(145, 0, 0) !important;
+	border-right: 0 !important;
+}
+
+.errorInputLeft + div {
+	border: 2px solid red !important;
+	border-left: 0 !important;
+}
+
+.errorInputLeft:focus + div {
+	border: 2px solid rgb(145, 0, 0) !important;
+	border-left: 0 !important;
+}
+
+.authentication__error {
+	opacity: 0;
+	color: red;
+	font-size: 1em;
+	min-height: calc(1em + 4px);
+	border-radius: 8px;
+	text-align: center;
+	margin-bottom: 15px;
+	transition: 0.5s;
+}
+
+.authentication__error-show {
+	opacity: 1;
+}
+
 @media (max-width: 900px) {
 	.welcome__title {
 		font-size: 40px;

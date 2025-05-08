@@ -19,45 +19,37 @@ import './App.css';
 function App() {
 	const [noticeText, setNoticeText] = useState("");
 	const [gotNotice, setGotNotice] = useState(false);
-	const [modalChildren, setModalChildren] = useState(<div></div>);
-	const [showModal, setShowModal] = useState(false);
 
 	const getNewNotice = (noticeText) => {
 		setNoticeText(noticeText);
 		setGotNotice(true);
 	}
 
-	const showModalContent = (content) => {
-		setModalChildren(content);
-		setShowModal(true);
-	}
-
 	return (
 		<Router>
-			<ModalWindow children={modalChildren} showModal={showModal} setShowModal={setShowModal} />
 			<Notice message={noticeText} newNotice={gotNotice} setNewNotice={setGotNotice} />
 			<Header />
 			<Routes>
 				{/* Инфо и регистрация/вход */}
-				<Route path="/" element={<Home getNewNotice={getNewNotice} showModalContent={showModalContent} />} />
+				<Route path="/" element={<Home getNewNotice={getNewNotice} />} />
 				{/* "Лента" */}
-				<Route path="/gallery" element={<Gallery getNewNotice={getNewNotice} showModalContent={showModalContent} />} />
+				<Route path="/gallery" element={<Gallery getNewNotice={getNewNotice} />} />
 				{/* Профиль (свой или чужой) */}
-				<Route path="/profile/:profileId" element={<Profile getNewNotice={getNewNotice} showModalContent={showModalContent} />} />
+				<Route path="/profile/:profileId" element={<Profile getNewNotice={getNewNotice} />} />
 				{/* Пост */}
-				<Route path="/post/:postId" element={<Post getNewNotice={getNewNotice} showModalContent={showModalContent} />} />
+				<Route path="/post/:postId" element={<Post getNewNotice={getNewNotice} />} />
 				{/* Сообщения */}
-				<Route path="/messages" element={<Messages getNewNotice={getNewNotice} showModalContent={showModalContent} />} />
+				<Route path="/messages" element={<Messages getNewNotice={getNewNotice} />} />
 				{/* Чат */}
-				<Route path="/messages/:chatId" element={<Chat getNewNotice={getNewNotice} showModalContent={showModalContent} />} />
+				<Route path="/messages/:chatId" element={<Chat getNewNotice={getNewNotice} />} />
 				{/* Уведомления */}
-				<Route path="/notifications" element={<Notifications getNewNotice={getNewNotice} showModalContent={showModalContent} />} />
+				<Route path="/notifications" element={<Notifications getNewNotice={getNewNotice} />} />
 				{/* (экспериментально) форма, связь с нами */}
-				<Route path="/contact" element={<Contact getNewNotice={getNewNotice} showModalContent={showModalContent} />} />
+				<Route path="/contact" element={<Contact getNewNotice={getNewNotice} />} />
 				{/* Информация */}
-				<Route path="/about" element={<About getNewNotice={getNewNotice} showModalContent={showModalContent} />} />
+				<Route path="/about" element={<About getNewNotice={getNewNotice} />} />
 				{/* Ошибка */}
-				<Route path="*" element={<Error getNewNotice={getNewNotice} />} showModalContent={showModalContent} />
+				<Route path="*" element={<Error getNewNotice={getNewNotice} />} />
 			</Routes>
 			<Footer />
 		</Router>
