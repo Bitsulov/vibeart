@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import parseNumber from '../../utils/parseNumber';
 import classes from "./postItem.module.css";
 
@@ -28,12 +29,12 @@ const PostItem = ({post, ...props}) => {
 
 	return (
 		<div className={classes.posts__post} {...props}>
-			<a href={post.link} className={classes.postImgParent}>
+			<Link to={post.link} className={classes.postImgParent}>
 				<img src={post.linkImg} alt={post.title} className={classes.postImg}></img>
-			</a>
-			<a href={post.link} className={classes.postNameParent}>
+			</Link>
+			<Link to={post.link} className={classes.postNameParent}>
 				<h3 className={classes.postName}>{post.title}</h3>
-			</a>
+			</Link>
 			<div className={classes.postActions}>
 				<button
 					className={`${classes.postStats} ${classes.postLikes}`}
@@ -49,12 +50,12 @@ const PostItem = ({post, ...props}) => {
 						{parseNumber(likes)}
 					</span>
 				</button>
-				<a className={`${classes.postStats} ${classes.postComments}`} href={`${post.link}#comments`}>
+				<Link className={`${classes.postStats} ${classes.postComments}`} to={{pathname: post.link, hash: "#comments"}}>
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={classes.commentImg}>
 						<path d="M20 2H4C2.89543 2 2 2.89543 2 4V16C2 17.1046 2.89543 18 4 18H8L12 22L16 18H20C21.1046 18 22 17.1046 22 16V4C22 2.89543 21.1046 2 20 2Z" stroke="#333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 					</svg>
 					<span className={classes.statsNumber}>{parseNumber(post.comments.length)}</span>
-				</a>
+				</Link>
 			</div>
 		</div>
 	)

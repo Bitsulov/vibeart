@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import "../styles/profile.css";
 import PostList from '../components/postList/postList';
 import AlbumList from '../components/albumList/albumList';
@@ -18,82 +19,82 @@ const profile = ({getNewNotice, showModalContent}) => {
 	const [selectedAlbum, setSelectedAlbum] = useState(0);
 	const [albums, setAlbums] = useState([
 		{name: "Все работы", key: 1, postList: [
-			{title: "Закат в горах", description: "Описание default 1", likes: 100000, isLiked: false, link: "#", linkImg: "/images/post1.jpg", key: 1, comments: [
+			{title: "Закат в горах", description: "Описание default 1", likes: 100000, isLiked: false, link: "/", linkImg: "/images/post1.jpg", key: 1, comments: [
 				{name: "Комментатор 1", text: "Текст комментария default 1"}
 			]},
-			{title: "Эльфийский лес", description: "Описание default 2", likes: 1100, isLiked: false, link: "#", linkImg: "/images/post2.jpg", key: 2, comments: [
+			{title: "Эльфийский лес", description: "Описание default 2", likes: 1100, isLiked: false, link: "/", linkImg: "/images/post2.jpg", key: 2, comments: [
 				{name: "Комментатор 2", text: "Текст комментария default 2"}
 			]},
-			{title: "Пост 0.3", description: "Описание default 3", likes: 0, isLiked: false, link: "#", linkImg: "/images/post3.jpeg", key: 3, comments: [
+			{title: "Пост 0.3", description: "Описание default 3", likes: 0, isLiked: false, link: "/", linkImg: "/images/post3.jpeg", key: 3, comments: [
 				{name: "Комментатор 3", text: "Текст комментария default 3"}
 			]},
-			{title: "Пост 0.4", description: "Описание default 4", likes: 0, isLiked: false, link: "#", linkImg: "/images/post1.jpg", key: 4, comments: [
+			{title: "Пост 0.4", description: "Описание default 4", likes: 0, isLiked: false, link: "/", linkImg: "/images/post1.jpg", key: 4, comments: [
 				{name: "Комментатор 4", text: "Текст комментария default 4"}
 			]},
-			{title: "Пост 0.5", description: "Описание default 5", likes: 0, isLiked: false, link: "#", linkImg: "/images/post2.jpg", key: 5, comments: [
+			{title: "Пост 0.5", description: "Описание default 5", likes: 0, isLiked: false, link: "/", linkImg: "/images/post2.jpg", key: 5, comments: [
 				{name: "Комментатор 5", text: "Текст комментария default 5"}
 			]},
-			{title: "Пост 0.6", description: "Описание default 6", likes: 0, isLiked: false, link: "#", linkImg: "/images/post3.jpeg", key: 6, comments: [
+			{title: "Пост 0.6", description: "Описание default 6", likes: 0, isLiked: false, link: "/", linkImg: "/images/post3.jpeg", key: 6, comments: [
 				{name: "Комментатор 6", text: "Текст комментария default 6"}
 			]}
 		]},
 		{name: "Пейзажи", linkImg: "/image/pivo.jpg", alt: "Альбом 1", key: 2, postList: [
-			{title: "Закат в горах", description: "Описание поста 1.1", likes: 0, isLiked: false, link: "#", linkImg: "/images/post1.jpg", key: 1, comments: [
+			{title: "Закат в горах", description: "Описание поста 1.1", likes: 0, isLiked: false, link: "/", linkImg: "/images/post1.jpg", key: 1, comments: [
 				{name: "Комментатор 1", text: "Текст комментария 1.1"}
 			]},
-			{title: "Эльфийский лес", description: "Описание поста 1.2", likes: 0, isLiked: false, link: "#", linkImg: "/images/post2.jpg", key: 2, comments: [
+			{title: "Эльфийский лес", description: "Описание поста 1.2", likes: 0, isLiked: false, link: "/", linkImg: "/images/post2.jpg", key: 2, comments: [
 				{name: "Комментатор 2", text: "Текст комментария 1.2"}
 			]},
-			{title: "Пост 1.3", description: "Описание поста 1.3", likes: 0, isLiked: false, link: "#", linkImg: "/images/post3.jpeg", key: 3, comments: [
+			{title: "Пост 1.3", description: "Описание поста 1.3", likes: 0, isLiked: false, link: "/", linkImg: "/images/post3.jpeg", key: 3, comments: [
 				{name: "Комментатор 3", text: "Текст комментария 1.3"}
 			]},
-			{title: "Пост 1.4", description: "Описание поста 1.4", likes: 0, isLiked: false, link: "#", linkImg: "/images/post2.jpg", key: 4, comments: [
+			{title: "Пост 1.4", description: "Описание поста 1.4", likes: 0, isLiked: false, link: "/", linkImg: "/images/post2.jpg", key: 4, comments: [
 				{name: "Комментатор 4", text: "Текст комментария 1.4"}
 			]},
-			{title: "Пост 1.5", description: "Описание поста 1.5", likes: 0, isLiked: false, link: "#", linkImg: "/images/post2.jpg", key: 5, comments: [
+			{title: "Пост 1.5", description: "Описание поста 1.5", likes: 0, isLiked: false, link: "/", linkImg: "/images/post2.jpg", key: 5, comments: [
 				{name: "Комментатор 5", text: "Текст комментария 1.5"}
 			]},
-			{title: "Пост 1.6", description: "Описание поста 1.6", likes: 0, isLiked: false, link: "#", linkImg: "/images/post2.jpg", key: 6, comments: [
+			{title: "Пост 1.6", description: "Описание поста 1.6", likes: 0, isLiked: false, link: "/", linkImg: "/images/post2.jpg", key: 6, comments: [
 				{name: "Комментатор 6", text: "Текст комментария 1.6"}
 			]}
 		]},
 		{name: "Фентези", linkImg: "/image/pivo.jpg", alt: "Альбом 2", key: 3, postList: [
-			{title: "Пост 2.1", description: "Описание поста 2.1", likes: 0, isLiked: false, link: "#", linkImg: "/images/post2.jpg", key: 1, comments: [
+			{title: "Пост 2.1", description: "Описание поста 2.1", likes: 0, isLiked: false, link: "/", linkImg: "/images/post2.jpg", key: 1, comments: [
 				{name: "Комментатор 7", text: "Текст комментария 2.1"}
 			]},
-			{title: "Пост 2.2", description: "Описание поста 2.2", likes: 0, isLiked: false, link: "#", linkImg: "/images/post2.jpg", key: 2, comments: [
+			{title: "Пост 2.2", description: "Описание поста 2.2", likes: 0, isLiked: false, link: "/", linkImg: "/images/post2.jpg", key: 2, comments: [
 				{name: "Комментатор 8", text: "Текст комментария 2.2"}
 			]},
-			{title: "Пост 2.3", description: "Описание поста 2.3", likes: 0, isLiked: false, link: "#", linkImg: "/images/post2.jpg", key: 3, comments: [
+			{title: "Пост 2.3", description: "Описание поста 2.3", likes: 0, isLiked: false, link: "/", linkImg: "/images/post2.jpg", key: 3, comments: [
 				{name: "Комментатор 9", text: "Текст комментария 2.3"}
 			]}
 		]},
 		{name: "Альбом 3", linkImg: "/image/pivo.jpg", alt: "Альбом 3", key: 4, postList: [
-			{title: "Пост 3.1", description: "Описание поста 3.1", likes: 0, isLiked: false, link: "#", linkImg: "/images/post2.jpg", key: 1, comments: [
+			{title: "Пост 3.1", description: "Описание поста 3.1", likes: 0, isLiked: false, link: "/", linkImg: "/images/post2.jpg", key: 1, comments: [
 				{name: "Комментатор 10", text: "Текст комментария 3.1"}
 			]},
-			{title: "Пост 3.2", description: "Описание поста 3.2", likes: 0, isLiked: false, link: "#", linkImg: "/images/post2.jpg", key: 2, comments: [
+			{title: "Пост 3.2", description: "Описание поста 3.2", likes: 0, isLiked: false, link: "/", linkImg: "/images/post2.jpg", key: 2, comments: [
 				{name: "Комментатор 11", text: "Текст комментария 3.2"}
 			]},
-			{title: "Пост 3.3", description: "Описание поста 3.3", likes: 0, isLiked: false, link: "#", linkImg: "/images/post2.jpg", key: 3, comments: [
+			{title: "Пост 3.3", description: "Описание поста 3.3", likes: 0, isLiked: false, link: "/", linkImg: "/images/post2.jpg", key: 3, comments: [
 				{name: "Комментатор 12", text: "Текст комментария 3.3"}
 			]},
-			{title: "Пост 3.4", description: "Описание поста 3.4", likes: 0, isLiked: false, link: "#", linkImg: "/images/post1.jpg", key: 4, comments: [
+			{title: "Пост 3.4", description: "Описание поста 3.4", likes: 0, isLiked: false, link: "/", linkImg: "/images/post1.jpg", key: 4, comments: [
 				{name: "Комментатор 13", text: "Текст комментария 3.4"}
 			]},
-			{title: "Пост 3.5", description: "Описание поста 3.5", likes: 0, isLiked: false, link: "#", linkImg: "/images/post1.jpg", key: 5, comments: [
+			{title: "Пост 3.5", description: "Описание поста 3.5", likes: 0, isLiked: false, link: "/", linkImg: "/images/post1.jpg", key: 5, comments: [
 				{name: "Комментатор 14", text: "Текст комментария 3.5"}
 			]},
-			{title: "Пост 3.6", description: "Описание поста 3.6", likes: 0, isLiked: false, link: "#", linkImg: "/images/post1.jpg", key: 6, comments: [
+			{title: "Пост 3.6", description: "Описание поста 3.6", likes: 0, isLiked: false, link: "/", linkImg: "/images/post1.jpg", key: 6, comments: [
 				{name: "Комментатор 15", text: "Текст комментария 3.6"}
 			]},
-			{title: "Пост 3.7", description: "Описание поста 3.7", likes: 0, isLiked: false, link: "#", linkImg: "/images/post1.jpg", key: 7, comments: [
+			{title: "Пост 3.7", description: "Описание поста 3.7", likes: 0, isLiked: false, link: "/", linkImg: "/images/post1.jpg", key: 7, comments: [
 				{name: "Комментатор 16", text: "Текст комментария 3.7"}
 			]},
-			{title: "Пост 3.8", description: "Описание поста 3.8", likes: 0, isLiked: false, link: "#", linkImg: "/images/post1.jpg", key: 8, comments: [
+			{title: "Пост 3.8", description: "Описание поста 3.8", likes: 0, isLiked: false, link: "/", linkImg: "/images/post1.jpg", key: 8, comments: [
 				{name: "Комментатор 17", text: "Текст комментария 3.8"}
 			]},
-			{title: "Пост 3.9", description: "Описание поста 3.9", likes: 0, isLiked: false, link: "#", linkImg: "/images/post1.jpg", key: 9, comments: [
+			{title: "Пост 3.9", description: "Описание поста 3.9", likes: 0, isLiked: false, link: "/", linkImg: "/images/post1.jpg", key: 9, comments: [
 				{name: "Комментатор 18", text: "Текст комментария 3.9"}
 			]}
 		]},
@@ -203,7 +204,7 @@ const profile = ({getNewNotice, showModalContent}) => {
 					>
 						{isSubscribe ? "Отписаться" : "Подписаться"}
 					</button>
-					<a href="#" className="info__buttonsButton info__messageBtn">Написать</a>
+					<Link to="#" className="info__buttonsButton info__messageBtn">Написать</Link>
 				</div>
 				<p className="info__description">{userDescription}</p>
 				<div className="info__stats">

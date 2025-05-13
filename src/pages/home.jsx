@@ -36,6 +36,8 @@ const Home = ({getNewNotice}) => {
 			setPasswordSignError(true);
 			setEmailSignError(false);
 			setErrorText("Заполните пароль");
+		} else if(email.indexOf("--") !== -1 || password.indexOf("--") !== -1) {
+			setErrorText("Произошла ошибка");
 		} else {
 			setEmailSignError(false);
 			setPasswordSignError(false);
@@ -80,11 +82,19 @@ const Home = ({getNewNotice}) => {
 		}
 		if(isEmpty) {
 			setErrorText(`Заполните ${str.join(" и ")}`);
+		} else if(email.indexOf("--") !== -1 || password.indexOf("--") !== -1) {
+			setErrorText("Произошла ошибка");
 		} else {
 			setEmailRegError(false);
 			setPasswordRegError(false);
 			setPasswordAgainRegError(false);
 			setErrorText("");
+
+			if(password !== passwordAgain) {
+				setPasswordRegError(true);
+				setPasswordAgainRegError(true);
+				setErrorText("Пароли не совпадают");
+			}
 		}
 	}
 	

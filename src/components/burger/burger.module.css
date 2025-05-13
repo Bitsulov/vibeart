@@ -70,7 +70,7 @@
 
 .burgerNoticeLen {
 	position: absolute;
-	top: -5px;
+	top: -3px;
 	right: -13px;
 	font-size: 8px;
 	display: flex;
@@ -85,7 +85,7 @@
 	margin-right: 5px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 670px) {
 	.header__burger {
 		display: flex;
 	}

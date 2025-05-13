@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import classes from "./burger.module.css";
 
-const Burger = ({notices, ...props}) => {
+const Burger = ({options, ...props}) => {
 	const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 	const [burgerLinksHeight, setBurgerLinksHeight] = useState(null);
 	const [BURGEROPENLINKSHEIGHT, setBurgerOpenLinksHeight] = useState(null);
@@ -37,11 +38,15 @@ const Burger = ({notices, ...props}) => {
 				ref={burgerMenuRef}
 				onClick={(e) => {e.stopPropagation()}}
 			>
-				<a href="#" className={classes.burger__link}>
-					<span className={classes.burgerNoticeLen}>{notices}</span> Уведомления
-				</a>
-				<a href="#" className={classes.burger__link}>Подписки</a>
-				<a href="#" className={classes.burger__link}>Профиль</a>
+				{options.map((option, index) => (
+					<Link to={option.href} className={classes.burger__link} key={index + 1}>
+						{option.haveCounter ? 
+							<span className={classes.burgerNoticeLen}>{option.counter}</span>
+							: ""
+						}
+						{option.text}
+					</Link>
+				))}
 			</nav>
 		</div>
 	)

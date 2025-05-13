@@ -3,18 +3,20 @@ import classes from "./header.module.css";
 import logoBlack from "../../assets/images/logo-black.png";
 import searchIcon from "../../assets/images/search-white.png";
 import Burger from '../burger/burger';
+import { Link } from 'react-router-dom';
 import parseNumber from '../../utils/parseNumber';
 
 const Header = () => {
 	const [noticesLength, setNoticesLength] = useState(5);
+	const [chatsLenght, setChatsLength] = useState(5);
 	const [avatarImg, setAvatarImg] = useState("/images/ava.jpg");
 
 	return (
 		<header>
-			<a className={classes.header__logo} href="#">
+			<Link className={classes.header__logo} to="#">
 				<img src={logoBlack} alt="logo" className={classes.header__logoImg}></img>
 				<span className={classes.header__title}>VibeArt</span>
-			</a>
+			</Link>
 			<form className={classes.header__form} action="#" method="get">
 				<input className={classes.header__search} type="text" placeholder="Художник, пост или тег..."></input>
 				<button type="submit" className={classes.header__submit}>
@@ -22,7 +24,38 @@ const Header = () => {
 				</button>
 			</form>
 			<nav className={classes.header__links}>
-				<a href="#" className={`${classes.header__link} ${classes.header__linksNotice}`}>
+				<Link to="#" className={`${classes.header__link} ${classes.header__linksNotice}`}>
+					<svg className={classes.chatsImg}
+						version="1.0" xmlns="http://www.w3.org/2000/svg"
+						width="480.000000pt" height="456.000000pt" viewBox="0 0 480.000000 456.000000"
+						preserveAspectRatio="xMidYMid meet"
+					>
+						<g transform="translate(0.000000,456.000000) scale(0.100000,-0.100000)"
+						fill="#000000" stroke="none">
+						<path d="M668 4544 c-259 -47 -479 -214 -588 -446 -17 -35 -41 -109 -55 -163
+						l-25 -98 0 -1196 c0 -1138 1 -1200 19 -1282 73 -330 323 -570 655 -628 39 -7
+						348 -11 870 -11 l811 0 535 -321 c294 -177 561 -334 593 -350 87 -41 180 -55
+						266 -40 177 32 324 153 381 313 19 53 23 92 27 238 l6 175 87 28 c124 40 210
+						95 317 202 80 81 97 105 141 196 94 195 86 71 90 1454 l2 1221 -25 99 c-75
+						300 -282 513 -580 597 l-80 23 -1685 2 c-1405 1 -1698 -1 -1762 -13z m3447
+						-319 c32 -9 85 -30 117 -47 69 -36 165 -135 197 -202 52 -107 51 -65 51 -1336
+						0 -1033 -2 -1193 -15 -1245 -51 -196 -215 -333 -427 -356 -104 -12 -140 -28
+						-171 -79 -21 -33 -22 -50 -27 -287 -5 -234 -6 -254 -26 -279 -38 -52 -71 -69
+						-132 -69 l-57 0 -565 339 c-310 187 -578 347 -595 355 -26 14 -140 17 -910 21
+						l-880 5 -75 37 c-41 20 -94 53 -117 72 -58 50 -119 146 -143 223 -20 64 -20
+						91 -20 1257 0 736 4 1207 10 1233 38 164 183 312 351 357 84 23 3347 23 3434
+						1z"/>
+						<path d="M1370 3218 c-48 -25 -90 -89 -90 -138 0 -48 42 -112 89 -137 l44 -23
+						986 0 987 0 44 23 c48 24 90 88 90 137 0 49 -42 113 -90 138 l-44 22 -986 0
+						-986 0 -44 -22z"/>
+						<path d="M1370 2258 c-48 -25 -90 -89 -90 -138 0 -48 42 -112 89 -137 l44 -23
+						986 0 987 0 44 23 c48 24 90 88 90 137 0 49 -42 113 -90 138 l-44 22 -986 0
+						-986 0 -44 -22z"/>
+						</g>
+					</svg>
+					<div className={classes.len}>{parseNumber(chatsLenght, false)}</div>
+				</Link>
+				<Link to="#" className={`${classes.header__link} ${classes.header__linksNotice}`}>
 					<svg className={classes.noticeImg}
 						version="1.0" xmlns="http://www.w3.org/2000/svg"
 						width="427.000000pt" height="512.000000pt" viewBox="0 0 427.000000 512.000000"
@@ -51,9 +84,9 @@ const Header = () => {
 							0 522 0 -6 -27z"/>
 						</g>
 					</svg>
-					<div className={classes.noticeLen}>{parseNumber(noticesLength, false)}</div>
-				</a>
-				<a href="#" className={`${classes.header__link} ${classes.header__linksSubscriptions}`}>
+					<div className={classes.len}>{parseNumber(noticesLength, false)}</div>
+				</Link>
+				<Link to="#" className={`${classes.header__link} ${classes.header__linksSubscriptions}`}>
 					<svg className={classes.subscriptionsImg}
 						version="1.0" xmlns="http://www.w3.org/2000/svg"
 						width="512.000000pt" height="364.000000pt" viewBox="0 0 512.000000 364.000000"
@@ -97,12 +130,19 @@ const Header = () => {
 							334 514 636 580 103 23 278 19 387 -9z"/>
 						</g>
 					</svg>
-				</a>
-				<a href="#" className={classes.header__linksUser}>
+				</Link>
+				<Link to="#" className={classes.header__linksUser}>
 					<img src={avatarImg} alt="User Avatar" className={classes.userAvatar}></img>
-				</a>
+				</Link>
 			</nav>
-			<Burger notices={noticesLength} />
+			<Burger
+				options={[
+					{text: "Уведомления", haveCounter: true, counter: noticesLength, href: "#"},
+					{text: "Сообщения", haveCounter: true, counter: chatsLenght, href: "#"},
+					{text: "Подписки", haveCounter: false, href: "#"},
+					{text: "Профиль", haveCounter: false, href: "#"},
+				]}
+			/>
 		</header>
 	)
 }

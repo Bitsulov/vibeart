@@ -191,6 +191,18 @@ footer {
 	transition: var(--main-transition);
 }
 
+.socialsLink:hover .vkImg {
+	filter: drop-shadow(0 0 6px var(--active-color));
+}
+
+.socialsLink:hover .telegramImg {
+	filter: drop-shadow(0 0 6px #31d6ff);
+}
+
+.socialsLink:hover .discordImg {
+	filter: drop-shadow(0 0 10px #752efa);
+}
+
 .socialsLink:hover svg {
     animation: pulse 1.5s infinite;
 }
@@ -204,16 +216,19 @@ footer {
 .discordImg {
 	width: 38px;
 	height: 27px;
+	transition: var(--main-transition);
 }
 
 .telegramImg {
 	width: 27px;
 	height: 27px;
+	transition: var(--main-transition);
 }
 
 .vkImg {
 	width: 27px;
 	height: 27px;
+	transition: var(--main-transition);
 }
 
 .show {

@@ -12,7 +12,7 @@
 	border-radius: 25px;
 	opacity: 0;
 	transition: var(--main-transition);
-	z-index: 1000;
+	z-index: 999;
 }
 
 .notice__text {

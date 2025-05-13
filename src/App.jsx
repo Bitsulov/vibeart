@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
+import LoaderPage from './components/loaderPage/loaderPage';
 import Home from "./pages/home";
 import Gallery from "./pages/gallery";
 import Profile from './pages/profile';
@@ -13,7 +14,6 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import Error from './pages/error';
 import Notice from './components/notice/notice';
-import ModalWindow from './components/modalWindow/modalWindow';
 import './App.css';
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
 
 	return (
 		<Router>
+			<LoaderPage />
 			<Notice message={noticeText} newNotice={gotNotice} setNewNotice={setGotNotice} />
 			<Header />
 			<Routes>

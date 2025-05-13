@@ -137,11 +137,20 @@ header {
     fill: var(--active-hover);
 }
 
+.header__linksChats {
+	position: relative;
+}
+
+.chatsImg {
+	width: 22px;
+	height: 27px;
+}
+
 .header__linksNotice {
 	position: relative;
 }
 
-.noticeLen {
+.len {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -199,7 +208,7 @@ header {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 670px) {
 	.header__logo {
 		font-size: 14px;
 	}
