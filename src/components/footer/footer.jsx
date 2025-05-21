@@ -27,13 +27,13 @@ const Footer = () => {
 	return (
 		<footer>
 			<div className={classes.footer__wrapper}>
-				<Link className={classes.footer__logo} to="#">
+				<Link className={classes.footer__logo} to="/gallery">
 					<img src={logoWhite} alt="logo" className={classes.footer__logoImg}></img>
 					<span className={classes.footer__title}>© 2025 VibeArt</span>
 				</Link>
 				<div className={classes.footer__links}>
-					<Link to="#" className={classes.footer__linksLink}>О нас</Link>
-					<Link to="#" className={classes.footer__linksLink}>Поддержка</Link>
+					<Link to="/about" className={classes.footer__linksLink}>О нас</Link>
+					<Link to="/contact" className={classes.footer__linksLink}>Поддержка</Link>
 					<button
 						className={classes.footer__linksMore}
 						onClick={toggleLinks}
@@ -46,13 +46,10 @@ const Footer = () => {
 							className={isFooterLinksOpen ? `${classes.footer__hiddenLinks} ${classes.hiddenLinksShow} ${classes.show}` : `${classes.footer__hiddenLinks}`}
 							style={OPENFOOTERLINKSHEIGHT === null ? {} : {height: footerLinksHeight + "px"}}
 							ref={linksRef}
-							onClick={(e) => {e.stopPropagation()}}
+							onClick={e => e.stopPropagation()}
 						>
 							<Link to="#" className={classes.hiddenLinksLink}>Правила</Link>
 							<Link to="#" className={classes.hiddenLinksLink}>FAQ</Link>
-							<Link to="#" className={classes.hiddenLinksLink}>Ссылка</Link>
-							<Link to="#" className={classes.hiddenLinksLink}>Ссылка</Link>
-							<Link to="#" className={classes.hiddenLinksLink}>Ссылка</Link>
 						</div>
 					</button>
 				</div>

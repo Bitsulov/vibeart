@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "../styles/error.css";
 import { useLocation } from 'react-router-dom';
 
-const Error = ({getNewNotice, showModalContent}) => {
+const Error = ({getNewNotice}) => {
 	const location =  useLocation();
 	const query = new URLSearchParams(location.search);
 	const status = query.get("code") || 404;

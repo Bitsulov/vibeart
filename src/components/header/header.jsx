@@ -13,7 +13,7 @@ const Header = () => {
 
 	return (
 		<header>
-			<Link className={classes.header__logo} to="#">
+			<Link className={classes.header__logo} to={"/gallery"}>
 				<img src={logoBlack} alt="logo" className={classes.header__logoImg}></img>
 				<span className={classes.header__title}>VibeArt</span>
 			</Link>
@@ -24,7 +24,7 @@ const Header = () => {
 				</button>
 			</form>
 			<nav className={classes.header__links}>
-				<Link to="#" className={`${classes.header__link} ${classes.header__linksNotice}`}>
+				<Link to="/messages" className={`${classes.header__link} ${classes.header__linksNotice}`}>
 					<svg className={classes.chatsImg}
 						version="1.0" xmlns="http://www.w3.org/2000/svg"
 						width="480.000000pt" height="456.000000pt" viewBox="0 0 480.000000 456.000000"
@@ -55,7 +55,7 @@ const Header = () => {
 					</svg>
 					<div className={classes.len}>{parseNumber(chatsLenght, false)}</div>
 				</Link>
-				<Link to="#" className={`${classes.header__link} ${classes.header__linksNotice}`}>
+				<Link to="/notifications" className={`${classes.header__link} ${classes.header__linksNotice}`}>
 					<svg className={classes.noticeImg}
 						version="1.0" xmlns="http://www.w3.org/2000/svg"
 						width="427.000000pt" height="512.000000pt" viewBox="0 0 427.000000 512.000000"
@@ -131,16 +131,16 @@ const Header = () => {
 						</g>
 					</svg>
 				</Link>
-				<Link to="#" className={classes.header__linksUser}>
+				<Link to={`/profile/${1}`} className={classes.header__linksUser}>
 					<img src={avatarImg} alt="User Avatar" className={classes.userAvatar}></img>
 				</Link>
 			</nav>
 			<Burger
 				options={[
-					{text: "Уведомления", haveCounter: true, counter: noticesLength, href: "#"},
-					{text: "Сообщения", haveCounter: true, counter: chatsLenght, href: "#"},
+					{text: "Уведомления", haveCounter: true, counter: noticesLength, href: "/notifications"},
+					{text: "Сообщения", haveCounter: true, counter: chatsLenght, href: "/messages"},
 					{text: "Подписки", haveCounter: false, href: "#"},
-					{text: "Профиль", haveCounter: false, href: "#"},
+					{text: "Профиль", haveCounter: false, href: `/profile/${1}`},
 				]}
 			/>
 		</header>

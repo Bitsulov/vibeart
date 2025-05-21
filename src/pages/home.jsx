@@ -133,6 +133,7 @@ const Home = ({getNewNotice}) => {
 								id="emailAuthentication"
 								type="email"
 								placeholder="Email"
+								placeholderClassName={emailSignError ? "errorPlaceholder" : ""}
 								value={emailValueSign}
 								onChange={e => setEmailValueSign(e.target.value)}
 								className={emailSignError ? "errorInput" : ""}
@@ -141,6 +142,7 @@ const Home = ({getNewNotice}) => {
 								id="passwordAuthentication"
 								type="password"
 								placeholder="Пароль"
+								placeholderClassName={passwordSignError ? "errorPlaceholder" : ""}
 								minLength={6}
 								value={passwordValueSign}
 								onChange={e => setPasswordValueSign(e.target.value)}
@@ -158,6 +160,7 @@ const Home = ({getNewNotice}) => {
 								id="emailAuthentication"
 								type="email"
 								placeholder="Email"
+								placeholderClassName={emailRegError ? "errorPlaceholder" : ""}
 								value={emailValueReg}
 								onChange={e => setEmailValueReg(e.target.value)}
 								className={emailRegError ? "errorInput" : ""}
@@ -166,6 +169,7 @@ const Home = ({getNewNotice}) => {
 								id="passwordAuthentication"
 								type="password"
 								placeholder="Пароль"
+								placeholderClassName={passwordRegError ? "errorPlaceholder" : ""}
 								minLength={6}
 								value={passwordValueReg}
 								onChange={e => setPasswordValueReg(e.target.value)}
@@ -175,6 +179,7 @@ const Home = ({getNewNotice}) => {
 								id="passwordAgainAuthentication"
 								type="password"
 								placeholder="Повторите пароль"
+								placeholderClassName={passwordAgainRegError ? "errorPlaceholder" : ""}
 								minLength={6}
 								value={passwordAgainValueReg}
 								onChange={e => setPasswordAgainValueReg(e.target.value)}

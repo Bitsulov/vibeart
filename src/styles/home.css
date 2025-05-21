@@ -3,6 +3,7 @@ main.home {
 	min-height: calc(100vh - 80px);
 	background-color: #f8f9fa;
 	color: #333;
+	font-size: 10px;
 }
 
 .welcome {
@@ -17,12 +18,12 @@ main.home {
 }
 
 .welcome__title {
-	font-size: 48px;
+	font-size: 4.8em;
 	margin-bottom: 20px;
 }
 
 .welcome__description {
-	font-size: 20px;
+	font-size: 2em;
 	margin-bottom: 40px;
 }
 
@@ -39,7 +40,7 @@ main.home {
 	border: none;
 	border-radius: 8px;
 	font-weight: 600;
-	font-size: 16px;
+	font-size: 1.6em;
 	cursor: pointer;
 	transition: background 0.3s;
 }
@@ -120,10 +121,14 @@ main.home {
 	border-left: 0 !important;
 }
 
+.errorPlaceholder {
+	color: rgb(145, 0, 0) !important;
+}
+
 .authentication__error {
 	opacity: 0;
 	color: red;
-	font-size: 1em;
+	font-size: 16px;
 	min-height: calc(1em + 4px);
 	border-radius: 8px;
 	text-align: center;
@@ -136,12 +141,12 @@ main.home {
 }
 
 @media (max-width: 900px) {
-	.welcome__title {
-		font-size: 40px;
+	main.home {
+		font-size: 9px;
 	}
 
-	.welcome__description {
-		font-size: 20px;
+	.welcome__button {
+		font-size: 1.8em;
 	}
 }
 
@@ -152,12 +157,26 @@ main.home {
 }
 
 @media (max-width: 700px) {
-	.welcome__title {
-		font-size: 32px;
+	main.home {
+		font-size: 8px;
+	}
+
+	.welcome__button {
+		font-size: 2em;
+	}
+}
+
+@media (max-width: 600px) {
+	main.home {
+		font-size: 7px;
 	}
 
 	.welcome__description {
-		font-size: 20px;
+		font-size: 2.5em;
+	}
+
+	.welcome__button {
+		font-size: 2.3em;
 	}
 }
 
@@ -168,6 +187,10 @@ main.home {
 }
 
 @media (max-width: 410px) {
+	main.home {
+		font-size: 6px;
+	}
+
 	.welcome {
 		padding-left: 20px;
 		padding-right: 20px;

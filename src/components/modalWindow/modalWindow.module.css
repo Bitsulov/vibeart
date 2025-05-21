@@ -106,3 +106,9 @@
 		opacity: 0;
 	}
 }
+
+@media (max-width: 400px) {
+	.modal {
+		padding: 30px 15px;
+	}
+}

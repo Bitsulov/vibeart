@@ -4,6 +4,7 @@ main.profile {
 	min-height: calc(100vh - 80px);
     padding: 90px 20px;
     gap: 20px;
+	font-size: 10px;
 }
 
 /* Блок информации об художнике */
@@ -28,14 +29,14 @@ main.profile {
 }
 
 .info__username {
-    font-size: 24px;
+    font-size: 2.4em;
     margin-bottom: 5px;
 }
 
 .info__usertag {
 	margin-right: 1em;
 	position: relative;
-    font-size: 16px;
+    font-size: 1.6em;
 	font-weight: 800;
     color: #666;
 }
@@ -65,7 +66,7 @@ main.profile {
 }
 
 .info__buttonsButton {
-	font-size: 14px;
+	font-size: 1.4em;
     padding: 8px 15px;
     border: none;
     border-radius: 20px;
@@ -100,12 +101,12 @@ main.profile {
 }
 
 .info__description {
-    font-size: 14px;
+    font-size: 1.4em;
     margin-bottom: 10px;
 }
 
 .info__stats {
-    font-size: 12px;
+    font-size: 1.2em;
     color: #666;
 }
 
@@ -215,14 +216,14 @@ main.profile {
 
 @media (max-width: 400px) {
 	.info__description {
-		font-size: 12px;
+		font-size: 1.2em;
 	}
 
 	.info__username {
-		font-size: 20px;
+		font-size: 2em;
 	}
 
 	.info__stats {
-		font-size: 10px;
+		font-size: 1em;
 	}
 }

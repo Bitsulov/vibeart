@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import classes from "./loaderPage.module.css";
+import { useLocation } from 'react-router-dom';
 
 const LoaderPage = ({...props}) => {
 	const [classesLoader, setClassesLoader] = useState(classes.loader);
+	const location = useLocation();
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -11,7 +13,11 @@ const LoaderPage = ({...props}) => {
 				setClassesLoader(`${classes.loader} ${classes.hide}`)
 			}, 1000);
 		}, 300);
-	}, [])
+	}, [location])
+
+	useEffect(() => {
+		setClassesLoader(classes.loader);
+	}, [location])
 
 	return (
 		<section className={classesLoader}>
