@@ -1,6 +1,11 @@
 "use strict";
 
-function formatTime(milliseconds) {
+export default function formatTime(milliseconds) {
+	/*
+	Форматирует временной интервал, заданный в миллисекундах,
+	в удобочитаемую строку на русском языке, указывающую сколько времени прошло
+	(например, "5 минут назад", "3 дня назад").
+	*/
 	const units = [
 		{ limit: 60000, divisor: 1000, names: ['секунда', 'секунды', 'секунд'] },
 		{ limit: 3600000, divisor: 60000, names: ['минута', 'минуты', 'минут'] },
@@ -28,5 +33,3 @@ function formatTime(milliseconds) {
 	  
 	return `${num} ${word} назад`;
 }
-
-export default formatTime;

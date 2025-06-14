@@ -65,7 +65,17 @@ main.profile {
     gap: 10px;
 }
 
-.info__buttonsButton {
+.info__buttons-own {
+    display: grid;
+	grid-template-columns: repeat(2, max-content);
+	gap: 10px;
+	margin: 15px 0;
+	justify-items: start;
+}
+
+.info__buttons-item {
+	background-color: #ccc;
+	color: #333;
 	font-size: 1.4em;
     padding: 8px 15px;
     border: none;
@@ -74,9 +84,45 @@ main.profile {
 	transition: var(--main-transition), padding 0s;
 }
 
-.info__buttonsButton:hover {
+.info__buttons-item:hover {
     box-shadow: 0 4px 8px rgba(42, 64, 102, 0.3);
     transform: scale(1.05);
+}
+
+.info__add-postBtn {
+	justify-self: stretch;
+}
+
+.info__add-postBtn:hover {
+	background-color: var(--active-color);
+	color: #fff;
+}
+
+.info__manage-albumsBtn {
+	justify-self: stretch;
+}
+
+.info__manage-albumsBtn:hover {
+	background-color: var(--active-color);
+	color: #fff;
+}
+
+.info__edit-profileBtn {
+	background-color: var(--active-color);
+    color: #fff;
+}
+
+.info__edit-profileBtn:hover {
+	background-color: var(--active-hover);
+}
+
+.info__settingsBtn {
+	color: white;
+	background-color: var(--active-color);
+}
+
+.info__settingsBtn:hover {
+	background-color: var(--active-hover);
 }
 
 .info__subscribeBtn {
@@ -88,11 +134,6 @@ main.profile {
 	padding: 8px 20px 8px 19px;
     background-color: #a52a2a;
     color: #fff;
-}
-
-.info__messageBtn {
-    background-color: #ccc;
-    color: #333;
 }
 
 .info__messageBtn:hover {
@@ -137,6 +178,17 @@ main.profile {
 	}
 }
 
+@media (max-width: 1430px) {
+	.info__buttons-own {
+		display: grid;
+		grid-template-columns: max-content;
+	}
+
+	.info__settingsBtn {
+		justify-self: stretch;
+	}
+}
+
 @media (max-width: 1300px) {
 	.info__buttons {
 		justify-content: center;
@@ -165,6 +217,10 @@ main.profile {
 	.info {
 		width: 50%;
 		align-items: center;
+	}
+
+	.info__buttons-own {
+		grid-template-columns: repeat(2, max-content);
 	}
 
 	.info__description {
@@ -215,6 +271,11 @@ main.profile {
 }
 
 @media (max-width: 400px) {
+	.info__buttons-own {
+		display: grid;
+		grid-template-columns: max-content;
+	}
+
 	.info__description {
 		font-size: 1.2em;
 	}

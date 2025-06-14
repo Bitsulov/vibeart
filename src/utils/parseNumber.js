@@ -4,29 +4,6 @@ function intDiv(dividend, divisor) {
 	return Math.floor(dividend / divisor);
 }
 
-// function parseNumber(number, precisely=true) {
-// 	const billion = 1000000000;
-// 	const million = 1000000;
-// 	const thousand = 1000;
-// 	if(number >= 1000) {
-// 		if(number > billion && number < billion * 10 && precisely) {
-// 			return `${intDiv(number, billion)}.${intDiv(number % billion, billion / 10)}B`;
-// 		} else if(number >= billion) {
-// 			return `${intDiv(number, billion)}B`;
-// 		} else if(number > million && number < million * 10 && precisely) {
-// 			return `${intDiv(number, million)}.${intDiv(number % million, million / 10)}M`;
-// 		} else if(number >= million) {
-// 			return `${intDiv(number, million)}M`;
-// 		} else if(number > thousand && number < thousand * 10 && precisely) {
-// 			return `${intDiv(number, thousand)}.${intDiv(number % thousand, thousand / 10)}K`;
-// 		} else if(number >= thousand) {
-// 			return `${intDiv(number, thousand)}К`;
-// 		}
-// 	} else {
-// 		return String(number);
-// 	}
-// }
-
 function f(x, y) {
 	return intDiv(x, y / 10);
 }
@@ -35,7 +12,7 @@ function d(x, y) {
 	return intDiv(x, y / 10) / 10;
 }
 
-function parseNumber(number, precisely=true) {
+export default function parseNumber(number, precisely=true) {
 	/*
 	Сокращает запись длинных чисел, добавляя суффиксы (K, M, B) для чисел в диапазоне [1000, 9999999999] и Возвращает строку.
 	Предназначена только для положительных целочисленных чисел или нуля.
@@ -67,4 +44,3 @@ function parseNumber(number, precisely=true) {
 		}
 	}
 }
-export default parseNumber;

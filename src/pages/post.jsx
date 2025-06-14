@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "../styles/post.css";
 import PostCommentsList from '../components/postCommentsList/postCommentsList';
 import UseHashScroll from '../hooks/useHashScroll';
+import { monthesRu } from '../utils/monthesRu';
 
 const Post = ({getNewNotice}) => {
 	UseHashScroll(-70);
@@ -17,20 +18,6 @@ const Post = ({getNewNotice}) => {
 	const [day, setDay] = useState(+date.split(".")[0]);
 	const [month, setMonth] = useState("");
 	const [year, setYear] = useState(+date.split(".")[2]);
-	const monthes = {
-		1: "января",
-		2: "февраля",
-		3: "марта",
-		4: "апреля",
-		5: "мая",
-		6: "июня",
-		7: "июля",
-		8: "августа",
-		9: "сентября",
-		10: "октября",
-		11: "ноября",
-		12: "декабря"
-	}
 	const [comments, setComments] = useState([
 		{id: 1, src: "/images/ava.jpg", name: "Комментатор 1", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elit est, dictum eget diam in, ultricies efficitur turpis. Donec nec ante euismod, dapibus turpis at, congue risus. Suspendisse ut elit turpis. Suspendisse ut egestas urna. In hac habitasse platea dictumst. Sed eleifend pellentesque erat vitae viverra. Текст комментария 1"},
 		{id: 2, src: "/images/ava.jpg", name: "Комментатор 2", text: "Текст комментария 2"},
@@ -69,9 +56,10 @@ const Post = ({getNewNotice}) => {
 	}
 
 	useEffect(() => {
-		setDay(+date.split(".")[0]);
-		setMonth(monthes[+date.split(".")[1]]);
-		setYear(+date.split(".")[2]);
+		let splitedDate = date.split(".");
+		setDay(splitedDate[0]);
+		setMonth(monthesRu[+splitedDate[1]]);
+		setYear(splitedDate[2]);
 	}, [date])
 
 	return (

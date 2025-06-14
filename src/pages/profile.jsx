@@ -139,6 +139,8 @@ const profile = ({getNewNotice}) => {
 		]}
 	]);
 
+	const [isOwnProfile, setIsOwnProfile] = useState(false);
+
 	// const albumsRef = useRef();
 	// const albumsElRef = useRef([]);
 	// const [navigation, setNavigation] = useState(true);
@@ -212,16 +214,25 @@ const profile = ({getNewNotice}) => {
 						</g>
 					</svg>
 				</span>
-				<div className="info__buttons">
-					<button
-						className={isSubscribe ? "info__buttonsButton info__unscribeBtn" : "info__buttonsButton info__subscribeBtn"}
-						id="subscribe"
-						onClick={setSubscribe}
-					>
-						{isSubscribe ? "Отписаться" : "Подписаться"}
-					</button>
-					<Link to="#" className="info__buttonsButton info__messageBtn">Написать</Link>
-				</div>
+				{isOwnProfile ? 
+					<div className="info__buttons-own">
+						<button className="info__buttons-item info__edit-profileBtn">Редактировать профиль</button>
+						<button className="info__buttons-item info__settingsBtn">Настройки</button>
+						<button className="info__buttons-item info__add-postBtn">Добавить пост</button>
+						<button className="info__buttons-item info__manage-albumsBtn">Альбомы</button>
+					</div>
+				:
+					<div className="info__buttons">
+						<button
+							className={isSubscribe ? "info__buttons-item info__unscribeBtn" : "info__buttons-item info__subscribeBtn"}
+							id="subscribe"
+							onClick={setSubscribe}
+						>
+							{isSubscribe ? "Отписаться" : "Подписаться"}
+						</button>
+						<Link to="#" className="info__buttons-item info__messageBtn">Написать</Link>
+					</div>
+				}
 				<p className="info__description">{userDescription}</p>
 				<div className="info__stats">
 					<span className="statsSubscribers" title={userSubscribers}>Подписчиков: {parseNumber(userSubscribers)}</span> <span className="spliter">|</span> <span className="statsSubscribes" title={userSubscribes}>Подписки: {parseNumber(userSubscribes)}</span> <span className="spliter">|</span> <span className="statsWorks" title={userWorks}>Работ: {userWorks}</span>

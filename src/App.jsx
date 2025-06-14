@@ -45,7 +45,7 @@ function App() {
 				<Route path="/messages/:chatId" element={<Chat getNewNotice={getNewNotice} />} />
 				{/* Уведомления */}
 				<Route path="/notifications" element={<Notifications getNewNotice={getNewNotice} />} />
-				{/* (экспериментально) форма, связь с нами */}
+				{/* Связь с нами */}
 				<Route path="/contact" element={<Contact getNewNotice={getNewNotice} />} />
 				{/* Информация */}
 				<Route path="/about" element={<About getNewNotice={getNewNotice} />} />
