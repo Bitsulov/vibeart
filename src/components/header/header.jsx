@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import classes from "./header.module.css";
 import logoBlack from "../../assets/images/logo-black.png";
 import searchIcon from "../../assets/images/search-white.png";
@@ -10,6 +10,8 @@ const Header = () => {
 	const [noticesLength, setNoticesLength] = useState(5);
 	const [chatsLenght, setChatsLength] = useState(5);
 	const [avatarImg, setAvatarImg] = useState("/images/ava.jpg");
+	const [searchText, setSearchText] = useState("");
+	const searchRef = useRef(null);
 
 	return (
 		<header>
@@ -17,11 +19,32 @@ const Header = () => {
 				<img src={logoBlack} alt="logo" className={classes.header__logoImg}></img>
 				<span className={classes.header__title}>VibeArt</span>
 			</Link>
-			<form className={classes.header__form} action="#" method="get">
-				<input className={classes.header__search} type="text" placeholder="Художник, пост или тег..."></input>
-				<button type="submit" className={classes.header__submit}>
+			<form
+				onSubmit={e => {
+					e.preventDefault();
+					setSearchText("");
+					searchRef.current.previousElementSibling.blur();
+					searchRef.current.click();
+				}}
+				className={classes.header__form}
+				action="#"
+				method="get"
+			>
+				<input
+					onChange={e => setSearchText(e.target.value)}
+					value={searchText}
+					className={classes.header__search}
+					type="text"
+					placeholder="Художник, пост или тег..."
+				></input>
+				<Link
+					ref={searchRef}
+					to={`/gallery?search=${searchText}`}
+					className={classes.header__submit}
+					onClick={() => setSearchText("")}
+				>
 					<img src={searchIcon} alt="Найти" className={classes.header__submitImg}></img>
-				</button>
+				</Link>
 			</form>
 			<nav className={classes.header__links}>
 				<Link to="/messages" className={`${classes.header__link} ${classes.header__linksNotice}`}>

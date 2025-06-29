@@ -33,13 +33,19 @@
     text-shadow: 1px 1px 3px rgba(42, 64, 102, 0.2); /* Мягкая тень */
 }
 
+.postInfo {
+	display: flex;
+	align-items: center;
+	margin-top: auto;
+	justify-content: space-between;
+}
+
 .postActions {
 	display: flex;
 	align-items: center;
     padding: 0 10px 5px 5px;
     font-size: 14px;
     color: #666;
-	margin-top: auto;
 }
 
 .postStats {
@@ -98,6 +104,14 @@
 
 .statsNumber {
 	
+}
+
+.postTime {
+	padding: 0 10px 5px;
+	display: flex;
+	font-size: 14px;
+	color: #666;
+	user-select: none;
 }
 
 @keyframes bounce {

@@ -3,20 +3,16 @@ import classes from "./galleryItem.module.css";
 import { Link } from 'react-router-dom';
 import { monthesRu } from '../../utils/monthesRu';
 import parseNumber from '../../utils/parseNumber';
+import { checkDateYear } from '../../utils/dates';
 
 const GalleryItem = ({post, ...props}) => {
-	const [day, setDay] = useState(0);
-	const [month, setMonth] = useState("");
-	const [year, setYear] = useState(0);
+	const [postDate, setPostDate] = useState(checkDateYear(post.date));
 	const [isLiked, setIsLiked] = useState(post.isLiked);
 	const [likes, setLikes] = useState(post.likes);
 	const [reposts, setReposts] = useState(post.reposts);
 
 	useEffect(() => {
-		let splitedDate = post.date.split(".");
-		setDay(splitedDate[0]);
-		setMonth(monthesRu[+splitedDate[1]]);
-		setYear(splitedDate[2]);
+		setPostDate(checkDateYear(post.date));
 		setIsLiked(post.isLiked);
 		setLikes(post.likes);
 		setReposts(post.reposts);
@@ -47,7 +43,7 @@ const GalleryItem = ({post, ...props}) => {
 					<p className={classes.gallery__itemDescription}>{post.description}</p>
 				</Link>
 				<div className={classes.gallery__itemActions}>
-					<span className={classes.gallery__itemDate}>{day} {month} {year}</span>
+					<span className={classes.gallery__itemDate}>{postDate}</span>
 					<div className={classes.gallery__itemButtons}>
 						<button className={classes.gallery__itemLike} onClick={like}>
 							<svg className={isLiked ? `${classes.likeImg} ${classes.likeActive}` : classes.likeImg}

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import "../styles/post.css";
 import PostCommentsList from '../components/postCommentsList/postCommentsList';
 import UseHashScroll from '../hooks/useHashScroll';
-import { monthesRu } from '../utils/monthesRu';
+import { checkDateYear } from '../utils/dates';
 
 const Post = ({getNewNotice}) => {
 	UseHashScroll(-70);
@@ -14,10 +14,8 @@ const Post = ({getNewNotice}) => {
 	const [description, setDescription] = useState("Здесь будет описание работы, вдохновение автора и т.п.");
 	const [title, setTitle] = useState("Название поста");
 	const [name, setName] = useState("artist_name");
-	const [date, setDate] = useState("13.05.2025");
-	const [day, setDay] = useState(+date.split(".")[0]);
-	const [month, setMonth] = useState("");
-	const [year, setYear] = useState(+date.split(".")[2]);
+	const [date, setDate] = useState("2025-05-13T08:00:00.00Z");
+	const [postDate, setPostDate] = useState(checkDateYear(date));
 	const [comments, setComments] = useState([
 		{id: 1, src: "/images/ava.jpg", name: "Комментатор 1", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elit est, dictum eget diam in, ultricies efficitur turpis. Donec nec ante euismod, dapibus turpis at, congue risus. Suspendisse ut elit turpis. Suspendisse ut egestas urna. In hac habitasse platea dictumst. Sed eleifend pellentesque erat vitae viverra. Текст комментария 1"},
 		{id: 2, src: "/images/ava.jpg", name: "Комментатор 2", text: "Текст комментария 2"},
@@ -55,13 +53,6 @@ const Post = ({getNewNotice}) => {
 		getNewNotice("Тег скопирован");
 	}
 
-	useEffect(() => {
-		let splitedDate = date.split(".");
-		setDay(splitedDate[0]);
-		setMonth(monthesRu[+splitedDate[1]]);
-		setYear(splitedDate[2]);
-	}, [date])
-
 	return (
 		<main className="post">
 			<section className="post__card">
@@ -85,7 +76,7 @@ const Post = ({getNewNotice}) => {
 						))}
 					</ul>
 					<div className="post__meta">
-						<span className="post__date">{day} {month} {year}</span>
+						<span className="post__date">{postDate}</span>
 						<div className="post__buttons">
 							<button className="post__like" onClick={like}>
 								<svg className={isLiked ? "like-img like-active" : "like-img"}
