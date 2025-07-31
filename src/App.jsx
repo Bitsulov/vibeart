@@ -15,6 +15,8 @@ import Contact from "./pages/contact";
 import Error from './pages/error';
 import Notice from './components/notice/notice';
 import './App.css';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 function App() {
 	const [noticeText, setNoticeText] = useState("");
@@ -26,34 +28,36 @@ function App() {
 	}
 
 	return (
-		<Router>
-			<LoaderPage />
-			<Notice message={noticeText} newNotice={gotNotice} setNewNotice={setGotNotice} />
-			<Header />
-			<Routes>
-				{/* Инфо и регистрация/вход */}
-				<Route path="/" element={<Home getNewNotice={getNewNotice} />} />
-				{/* "Лента" */}
-				<Route path="/gallery" element={<Gallery getNewNotice={getNewNotice} />} />
-				{/* Профиль (свой или чужой) */}
-				<Route path="/profile/:profileId" element={<Profile getNewNotice={getNewNotice} />} />
-				{/* Пост */}
-				<Route path="/post/:postId" element={<Post getNewNotice={getNewNotice} />} />
-				{/* Сообщения */}
-				<Route path="/messages" element={<Messages getNewNotice={getNewNotice} />} />
-				{/* Чат */}
-				<Route path="/messages/:chatId" element={<Chat getNewNotice={getNewNotice} />} />
-				{/* Уведомления */}
-				<Route path="/notifications" element={<Notifications getNewNotice={getNewNotice} />} />
-				{/* Связь с нами */}
-				<Route path="/contact" element={<Contact getNewNotice={getNewNotice} />} />
-				{/* Информация */}
-				<Route path="/about" element={<About getNewNotice={getNewNotice} />} />
-				{/* Ошибка */}
-				<Route path="*" element={<Error getNewNotice={getNewNotice} />} />
-			</Routes>
-			<Footer />
-		</Router>
+		<Provider store={store}>
+			<Router>
+				<LoaderPage />
+				<Notice message={noticeText} newNotice={gotNotice} setNewNotice={setGotNotice} />
+				<Header />
+				<Routes>
+					{/* Инфо и регистрация/вход */}
+					<Route path="/" element={<Home getNewNotice={getNewNotice} />} />
+					{/* "Лента" */}
+					<Route path="/gallery" element={<Gallery getNewNotice={getNewNotice} />} />
+					{/* Профиль (свой или чужой) */}
+					<Route path="/profile/:profileId" element={<Profile getNewNotice={getNewNotice} />} />
+					{/* Пост */}
+					<Route path="/post/:postId" element={<Post getNewNotice={getNewNotice} />} />
+					{/* Сообщения */}
+					<Route path="/messages" element={<Messages getNewNotice={getNewNotice} />} />
+					{/* Чат */}
+					<Route path="/messages/:chatId" element={<Chat getNewNotice={getNewNotice} />} />
+					{/* Уведомления */}
+					<Route path="/notifications" element={<Notifications getNewNotice={getNewNotice} />} />
+					{/* Связь с нами */}
+					<Route path="/contact" element={<Contact getNewNotice={getNewNotice} />} />
+					{/* Информация */}
+					<Route path="/about" element={<About getNewNotice={getNewNotice} />} />
+					{/* Ошибка */}
+					<Route path="*" element={<Error getNewNotice={getNewNotice} />} />
+				</Routes>
+				<Footer />
+			</Router>
+		</Provider>
 	)
 }
 

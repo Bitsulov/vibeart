@@ -16,6 +16,15 @@
 .postName {
     font-size: 16px;
     padding: 10px;
+	transition: var(--main-transition);
+}
+
+.postDescription {
+	color: black;
+	text-shadow: none;
+    font-size: 14px;
+	padding: 0 10px 10px;
+	transform: none;
 }
 
 .postImgParent {
@@ -26,11 +35,11 @@
 	transition: var(--main-transition);
 }
 
-.postImgParent:hover ~ .postNameParent,
-.postNameParent:hover {
+.postImgParent:hover ~ .postNameParent .postName,
+.postNameParent:hover .postName {
     color: var(--active-hover);
     transform: translateX(3px) scale(1.02);
-    text-shadow: 1px 1px 3px rgba(42, 64, 102, 0.2); /* Мягкая тень */
+    text-shadow: 1px 1px 3px rgba(42, 64, 102, 0.2);
 }
 
 .postInfo {
@@ -102,6 +111,25 @@
     stroke: var(--main-text);
 }
 
+.postShare {
+	padding: 5px;
+}
+
+.shareImg {
+	margin-right: 0.25em;
+	width: 16px;
+	height: 16px;
+}
+
+.shareImg g {
+	transition: var(--main-transition);
+	fill: var(--main-text);
+}
+
+.postShare:hover .shareImg g {
+	fill: var(--active-color);
+}
+
 .statsNumber {
 	
 }
@@ -112,10 +140,46 @@
 	font-size: 14px;
 	color: #666;
 	user-select: none;
+	white-space: nowrap;
 }
 
 @keyframes bounce {
     0% { transform: scale(1); }
     50% { transform: scale(1.2); }
     100% { transform: scale(1); }
+}
+
+@media (max-width: 570px) {
+	.postStats {
+		padding-left: 3px;
+		padding-right: 3px;
+	}
+
+	.postStats:last-child {
+		padding-right: 6px;
+	}
+
+	.postStats svg {
+		width: 14px;
+		height: 14px;
+	}
+
+	.postTime {
+		font-size: 12px;
+	}
+
+	.statsNumber {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 470px) {
+	.postInfo {
+		flex-wrap: wrap;
+	}
+
+	.postTime {
+		margin-left: auto;
+		padding-right: 10px;
+	}
 }

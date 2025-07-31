@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import "../styles/home.css";
 import ModalWindow from '../components/modalWindow/modalWindow';
 import InputForm from '../components/inputForm/inputForm';
+import { useDispatch, useSelector } from 'react-redux';
+import { setVisibility, toggle } from '../store/modalSlice';
 
 const Home = ({getNewNotice}) => {
-	const [showModal, setShowModal] = useState(false);
-	const [typeModal, setTypeModal] = useState("sign");
+	const showModal = useSelector(state => state.modal.show);
+	const typeModal = useSelector(state => state.modal.type)
+	const dispatch = useDispatch();
 
 	const [emailValueSign, setEmailValueSign] = useState("");
 	const [passwordValueSign, setPasswordValueSign] = useState("");
@@ -99,13 +102,11 @@ const Home = ({getNewNotice}) => {
 	}
 	
 	const openSign = () => {
-		setTypeModal("sign");
-		setShowModal(true);
+		dispatch(setVisibility({type: "sign", show: true}));
 	}
 
 	const openRegister = () => {
-		setTypeModal("register");
-		setShowModal(true);
+		dispatch(setVisibility({type: "register", show: true}));
 	}
 
 	useEffect(() => {
@@ -117,14 +118,14 @@ const Home = ({getNewNotice}) => {
 				setPasswordRegError(false);
 				setPasswordAgainRegError(false);
 				setErrorText("");
-				setTypeModal("");
+				dispatch(setVisibility({type: typeModal, show: false}));
 			}, 350);
 		}
 	}, [showModal])
 
 	return (
 		<main className="home">
-			<ModalWindow showModal={showModal} setShowModal={setShowModal} >
+			<ModalWindow showModal={showModal} setShowModal={() => dispatch(setVisibility({type: typeModal, show: false}))} >
 				{typeModal == "sign" ? 
 					<section className="authentication">
 						<h2 className="authentication__title">Войти</h2>
