@@ -1,0 +1,26 @@
+.welcome {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	text-align: center;
+	flex-grow: 1;
+	padding: 65px 40px 0;
+	background: linear-gradient(to right, #cbf4fa, #ffffff);
+}
+
+.welcome__title {
+	font-size: 4.8em;
+	margin-bottom: 20px;
+}
+
+.welcome__description {
+	font-size: 2em;
+	margin-bottom: 40px;
+}
+
+.welcome__buttons {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}

@@ -1,0 +1,19 @@
+.inputRight {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 13%;
+	padding: 6px 0;
+	border: 2px solid #ccc;
+	border-radius: 8px;
+	border-left: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	transition: border var(--main-transition);
+}
+
+.inputButtonShow {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
