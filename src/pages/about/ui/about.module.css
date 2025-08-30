@@ -1,0 +1,16 @@
+main.about {
+	min-height: calc(100vh - 80px);
+	padding: 90px 20px 0;
+}
+
+@media (max-width: 768px) {
+	main.about {
+        min-height: calc(100vh - 161px);
+    }
+}
+
+@media (max-width: 480px) {
+	main.about {
+		min-height: calc(100vh - 136px);
+	}
+}
