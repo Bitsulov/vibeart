@@ -1,4 +1,6 @@
 import { createUser } from "../model/createUser";
+import ava1 from "@/shared/icons/ava-person.jpg";
+import ava2 from "@/shared/icons/ava.jpg";
 
 export const userMock = createUser({
 	id: 1,
@@ -9,7 +11,7 @@ export const userMock = createUser({
 	subcribers: 12000,
 	subscribes: 45,
 	works: 78,
-	srcImg: "../src/shared/icons/ava-person.jpg",
+	srcImg: ava1,
 	status: "online"
 });
 
@@ -18,7 +20,7 @@ export const userChatMock = createUser({
 	firstName: "Пользователь",
 	secondName: "1241231",
 	userName: "user1241231",
-	srcImg: "../src/shared/icons/ava-person.jpg",
+	srcImg: ava1,
 	status: Math.random() > 0.5 ? "online" : "offline"
 });
 
@@ -27,7 +29,7 @@ export const userProfileMock = createUser({
 	firstName: "Тестовый",
 	secondName: "Пользователь",
 	userName: "test_user",
-	srcImg: "../src/shared/icons/ava.jpg",
+	srcImg: ava2,
 	description: "тест Lorem ipsum dolor sit amet, consectetuer adipiscin Lorem ipsum dolor sit amet, consectetuer adipiscin",
 	subcribers: 1000000,
 	subscribes: 1000,

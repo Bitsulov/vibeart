@@ -12,7 +12,7 @@ export const useLoadPageStatus = () => {
 
 	useEffect(() => {
 		dispatch(setIsLoaded(false));
-	  }, [location]);
+	}, [location]);
 	
 	useEffect(() => {
 		dispatch(setIsLoaded(true));

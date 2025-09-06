@@ -5,11 +5,6 @@ import { noticeTypes } from '../config/noticeTypes.jsx';
 import { hrefTypes } from '../config/hrefTypes';
 
 const NotificationItem = ({authorName, authorId, noticeType, date, srcImg, href, postName, postId, ...props}) => {
-
-	useEffect(() => {
-		console.log(noticeType);
-	}, [noticeType])
-
 	return (
 		<LinkWrapper href={hrefTypes[noticeType]({authorId, postId})} className={classes.notification__item} {...props}>
 			<img src={srcImg} alt="Аватар" className={classes.notification__avatar}></img>

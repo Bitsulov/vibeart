@@ -12,8 +12,11 @@ import { Layout } from "widgets/layout";
 import { profileAlbumsWithPostsMock } from 'entities/albumsWithPosts';
 import { profileAlbumsMock } from 'entities/album';
 import { profilePostsMock } from 'entities/post/const/mockConst';
+import { useLoadPageStatus } from 'entities/pageStats/hooks/useLoadPageStatus';
 
 const Profile = () => {
+	const isPageLoaded = useLoadPageStatus();
+
 	const [selectedAlbum, setSelectedAlbum] = useState(profileAlbumsMock[0].id);
 	const currentPostList = profileAlbumsWithPostsMock
 		.filter(i => i.albumId === selectedAlbum)
@@ -25,7 +28,7 @@ const Profile = () => {
 	const [isSubscribe, setIsSubscribe] = useState(subscriptionMock.value);
 
   	return (
-		<Layout>
+		<Layout pageStatus={isPageLoaded}>
 			<main className={classes.profile}>
 				<ProfileUserInfo 
 					srcImg={userProfileMock.srcImg}

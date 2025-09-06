@@ -1,6 +1,5 @@
 main.home {
 	display: flex;
-	min-height: calc(100vh - 80px);
 	background-color: #f8f9fa;
 	color: #333;
 	font-size: 10px;
@@ -150,12 +149,6 @@ main.home {
 	}
 }
 
-@media (max-width: 768px) {
-	main.home {
-		min-height: calc(100vh - 161px);
-	}
-}
-
 @media (max-width: 700px) {
 	main.home {
 		font-size: 8px;
@@ -177,12 +170,6 @@ main.home {
 
 	.welcome__button {
 		font-size: 2.3rem;
-	}
-}
-
-@media (max-width: 480px) {
-	main.home {
-		min-height: calc(100vh - 136px);
 	}
 }
 

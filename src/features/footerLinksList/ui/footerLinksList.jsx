@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { toggleLinksHandler } from '../model/toggleLinksHandler';
 import { useSelector, useDispatch } from "react-redux";
 import { selectFooterLinksHeight, selectIsFooterLinksOpen, selectOPENFOOTERLINKSHEIGHT } from '../model/selectors';
-import { setOpenFooterLinksHeight, setFooterLinksHeight } from '../model/footerLinksSlice';
+import { setOpenFooterLinksHeight, setFooterLinksHeight, setIsFooterLinksOpen } from '../model/footerLinksSlice';
 import { footerLinksWrapperHandler } from '../model/footerLinksWrapperHandler';
 import { footerLinksConfig as links } from '../config/footerLinksConfig';
 
@@ -19,7 +19,12 @@ const FooterLinksList = () => {
 	useEffect(() => {
 		dispatch(setOpenFooterLinksHeight(linksRef.current.scrollHeight));
 		dispatch(setFooterLinksHeight(0));
-	}, [])
+	}, []);
+
+	useEffect(() => {
+		dispatch(setIsFooterLinksOpen(false));
+	}, [location.pathname]);
+
 
 	return (
 		<div className={classes.footer__links}>

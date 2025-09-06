@@ -10,9 +10,11 @@ import { commentsMock } from 'entities/comment/const/mockConst';
 import { useSelector } from 'react-redux';
 import { selectUserInfo } from 'entities/user/model/selectors';
 import { Layout } from "widgets/layout";
+import { useLoadPageStatus } from 'entities/pageStats/hooks/useLoadPageStatus';
 
 const Post = () => {
 	useHashScroll();
+	const isPageLoaded = useLoadPageStatus();
 
 	const [comments, setComments] = useState(commentsMock);
 	const [textAreaValue, setTextAreaValue] = useState("");
@@ -25,7 +27,7 @@ const Post = () => {
 	}
 
 	return (
-		<Layout>
+		<Layout pageStatus={isPageLoaded}>
 			<main className={classes.post}>
 				<PostCard
 					srcImg={postMock.srcImg}

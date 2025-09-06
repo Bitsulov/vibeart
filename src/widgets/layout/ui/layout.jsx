@@ -5,10 +5,10 @@ import { Footer } from "../../footer";
 import { LoaderPage } from '../../LoaderPage';
 import { Notice } from 'features/notice/ui/notice';
 
-const Layout = ({children}) => {
+const Layout = ({children, pageStatus}) => {
 	return (
 		<div className={classes.layout}>
-			<LoaderPage />
+			<LoaderPage pageStatus={pageStatus} />
 			<Notice />
 			<Header />
 			{children}

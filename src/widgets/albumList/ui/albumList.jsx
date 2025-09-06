@@ -12,7 +12,7 @@ const AlbumList = ({albumList, selectedAlbum, setSelectedAlbum, ...props}) => {
 
 	return (
 		<div className={classes.posts__albums} {...props}>
-			<AlbumListButtonLeft ref={prevRef} swiper={swiperRef} />
+			<AlbumListButtonLeft ref={prevRef} swiperRef={swiperRef} />
 			<Swiper
 				spaceBetween={10}
 				slidesPerView="auto"
@@ -47,7 +47,7 @@ const AlbumList = ({albumList, selectedAlbum, setSelectedAlbum, ...props}) => {
 					)
 				})}
 			</Swiper>
-			<AlbumListButtonRight ref={nextRef} swiper={swiperRef} />
+			<AlbumListButtonRight ref={nextRef} swiperRef={swiperRef} />
 		</div>
 	)
 }

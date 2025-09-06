@@ -1,5 +1,4 @@
 main.post {
-	min-height: calc(100vh - 80px);
 	background-color: var(--background);
 	padding: 90px 0 25px;
 	max-width: 800px;
@@ -11,17 +10,5 @@ main.post {
 @media (max-width: 900px) {
 	main.post {
 		width: 90%;
-	}
-}
-
-@media (max-width: 768px) {
-	main.post {
-		min-height: calc(100vh - 161px);
-	}
-}
-
-@media (max-width: 480px) {
-	main.post {
-		min-height: calc(100vh - 136px);
 	}
 }
