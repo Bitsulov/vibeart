@@ -1,0 +1,24 @@
+import React from "react";
+import classes from "./albumItem.module.css";
+import { albumClickHandler } from "../model/albumClickHandler.js";
+
+interface AlbumItem {
+    id: number;
+    name: string;
+    isActive: boolean;
+    setSelectedAlbum: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const AlbumItem = ({ id, name, isActive = false, setSelectedAlbum, ...props }: AlbumItem) => {
+    return (
+        <button
+            className={isActive ? `${classes.albumsAlbum} ${classes.albumActive}` : classes.albumsAlbum}
+            onClick={e => albumClickHandler(e, setSelectedAlbum, id)}
+            {...props}
+        >
+            {name}
+        </button>
+    );
+};
+
+export { AlbumItem };

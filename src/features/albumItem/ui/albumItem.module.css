@@ -3,10 +3,10 @@
     border: none;
     background-color: var(--background-el);
     border-radius: 20px;
-	white-space: nowrap;
-	transition: var(--main-transition);
-	user-select: none;
-	cursor: pointer;
+    white-space: nowrap;
+    transition: var(--main-transition);
+    user-select: none;
+    cursor: pointer;
 }
 
 .albumsAlbum:hover {
@@ -18,9 +18,9 @@
 .albumActive {
     background-color: var(--active-color);
     color: #fff;
-	cursor: default;
+    cursor: default;
 }
 
 .albumActive:hover {
-	background-color: var(--active-color);
+    background-color: var(--active-color);
 }

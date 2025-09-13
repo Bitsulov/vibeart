@@ -4,6 +4,7 @@
 Проект создан для практики разработки на **React**.
 
 ## 🚀 Возможности
+
 - 🖼️ Публикация арт-работ
 - 📂 Создание альбомов
 - ❤️ Лайки, репосты и комментарии
@@ -11,11 +12,12 @@
 - 👤 Пользовательский профиль
 
 ## 🛠️ Технологии
-- React JS + Vite  
-- Redux Toolkit  
-- React Router  
-- Feature-Sliced Design  
-- CSS Modules  
+
+- React JS + Vite
+- Redux Toolkit
+- React Router
+- Feature-Sliced Design
+- CSS Modules
 - ...
 
 ---
@@ -27,3 +29,4 @@ git clone https://github.com/Bitsulov/vibeart.git
 cd vibeart
 npm install
 npm run dev
+```

@@ -1,1 +1,0 @@
-export const selectIsLoaded = state => state.pageStats.isLoaded;

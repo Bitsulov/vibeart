@@ -19,10 +19,10 @@ header {
     font-size: 20px;
     font-weight: bold;
     color: var(--active-hover);
-	padding-right: 10px;
-	margin-right: -10px;
-	cursor: pointer;
-	transition: var(--main-transition);
+    padding-right: 10px;
+    margin-right: -10px;
+    cursor: pointer;
+    transition: var(--main-transition);
 }
 
 .header__logo:hover {
@@ -31,39 +31,39 @@ header {
 }
 
 .header__title {
-	transition: var(--main-transition);
+    transition: var(--main-transition);
 }
 
 .header__logo:hover .header__title {
-	filter: drop-shadow(0 0 6px var(--active-color));
+    filter: drop-shadow(0 0 6px var(--active-color));
 }
 
 .header__logoImg {
     height: 30px;
-	max-height: 30px;
+    max-height: 30px;
     margin-right: 10px;
 }
 
 /* Право */
 
 .header__links {
-	display: flex;
+    display: flex;
     align-items: center;
     gap: 20px;
     font-size: 20px;
 }
 
 .header__link {
-	cursor: pointer;
-	transition: var(--main-transition);
+    cursor: pointer;
+    transition: var(--main-transition);
 }
 
 .header__link:hover {
-	transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .header__link svg g {
-	transition: var(--main-transition);
+    transition: var(--main-transition);
 }
 
 .header__link:hover svg g {
@@ -71,42 +71,42 @@ header {
 }
 
 .header__linksChats {
-	position: relative;
+    position: relative;
 }
 
 .chatsImg {
-	width: 22px;
-	height: 27px;
+    width: 22px;
+    height: 27px;
 }
 
 .header__linksNotice {
-	position: relative;
+    position: relative;
 }
 
 .len {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	top: -5px;
-	right: -10px;
-	font-size: 12px;
-	border-radius: 50%;
-	min-width: 20px;
-	height: 20px;
-	padding: 5px;
-	background-color: red;
-	color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    font-size: 12px;
+    border-radius: 50%;
+    min-width: 20px;
+    height: 20px;
+    padding: 5px;
+    background-color: red;
+    color: white;
 }
 
 .noticeImg {
-	width: 22px;
-	height: 27px;
+    width: 22px;
+    height: 27px;
 }
 
 .subscriptionsImg {
-	width: 38px;
-	height: 27px;
+    width: 38px;
+    height: 27px;
 }
 
 .userAvatar {
@@ -114,7 +114,7 @@ header {
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-	transition: var(--main-transition);
+    transition: var(--main-transition);
 }
 
 .userAvatar:hover {
@@ -128,7 +128,7 @@ header {
         flex-wrap: wrap;
     }
 
-	.header__form {
+    .header__form {
         width: 200px;
     }
 
@@ -142,61 +142,61 @@ header {
 }
 
 @media (max-width: 670px) {
-	.header__logo {
-		font-size: 14px;
-	}
+    .header__logo {
+        font-size: 14px;
+    }
 
-	.header__logo span {
-		display: none;
-	}
+    .header__logo span {
+        display: none;
+    }
 
-	.header__logoImg {
-		max-height: 20px;
-		margin-right: 5px;
-	}
+    .header__logoImg {
+        max-height: 20px;
+        margin-right: 5px;
+    }
 
-	.header__links {
-		display: none;
-	}
+    .header__links {
+        display: none;
+    }
 
-	.header__burger {
-		display: flex;
-	}
+    .header__burger {
+        display: flex;
+    }
 
-	.burger__links {
-		display: flex;
-	}
+    .burger__links {
+        display: flex;
+    }
 }
 
 @media (max-width: 480px) {
-	.header__logoImg {
-		margin-right: 0;
-	}
+    .header__logoImg {
+        margin-right: 0;
+    }
 
-	.header__form {
-		width: 180px;
+    .header__form {
+        width: 180px;
         margin: 10px 0;
     }
 
     .header__search {
-		font-size: 11px;
-		width: 145px;
+        font-size: 11px;
+        width: 145px;
         padding: 6px 10px;
     }
 
     .header__submit {
-		height: 27px;
-		padding: 3px 8px 3px 3px;
-		border: 1px solid var(--active-color);
+        height: 27px;
+        padding: 3px 8px 3px 3px;
+        border: 1px solid var(--active-color);
     }
 
-	.header__burger {
-		margin: 0 1.7% 0 3.3%;
-	}
+    .header__burger {
+        margin: 0 1.7% 0 3.3%;
+    }
 }
 
 @media (max-width: 400px) {
-	.header__burger {
-		margin: 0 1.7% 0 0;
-	}
+    .header__burger {
+        margin: 0 1.7% 0 0;
+    }
 }

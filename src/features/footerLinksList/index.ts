@@ -1,0 +1,1 @@
+export { FooterLinksList } from "./ui/footerLinksList.jsx";

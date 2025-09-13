@@ -1,13 +1,13 @@
 .inDevelopment {
-	margin: 25px 40px;
+    margin: 25px 40px;
 }
 
 .inDevelopment__title {
-	color: var(--active-color);
-	font-size: 28px;
+    color: var(--active-color);
+    font-size: 28px;
 }
 
 .inDevelopment__text {
-	margin-top: 20px;
-	font-size: 20px;
+    margin-top: 20px;
+    font-size: 20px;
 }

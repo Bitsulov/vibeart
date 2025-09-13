@@ -1,14 +1,14 @@
 .posts__albums {
     display: flex;
-	position: relative;
+    position: relative;
     gap: 10px;
     margin-bottom: 20px;
 }
 
 .swiperAlbums {
-	width: 100%;
-	margin-left: 0;
-	margin-right: 0;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /* .swiperAlbums:active {
@@ -20,5 +20,5 @@
 } */
 
 .slideAlbum {
-	width: auto;
+    width: auto;
 }

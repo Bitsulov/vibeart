@@ -6,21 +6,23 @@
 
 .info__buttonsOwn {
     display: grid;
-	grid-template-columns: repeat(2, max-content);
-	gap: 10px;
-	margin: 15px 0;
-	justify-items: start;
+    grid-template-columns: repeat(2, max-content);
+    gap: 10px;
+    margin: 15px 0;
+    justify-items: start;
 }
 
 .info__buttonsItem {
-	background-color: #ccc;
-	color: #333;
-	font-size: 1.4em;
+    background-color: #ccc;
+    color: #333;
+    font-size: 1.4em;
     padding: 8px 15px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-	transition: var(--main-transition), padding 0s;
+    transition:
+        var(--main-transition),
+        padding 0s;
 }
 
 .info__buttonsItem:hover {
@@ -29,39 +31,39 @@
 }
 
 .info__addPostBtn {
-	justify-self: stretch;
+    justify-self: stretch;
 }
 
 .info__addPostBtn:hover {
-	background-color: var(--active-color);
-	color: #fff;
+    background-color: var(--active-color);
+    color: #fff;
 }
 
 .info__manageAlbumsBtn {
-	justify-self: stretch;
+    justify-self: stretch;
 }
 
 .info__manageAlbumsBtn:hover {
-	background-color: var(--active-color);
-	color: #fff;
+    background-color: var(--active-color);
+    color: #fff;
 }
 
 .info__editProfileBtn {
-	background-color: var(--active-color);
+    background-color: var(--active-color);
     color: #fff;
 }
 
 .info__editProfileBtn:hover {
-	background-color: var(--active-hover);
+    background-color: var(--active-hover);
 }
 
 .info__settingsBtn {
-	color: white;
-	background-color: var(--active-color);
+    color: white;
+    background-color: var(--active-color);
 }
 
 .info__settingsBtn:hover {
-	background-color: var(--active-hover);
+    background-color: var(--active-hover);
 }
 
 .info__subscribeBtn {
@@ -70,58 +72,58 @@
 }
 
 .info__unscribeBtn {
-	padding: 8px 20px 8px 19px;
+    padding: 8px 20px 8px 19px;
     background-color: #a52a2a;
     color: #fff;
 }
 
 .info__messageBtn:hover {
-	color: white;
-	background-color: var(--active-color);
+    color: white;
+    background-color: var(--active-color);
 }
 
 @media (max-width: 1430px) {
-	.info__buttonsItem {
-		font-size: 1.3em;
-	}
+    .info__buttonsItem {
+        font-size: 1.3em;
+    }
 
-	.info__settingsBtn {
-		justify-self: stretch;
-	}
+    .info__settingsBtn {
+        justify-self: stretch;
+    }
 }
 
 @media (max-width: 1300px) {
-	.info__buttons {
-		justify-content: center;
-	}
+    .info__buttons {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 1200px) {
-	.info__buttonsOwn {
-		grid-template-columns: repeat(2, max-content);
-	}
+    .info__buttonsOwn {
+        grid-template-columns: repeat(2, max-content);
+    }
 
-	.info__buttons {
-		min-width: 250px;
-	}
+    .info__buttons {
+        min-width: 250px;
+    }
 
-	.info__buttonsItem {
-		font-size: 1.4em;
-	}
+    .info__buttonsItem {
+        font-size: 1.4em;
+    }
 
-	.info__subscribeBtn {
-		width: 50%;
-		text-align: center;
-	}
+    .info__subscribeBtn {
+        width: 50%;
+        text-align: center;
+    }
 
-	.info__messageBtn {
-		width: 50%;
-		text-align: center;
-	}
+    .info__messageBtn {
+        width: 50%;
+        text-align: center;
+    }
 }
 
 @media (max-width: 400px) {
-	.info__buttonsOwn {
-		grid-template-columns: repeat(1, max-content);
-	}
+    .info__buttonsOwn {
+        grid-template-columns: repeat(1, max-content);
+    }
 }

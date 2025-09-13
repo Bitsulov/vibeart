@@ -1,6 +1,6 @@
 .posts__post {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
     background-color: var(--background-el);
     border-radius: 8px;
     overflow: hidden;
@@ -9,30 +9,30 @@
 
 .postImg {
     width: 100%;
-	height: 200px;
+    height: 200px;
     object-fit: cover;
 }
 
 .postName {
     font-size: 16px;
     padding: 10px;
-	transition: var(--main-transition);
+    transition: var(--main-transition);
 }
 
 .postDescription {
-	color: black;
-	text-shadow: none;
+    color: black;
+    text-shadow: none;
     font-size: 14px;
-	padding: 0 10px 10px;
-	transform: none;
+    padding: 0 10px 10px;
+    transform: none;
 }
 
 .postImgParent {
-	transition: var(--main-transition);
+    transition: var(--main-transition);
 }
 
 .postNameParent {
-	transition: var(--main-transition);
+    transition: var(--main-transition);
 }
 
 .postImgParent:hover ~ .postNameParent .postName,
@@ -43,39 +43,39 @@
 }
 
 .postInfo {
-	display: flex;
-	align-items: center;
-	margin-top: auto;
-	justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    justify-content: space-between;
 }
 
 .postActions {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
     padding: 0 10px 5px 10px;
-	gap: 5px;
+    gap: 5px;
     font-size: 10px;
     color: #666;
 }
 
 .postStats {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .postLikes {
-	transform: translateY(-1px);
-	padding: 5px;
-	transition: var(--main-transition);
+    transform: translateY(-1px);
+    padding: 5px;
+    transition: var(--main-transition);
 }
 
 .likeImg {
-	margin-right: 0.25em;
-	transition: var(--main-transition);
+    margin-right: 0.25em;
+    transition: var(--main-transition);
 }
 
 .likeImg path {
-	transition: var(--main-transition);
+    transition: var(--main-transition);
 }
 
 .postLikes:hover .likeImg path {
@@ -83,113 +83,118 @@
 }
 
 .likeActive {
-	fill: var(--like-color);
-	animation: bounce 0.25s ease-out;
+    fill: var(--like-color);
+    animation: bounce 0.25s ease-out;
 }
 
 .likeActive > path {
-	transition: var(--main-transition);
-	stroke: var(--like-color);
+    transition: var(--main-transition);
+    stroke: var(--like-color);
 }
 
 .postComments {
-	padding: 5px;
-	transition: var(--main-transition);
+    padding: 5px;
+    transition: var(--main-transition);
 }
 
 .commentImg {
-	margin-right: 0.25em;
-	transition: var(--main-transition);
+    margin-right: 0.25em;
+    transition: var(--main-transition);
 }
 
 .postComments:hover .commentImg path {
-	stroke: var(--active-hover);
-	box-shadow: 0 2px 4px rgba(42, 64, 102, 0.3);
+    stroke: var(--active-hover);
+    box-shadow: 0 2px 4px rgba(42, 64, 102, 0.3);
 }
 
 .commentImg path {
-	transition: var(--main-transition);
+    transition: var(--main-transition);
     stroke: var(--main-text);
 }
 
 .postShare {
-	padding: 5px;
+    padding: 5px;
 }
 
 .shareImg {
-	margin-right: 0.25em;
-	width: 16px;
-	height: 16px;
+    margin-right: 0.25em;
+    width: 16px;
+    height: 16px;
 }
 
 .shareImg g {
-	transition: var(--main-transition);
-	fill: var(--main-text);
+    transition: var(--main-transition);
+    fill: var(--main-text);
 }
 
 .postShare:hover .shareImg g {
-	fill: var(--active-color);
+    fill: var(--active-color);
 }
 
 .statsNumber {
-	
 }
 
 .postTime {
-	padding: 0 10px 5px;
-	display: flex;
-	font-size: 14px;
-	color: #666;
-	user-select: none;
-	white-space: nowrap;
+    padding: 0 10px 5px;
+    display: flex;
+    font-size: 14px;
+    color: #666;
+    user-select: none;
+    white-space: nowrap;
 }
 
 @keyframes bounce {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 @media (max-width: 570px) {
-	.postStats {
-		padding-left: 3px;
-		padding-right: 3px;
-	}
+    .postStats {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
 
-	.postStats:last-child {
-		padding-right: 6px;
-	}
+    .postStats:last-child {
+        padding-right: 6px;
+    }
 
-	.postStats svg {
-		width: 14px;
-		height: 14px;
-	}
+    .postStats svg {
+        width: 14px;
+        height: 14px;
+    }
 
-	.postTime {
-		font-size: 12px;
-	}
+    .postTime {
+        font-size: 12px;
+    }
 
-	.statsNumber {
-		font-size: 12px;
-	}
+    .statsNumber {
+        font-size: 12px;
+    }
 
-	.postActions {
-		gap: 0;
-	}
+    .postActions {
+        gap: 0;
+    }
 }
 
 @media (max-width: 470px) {
-	.postInfo {
-		flex-wrap: wrap;
-	}
+    .postInfo {
+        flex-wrap: wrap;
+    }
 
-	.postTime {
-		margin-left: auto;
-		padding-right: 10px !important;
-		font-size: 14px;
-	}
+    .postTime {
+        margin-left: auto;
+        padding-right: 10px !important;
+        font-size: 14px;
+    }
 
-	.postActions {
-		gap: 5px;
-	}
+    .postActions {
+        gap: 5px;
+    }
 }
