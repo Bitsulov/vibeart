@@ -1,5 +1,5 @@
 import { useState } from "react";
-import classes from "./chat.module.css";
+import classes from "./chat.module.scss";
 import { userChatMock } from "entities/user/index.js";
 import { chatMessagesMock } from "entities/message/index.js";
 import { ChatContainer } from "widgets/chatContainer/index.js";

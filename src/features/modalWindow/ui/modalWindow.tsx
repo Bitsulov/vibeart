@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type React from "react";
-import classes from "./modalWindow.module.css";
+import classes from "./modalWindow.module.scss";
 import { closeModalHandler } from "../model/closeModalHandler.js";
 import { modalClickHandler } from "../model/modalClickHandler.js";
 import { useSelector, useDispatch } from "react-redux";

@@ -1,4 +1,4 @@
-import classes from "./messages.module.css";
+import classes from "./messages.module.scss";
 import { Layout } from "widgets/layout/index.js";
 import { ChatList } from "widgets/chatList/index.js";
 import { PageTitle } from "widgets/pageTitle/index.js";

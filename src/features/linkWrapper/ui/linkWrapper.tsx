@@ -1,5 +1,5 @@
 import type React from "react";
-import classes from "./linkWrapper.module.css";
+import classes from "./linkWrapper.module.scss";
 import { Link } from "react-router-dom";
 
 interface LinkWrapperType {

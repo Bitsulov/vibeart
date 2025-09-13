@@ -1,4 +1,4 @@
-import classes from "./home.module.css";
+import classes from "./home.module.scss";
 import { AuthModal } from "widgets/authModal/index.js";
 import { WelcomeMain } from "widgets/welcomeMain/index.js";
 import { Layout } from "widgets/layout/index.js";

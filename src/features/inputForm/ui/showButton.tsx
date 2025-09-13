@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./inputForm.module.css";
+import classes from "./inputForm.module.scss";
 
 export interface ShowButtonType {
     onClick: (e: React.MouseEvent) => void;

@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./albumItem.module.css";
+import classes from "./albumItem.module.scss";
 import { albumClickHandler } from "../model/albumClickHandler.js";
 
 interface AlbumItem {

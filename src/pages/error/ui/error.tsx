@@ -1,4 +1,4 @@
-import classes from "./error.module.css";
+import classes from "./error.module.scss";
 import { useGetErrorCode } from "../hooks/useGetErrorCode.jsx";
 import { getErrorMessage } from "../lib/getErrorMessage.js";
 import { Layout } from "widgets/layout/index.js";

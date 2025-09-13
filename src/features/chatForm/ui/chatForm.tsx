@@ -1,5 +1,5 @@
 import type React from "react";
-import classes from "./chatForm.module.css";
+import classes from "./chatForm.module.scss";
 import { globalOnChangeHandler } from "shared/lib/globalOnChangeHandler.js";
 
 interface ChatFormProps {

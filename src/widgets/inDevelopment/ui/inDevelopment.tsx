@@ -1,4 +1,4 @@
-import classes from "./inDevelopment.module.css";
+import classes from "./inDevelopment.module.scss";
 
 const InDevelopment = () => {
     return (

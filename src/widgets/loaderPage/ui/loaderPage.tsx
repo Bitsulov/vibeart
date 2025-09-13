@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import classes from "./loaderPage.module.css";
+import classes from "./loaderPage.module.scss";
 import { useLocation } from "react-router-dom";
 
 interface LoaderPagePropsType {

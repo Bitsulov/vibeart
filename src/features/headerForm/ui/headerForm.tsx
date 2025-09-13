@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import classes from "./headerForm.module.css";
+import classes from "./headerForm.module.scss";
 import searchIcon from "shared/icons/search-white.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

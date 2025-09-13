@@ -1,4 +1,4 @@
-import classes from "./authButton.module.css";
+import classes from "./authButton.module.scss";
 import { authButtonHandler } from "../model/authButtonHandler.js";
 import { useDispatch } from "react-redux";
 

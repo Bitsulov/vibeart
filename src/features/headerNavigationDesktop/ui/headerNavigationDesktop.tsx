@@ -1,4 +1,4 @@
-import classes from "./headerNavigationDesktop.module.css";
+import classes from "./headerNavigationDesktop.module.scss";
 import { useSelector } from "react-redux";
 import { parseNumber } from "shared/lib/parseNumber.js";
 import {

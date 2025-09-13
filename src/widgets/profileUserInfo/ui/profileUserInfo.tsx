@@ -1,5 +1,5 @@
 import type React from "react";
-import classes from "./profileUserInfo.module.css";
+import classes from "./profileUserInfo.module.scss";
 import { ProfileUserTag } from "features/profileUserTag/index.js";
 import { ProfileButtonsUser } from "features/profileButtonsUser/index.js";
 import { parseNumber } from "shared/lib/parseNumber.js";

@@ -1,4 +1,4 @@
-import classes from "./commentButton.module.css";
+import classes from "./commentButton.module.scss";
 import { parseNumber } from "shared/lib/parseNumber.js";
 import { Link } from "react-router-dom";
 

@@ -1,4 +1,4 @@
-import classes from "./tagList.module.css";
+import classes from "./tagList.module.scss";
 import { Tag } from "./tag.jsx";
 import type { TagType } from "entities/tag/index.js";
 

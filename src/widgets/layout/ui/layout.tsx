@@ -1,9 +1,10 @@
 import type React from "react";
-import classes from "./layout.module.css";
+import classes from "./layout.module.scss";
 import { Header } from "../../header/index.js";
 import { Footer } from "../../footer/index.js";
 import { LoaderPage } from "../../loaderPage/index.js";
 import { Notice } from "features/notice/index.js";
+import { UnderFooter } from "../../underFooter/index.js";
 
 interface LayoutPropsType {
     children: React.ReactNode;
@@ -18,6 +19,7 @@ const Layout = ({ children, pageStatus }: LayoutPropsType) => {
             <Header />
             {children}
             <Footer />
+            <UnderFooter />
         </div>
     );
 };

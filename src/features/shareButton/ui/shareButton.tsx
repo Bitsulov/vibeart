@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import classes from "./shareButton.module.css";
+import classes from "./shareButton.module.scss";
 import { shareHandler } from "../model/shareHandler.js";
 import { parseNumber } from "shared/lib/parseNumber.js";
 

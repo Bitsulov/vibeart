@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { StoreProvider } from "./providers/storeProvider.js";
 import RouterProvider from "./providers/routerProvider.js";
 import { InitProvider } from "./providers/initProvider.js";

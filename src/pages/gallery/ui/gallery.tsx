@@ -1,4 +1,4 @@
-import classes from "./gallery.module.css";
+import classes from "./gallery.module.scss";
 import { GalleryList } from "widgets/galleryList/index.js";
 import { PageTitle } from "widgets/pageTitle/index.js";
 import { useQueryParam } from "shared/hooks/useQueryParam.js";

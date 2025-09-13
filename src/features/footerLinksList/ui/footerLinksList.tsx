@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import classes from "./footerLinksList.module.css";
+import classes from "./footerLinksList.module.scss";
 import { Link } from "react-router-dom";
 import { toggleLinksHandler } from "../model/toggleLinksHandler.js";
 import { useSelector, useDispatch } from "react-redux";

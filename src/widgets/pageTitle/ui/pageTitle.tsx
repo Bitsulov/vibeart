@@ -1,4 +1,4 @@
-import classes from "./pageTitle.module.css";
+import classes from "./pageTitle.module.scss";
 
 interface PageTitlePropsType {
     title: string;

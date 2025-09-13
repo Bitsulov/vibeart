@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import classes from "./albumListButtons.module.css";
+import classes from "./albumListButtons.module.scss";
 import { slideLeft } from "../model/clickHandlers.js";
 import type Swiper from "swiper";
 

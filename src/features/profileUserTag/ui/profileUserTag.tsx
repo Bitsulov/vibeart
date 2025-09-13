@@ -1,4 +1,4 @@
-import classes from "./profileUserTag.module.css";
+import classes from "./profileUserTag.module.scss";
 import { tagClickHandler } from "../model/tagClickHandler.js";
 import { useDispatch } from "react-redux";
 

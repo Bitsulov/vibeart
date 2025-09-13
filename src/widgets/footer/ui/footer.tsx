@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import classes from "./footer.module.css";
+import classes from "./footer.module.scss";
 import logoWhite from "shared/icons/logo-white.png";
 import { socialsConfig } from "../config/socialsConfig.js";
 import SocialLink from "./socialLink.jsx";

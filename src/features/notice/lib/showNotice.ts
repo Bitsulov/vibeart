@@ -1,6 +1,6 @@
 import type { Dispatch } from "@reduxjs/toolkit";
 import { setClassesNotice, setShowNotice } from "../model/noticeSlice.js";
-import classes from "../ui/notice.module.css";
+import classes from "../ui/notice.module.scss";
 
 export function showNoticeFunc(dispatch: Dispatch) {
     dispatch(setClassesNotice(`${classes.notice} ${classes.noticeShow}`));

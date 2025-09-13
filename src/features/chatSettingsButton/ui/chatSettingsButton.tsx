@@ -1,4 +1,4 @@
-import classes from "./chatSettingsButton.module.css";
+import classes from "./chatSettingsButton.module.scss";
 
 const ChatSettingsButton = ({ ...props }) => {
     return (

@@ -1,4 +1,4 @@
-import classes from "./regForm.module.css";
+import classes from "./regForm.module.scss";
 import { useSelector, useDispatch } from "react-redux";
 import useSubmitReg from "../model/useSubmitReg.jsx";
 import { emailChangeHandler } from "../model/emailChangeHandler.js";

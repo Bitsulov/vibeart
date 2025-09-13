@@ -1,4 +1,4 @@
-import classes from "./errorInfo.module.css";
+import classes from "./errorInfo.module.scss";
 
 interface ErrorInfoType {
     status: number;

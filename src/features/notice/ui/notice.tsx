@@ -1,4 +1,4 @@
-import classes from "./notice.module.css";
+import classes from "./notice.module.scss";
 import { useNoticeQueue } from "../hooks/useNoticeQueue.jsx";
 import { selectClassesNotice, selectCurrentMessageNotice } from "../model/selectors.js";
 import { useSelector } from "react-redux";

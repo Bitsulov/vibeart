@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import classes from "./galleryList.module.css";
+import classes from "./galleryList.module.scss";
 import { GalleryItem } from "features/galleryItem/index.js";
 import { Link } from "react-router-dom";
 import type { PostType } from "entities/post/index.js";

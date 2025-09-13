@@ -1,4 +1,4 @@
-import classes from "./notificationItem.module.css";
+import classes from "./notificationItem.module.scss";
 import { LinkWrapper } from "features/linkWrapper/index.js";
 import { noticeTypes } from "../config/noticeTypes.jsx";
 import { hrefTypes } from "../config/hrefTypes.js";

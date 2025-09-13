@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
-import classes from "./albumList.module.css";
+import classes from "./albumList.module.scss";
 import { AlbumItem } from "features/albumItem/index.js";
 import { AlbumListButtonLeft, AlbumListButtonRight } from "features/albumListSliderButtons/index.js";
 import type { AlbumType } from "entities/album/index.js";

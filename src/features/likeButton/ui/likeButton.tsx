@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import classes from "./likeButton.module.css";
+import classes from "./likeButton.module.scss";
 import { likeHandler } from "../model/likeHandler.js";
 import { parseNumber } from "shared/lib/parseNumber.js";
 

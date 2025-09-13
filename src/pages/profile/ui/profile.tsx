@@ -1,5 +1,5 @@
 import { useState } from "react";
-import classes from "./profile.module.css";
+import classes from "./profile.module.scss";
 import { subscriptionMock } from "entities/subscription/index.js";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";

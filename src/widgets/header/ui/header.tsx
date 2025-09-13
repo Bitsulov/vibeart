@@ -1,4 +1,4 @@
-import classes from "./header.module.css";
+import classes from "./header.module.scss";
 import logoBlack from "shared/icons/logo-black.png";
 import { Burger } from "features/burger/index.js";
 import { Link } from "react-router-dom";

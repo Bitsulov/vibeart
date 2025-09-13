@@ -1,5 +1,5 @@
 import type { SocialLinkType } from "../model/types.js";
-import classes from "./socialLink.module.css";
+import classes from "./socialLink.module.scss";
 import { Link } from "react-router-dom";
 
 interface SocialLinkPropsType {

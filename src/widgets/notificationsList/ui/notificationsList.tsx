@@ -1,4 +1,4 @@
-import classes from "./notificationsList.module.css";
+import classes from "./notificationsList.module.scss";
 import { formatTime } from "shared/lib/formatTime.js";
 import { NotificationItem } from "features/notificationItem/index.js";
 import type { NotificationType } from "entities/notification/index.js";

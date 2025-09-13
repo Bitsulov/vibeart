@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import classes from "./inputForm.module.css";
+import classes from "./inputForm.module.scss";
 import { buttonTypes } from "../config/buttonTypes.js";
 import { onChangeValue } from "../model/onChangeValue.js";
 import { toggleButtonHandler } from "../model/toggleButtonHandler.js";
@@ -16,7 +16,7 @@ interface InputFormType {
     defaultValue?: string | null;
 }
 
-type buttonType = "text" | "password";
+type buttonType = "text" | "password" | "email";
 
 const InputForm = ({
     placeholder = "",
@@ -92,17 +92,17 @@ const InputForm = ({
                     id={id}
                     className={inputClasses}
                     value={value}
-                    minLength={minLength ?? ""}
+                    minLength={minLength}
                     onChange={e =>
                         onChangeValue(
                             e,
-                            onChange,
                             classes,
                             defaultClass,
                             className,
                             placeholderClassName,
                             setInputClasses,
-                            setPlaceholderClasses
+                            setPlaceholderClasses,
+							onChange,
                         )
                     }
                     {...props}

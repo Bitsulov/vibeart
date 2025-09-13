@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import classes from "./profilePostItem.module.css";
+import classes from "./profilePostItem.module.scss";
 import { LikeButton } from "features/likeButton/index.js";
 import { CommentButton } from "features/commentButton/index.js";
 import { ShareButton } from "features/shareButton/index.js";

@@ -1,4 +1,4 @@
-import classes from "../ui/chatContainer.module.css";
+import classes from "../ui/chatContainer.module.scss";
 import type React from "react";
 import type { MessageType } from "entities/message/index.js";
 

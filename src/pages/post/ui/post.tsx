@@ -1,5 +1,5 @@
 import { useState } from "react";
-import classes from "./post.module.css";
+import classes from "./post.module.scss";
 import { PostCommentsList } from "widgets/postCommentsList/index.js";
 import { useHashScroll } from "shared/hooks/useHashScroll.js";
 import { PostCard } from "widgets/postCard/index.js";

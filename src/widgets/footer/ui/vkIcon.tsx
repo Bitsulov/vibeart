@@ -1,4 +1,4 @@
-import classes from "./socialLink.module.css";
+import classes from "./socialLink.module.scss";
 
 const VkIcon = () => {
     return (

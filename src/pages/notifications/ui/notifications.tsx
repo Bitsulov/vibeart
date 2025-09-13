@@ -1,4 +1,4 @@
-import classes from "./notifications.module.css";
+import classes from "./notifications.module.scss";
 import { PageTitle } from "widgets/pageTitle/index.js";
 import { NotificationsList } from "widgets/notificationsList/index.js";
 import { Layout } from "widgets/layout/index.js";

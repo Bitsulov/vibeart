@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import classes from "./burger.module.css";
+import classes from "./burger.module.scss";
 import { toggleBurgerHandler } from "../model/toggleBurgerHandler.js";
 import { useDispatch, useSelector } from "react-redux";
 import { selectBURGEROPENLINKSHEIGHT, selectBurgerLinksHeight, selectIsBurgerOpen } from "../model/selectors.js";

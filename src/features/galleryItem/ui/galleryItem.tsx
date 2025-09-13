@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./galleryItem.module.css";
+import classes from "./galleryItem.module.scss";
 import { Link } from "react-router-dom";
 import { checkDateYear } from "shared/lib/dates.js";
 import { LikeButton } from "features/likeButton/index.js";

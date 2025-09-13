@@ -1,5 +1,5 @@
 import type { PostType } from "entities/post/index.js";
-import classes from "./profilePostList.module.css";
+import classes from "./profilePostList.module.scss";
 import { ProfilePostItem } from "features/profilePostItem/index.js";
 
 interface ProfilePostListPropsType {

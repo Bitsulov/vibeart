@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import classes from "./postCard.module.css";
+import classes from "./postCard.module.scss";
 import { postLikeHandler } from "../model/postLikeHandler.js";
 import { postShareHandler } from "../model/postShareHandler.js";
 import { TagList } from "features/tagList/index.js";

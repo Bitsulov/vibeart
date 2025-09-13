@@ -1,4 +1,4 @@
-import classes from "./postCommentsForm.module.css";
+import classes from "./postCommentsForm.module.scss";
 import { globalOnChangeHandler } from "shared/lib/globalOnChangeHandler.js";
 import type React from "react";
 import type { SetStateAction } from "react";

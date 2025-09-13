@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import classes from "../ui/notice.module.css";
+import classes from "../ui/notice.module.scss";
 
 interface statesType {
     isNewNotice: boolean;

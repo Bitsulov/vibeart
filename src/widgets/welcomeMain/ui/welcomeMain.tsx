@@ -1,4 +1,4 @@
-import classes from "./welcomeMain.module.css";
+import classes from "./welcomeMain.module.scss";
 import { AuthButton } from "features/authButton/index.js";
 import { RegButton } from "features/regButton/index.js";
 

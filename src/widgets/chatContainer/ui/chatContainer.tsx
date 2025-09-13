@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import classes from "./chatContainer.module.css";
+import classes from "./chatContainer.module.scss";
 import { MessageItem } from "features/messageItem/index.js";
 import { formatTime2Nums } from "shared/lib/formatTime2Nums.js";
 import { formatDate } from "shared/lib/formatDate.js";

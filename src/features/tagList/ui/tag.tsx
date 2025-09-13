@@ -1,5 +1,4 @@
-import React from "react";
-import classes from "./tagList.module.css";
+import classes from "./tagList.module.scss";
 import { tagClickHandler } from "../model/tagClickHandler.js";
 import { useDispatch } from "react-redux";
 

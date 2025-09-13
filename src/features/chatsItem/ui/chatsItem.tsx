@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import classes from "./chatsItem.module.css";
+import classes from "./chatsItem.module.scss";
 import { Link } from "react-router-dom";
 import { formatTime } from "shared/lib/formatTime.js";
 import type { ChatType } from "entities/chats/index.js";
 
 const ChatsItem = ({ id, title, srcImg, alt, lastMessage, date, ...props }: ChatType) => {
-    const [resultDate, setResultDate] = useState(0);
+    const [resultDate, setResultDate] = useState("");
 
     useEffect(() => {
         const chatDate = Date.parse(date);

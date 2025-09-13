@@ -1,4 +1,4 @@
-import classes from "./burgerNavigationList.module.css";
+import classes from "./burgerNavigationList.module.scss";
 import { Link } from "react-router-dom";
 
 interface BurgerNavigationListProps {

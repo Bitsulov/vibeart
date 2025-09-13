@@ -1,9 +1,9 @@
-import classes from "./underFooter.module.css";
+import classes from "./underFooter.module.scss";
 
 const UnderFooter = () => {
     return (
         <div className={classes.underFooter_wrapper}>
-            <h3 className={classes.underFooter_title}></h3>
+            <h3 className={classes.underFooter_title}>При поддержке FutureStudio</h3>
         </div>
     );
 };

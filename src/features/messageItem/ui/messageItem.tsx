@@ -1,4 +1,4 @@
-import classes from "./messageItem.module.css";
+import classes from "./messageItem.module.scss";
 
 interface MessageItemType {
     text: string;

@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./authForm.module.css";
+import classes from "./authForm.module.scss";
 import { useSelector, useDispatch } from "react-redux";
 import useSubmitSign from "../model/useSubmitSign.jsx";
 import { emailChangeHandler } from "../model/emailChangeHandler.js";

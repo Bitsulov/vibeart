@@ -1,4 +1,4 @@
-import classes from "../ui/notificationItem.module.css";
+import classes from "../ui/notificationItem.module.scss";
 import type { NoticeTypesParametersType } from "../model/types.js";
 
 export const noticeTypes = {
