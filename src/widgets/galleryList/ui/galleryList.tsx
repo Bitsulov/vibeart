@@ -22,9 +22,17 @@ const GalleryList = ({ postsList, queryText, ...props }: GalleryListPropsType) =
 
     useEffect(() => {
         if (queryText !== null) {
+            const lowerText = queryText.toLowerCase();
+			const tagCheckStr = lowerText.slice(1);
             setFilteredList(
                 postsList.filter(post => {
-                    if (post.title.toLowerCase().includes(queryText.toLowerCase())) {
+                    if (
+                        post.title.toLowerCase().includes(lowerText) ||
+                        post.authorUserName.toLowerCase().includes(tagCheckStr) ||
+                        post.authorName.toLowerCase().includes(lowerText) ||
+                        post.description.toLowerCase().includes(lowerText) ||
+                        post.tags.some(tag => tag.name.toLowerCase().includes(tagCheckStr))
+                    ) {
                         return post;
                     }
                 })

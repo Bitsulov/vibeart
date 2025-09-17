@@ -10,6 +10,7 @@ export function createUser({
     subscribes = 0,
     works = 0,
     srcImg,
+	date,
     status = "offline"
 }: UserType) {
     return {
@@ -22,6 +23,7 @@ export function createUser({
         subscribes,
         works,
         srcImg,
+		date,
         status
     };
 }

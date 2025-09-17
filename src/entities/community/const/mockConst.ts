@@ -1,0 +1,60 @@
+import { createCommunity } from "../model/createCommunity.js";
+import kotik from "shared/icons/kotik.jpg";
+
+export const communitiesMock = [
+    createCommunity({
+        id: 1,
+        title: "Сообщество 1",
+        userName: "community_username",
+        description: "Lorem ipsum dolor sit amet, consectetuer adipiscin",
+        subscribers: 1,
+        works: 100,
+        srcImg: kotik,
+        creatorId: 1,
+        date: "2025-09-15T14:57:06.504Z"
+    }),
+    createCommunity({
+        id: 2,
+        title: "Сообщество 2",
+        userName: "community_username2",
+        description: "Короткое описание",
+        subscribers: 100000000000,
+        works: 100000,
+        srcImg: kotik,
+        creatorId: 2,
+        date: "2025-09-10T13:57:06.504Z"
+    }),
+    createCommunity({
+        id: 3,
+        title: "Сообщество 3",
+        userName: "community",
+        description: "Очень дл инн нооо оо оо о ооо оо ооо оооо ооо оооо оооооо ооо ое описание сообщества",
+        subscribers: 100000000,
+        works: 100000000,
+        srcImg: kotik,
+        creatorId: 3,
+        date: "2025-09-5T14:57:06.504Z"
+    }),
+    createCommunity({
+        id: 4,
+        title: "Сообщество 4",
+        userName: "comname",
+        description: "Описание сообщества 4 Описание сообщества 1",
+        subscribers: 100000,
+        works: 1,
+        srcImg: kotik,
+        creatorId: 4,
+        date: "2025-01-15T14:57:06.504Z"
+    }),
+    createCommunity({
+        id: 5,
+        title: "Сообщество 5",
+        userName: "com",
+        description: "Описание сообщества 5",
+        subscribers: 10,
+        works: 1000,
+        srcImg: kotik,
+        creatorId: 5,
+        date: "2021-09-15T14:57:06.504Z"
+    })
+];

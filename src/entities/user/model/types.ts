@@ -8,5 +8,6 @@ export interface UserType {
     subscribes?: number;
     works?: number;
     srcImg: string;
+	date: string;
     status: "offline" | "online";
 }
