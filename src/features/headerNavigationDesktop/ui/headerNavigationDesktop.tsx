@@ -102,7 +102,7 @@ const HeaderNavigationDesktop = ({ avatar, userId }: HeaderNavigationDesktopType
                 </svg>
                 {noticesLength ? <div className={classes.len}>{parseNumber(noticesLength, false)}</div> : ""}
             </Link>
-            <Link to="#" className={`${classes.header__link} ${classes.header__linksSubscriptions}`}>
+            <Link to="/communities" className={`${classes.header__link} ${classes.header__linksSubscriptions}`}>
                 <svg
                     className={classes.subscriptionsImg}
                     version="1.0"

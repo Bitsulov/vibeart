@@ -11,7 +11,8 @@ export const communitiesMock = [
         works: 100,
         srcImg: kotik,
         creatorId: 1,
-        date: "2025-09-15T14:57:06.504Z"
+        date: "2025-09-15T14:57:06.504Z",
+        countries: ["Россия"]
     }),
     createCommunity({
         id: 2,
@@ -22,7 +23,8 @@ export const communitiesMock = [
         works: 100000,
         srcImg: kotik,
         creatorId: 2,
-        date: "2025-09-10T13:57:06.504Z"
+        date: "2025-09-10T13:57:06.504Z",
+        countries: ["США", "Россия"]
     }),
     createCommunity({
         id: 3,
@@ -33,7 +35,49 @@ export const communitiesMock = [
         works: 100000000,
         srcImg: kotik,
         creatorId: 3,
-        date: "2025-09-5T14:57:06.504Z"
+        date: "2025-09-5T14:57:06.504Z",
+        countries: [
+            "Великобритания",
+            "Германия",
+            "Дания",
+            "Франция",
+            "Норвегия",
+            "Швеция",
+            "Австрия",
+            "Беларусь",
+            "Бельгия",
+            "Ватикан",
+            "Венгрия",
+            "Греция",
+            "Ирландия",
+            "Исландия",
+            "Испания",
+            "Италия",
+            "Кипр",
+            "Латвия",
+            "Литва",
+            "Лихтенштейн",
+            "Люксембург",
+            "Мальта",
+            "Молдавия",
+            "Монако",
+            "Нидерланды",
+            "Польша",
+            "Португалия",
+            "Россия",
+            "Румыния",
+            "Сербия",
+            "Словакия",
+            "Словения",
+            "Турция",
+            "Украина",
+            "Финляндия",
+            "Хорватия",
+            "Черногория",
+            "Чехия",
+            "Швейцария",
+            "Эстония"
+        ]
     }),
     createCommunity({
         id: 4,
@@ -44,7 +88,8 @@ export const communitiesMock = [
         works: 1,
         srcImg: kotik,
         creatorId: 4,
-        date: "2025-01-15T14:57:06.504Z"
+        date: "2025-01-15T14:57:06.504Z",
+        countries: ["Уганда"]
     }),
     createCommunity({
         id: 5,
@@ -55,6 +100,20 @@ export const communitiesMock = [
         works: 1000,
         srcImg: kotik,
         creatorId: 5,
-        date: "2021-09-15T14:57:06.504Z"
+        date: "2021-09-15T14:57:06.504Z",
+        countries: "Весь мир"
     })
 ];
+
+export const communitieMock = createCommunity({
+    id: 1,
+    title: "Название сообщества",
+    userName: "long_community_userName",
+    description: "Описание Описание Описание Описание Описание Описание Описание Описание Описание",
+    subscribers: 100000,
+    works: 100000,
+    srcImg: kotik,
+    creatorId: 2,
+    date: "2024-09-19T15:51:42.222Z",
+    countries: ["Россия", "Канада", "Китай", "США", "Бразилия", "Австралия", "Индия", "Аргентина", "Казахстан", "Алжир"]
+});

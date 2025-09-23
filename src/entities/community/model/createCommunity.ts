@@ -9,7 +9,8 @@ export function createCommunity({
     works = 0,
     srcImg,
     creatorId,
-	date
+	date,
+	countries = [],
 }: CommunityType) {
-    return { id, title, userName, description, subscribers, works, srcImg, creatorId, date };
+    return { id, title, userName, description, subscribers, works, srcImg, creatorId, date, countries };
 }

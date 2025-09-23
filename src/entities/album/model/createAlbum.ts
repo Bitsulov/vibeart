@@ -5,9 +5,10 @@ export function createAlbum({
     name = "Все работы",
     srcImg = null,
     userId,
+	communityId,
     isFirst = true
 }: AlbumType) {
-    return { id, name, srcImg, userId, isFirst };
+    return { id, name, srcImg, userId, communityId, isFirst };
 }
 
 export type { AlbumType };

@@ -1,7 +1,8 @@
 export interface AlbumType {
     id: number;
-    name: string;
+    name?: string;
     srcImg?: string | null;
-    userId: number;
-    isFirst?: boolean;
+    userId: number | null;
+	communityId: number | null;
+    isFirst?: boolean
 }

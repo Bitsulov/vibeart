@@ -1,12 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import { selectIsNewNotice, selectNoticeMessage, selectNoticesQueue, selectShowNotice } from "../model/selectors.js";
 import { resetNewNotice, setCurrentMessageNotice, setNoticesQueue } from "../model/noticeSlice.js";
-import { useLoadPageStatus } from "entities/pageStats/index.js";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { showNoticeFunc } from "../lib/showNotice.js";
 
 const useNoticeQueue = () => {
-    const loaded = useLoadPageStatus();
+    const [loaded, setLoaded] = useState(false);
     const queue = useSelector(selectNoticesQueue);
     const noticeMessageNew = useSelector(selectNoticeMessage);
     const isNewNotice = useSelector(selectIsNewNotice);
@@ -20,7 +19,9 @@ const useNoticeQueue = () => {
                 dispatch(setNoticesQueue([...queue, noticeMessageNew]));
             }
             dispatch(resetNewNotice());
-        }
+        } else {
+			setLoaded(true);
+		}
     }, [isNewNotice, loaded, noticeMessageNew, queue, dispatch]);
 
     useEffect(() => {

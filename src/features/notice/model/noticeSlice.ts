@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import classes from "../ui/notice.module.scss";
 
-interface statesType {
+export interface statesType {
     isNewNotice: boolean;
     noticeMessageNew: string;
     showNotice: boolean;
@@ -10,7 +10,7 @@ interface statesType {
     noticesQueue: string[];
 }
 
-const initialState: statesType = {
+export const initialState: statesType = {
     isNewNotice: false,
     noticeMessageNew: "",
     showNotice: false,

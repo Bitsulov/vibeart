@@ -4,7 +4,7 @@ import { albumClickHandler } from "../model/albumClickHandler.js";
 
 interface AlbumItem {
     id: number;
-    name: string;
+    name: string | undefined;
     isActive: boolean;
     setSelectedAlbum: React.Dispatch<React.SetStateAction<number>>;
 }

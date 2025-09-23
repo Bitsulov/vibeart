@@ -11,6 +11,7 @@ import { Contact } from "pages/contact/index.js";
 import { Error } from "pages/error/index.js";
 import type { ReactNode } from "react";
 import { Communities } from "pages/communities/index.js";
+import { Community } from "pages/community/index.js";
 
 const RouterProvider = (): ReactNode => {
     return (
@@ -32,6 +33,8 @@ const RouterProvider = (): ReactNode => {
                 <Route path="/notifications" element={<Notifications />} />
 				{/* Список сообществ */}
 				<Route path="/communities" element={<Communities />} />
+				{/* Сообщество */}
+				<Route path="/communities/:communityId" element={<Community />} />
                 {/* Связь с нами */}
                 <Route path="/contact" element={<Contact />} />
                 {/* Информация */}

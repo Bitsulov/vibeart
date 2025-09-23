@@ -13,7 +13,8 @@ export const userMock = createUser({
     subscribes: 45,
     works: 78,
     srcImg: ava1,
-    status: "online"
+    status: "online",
+	date: "2021-09-15T14:57:06.504Z"
 });
 
 export const userChatMock = createUser({
@@ -22,7 +23,8 @@ export const userChatMock = createUser({
     secondName: "1241231",
     userName: "user1241231",
     srcImg: ava1,
-    status: Math.random() > 0.5 ? "online" : "offline"
+    status: Math.random() > 0.5 ? "online" : "offline",
+	date: "2021-09-15T14:57:06.504Z"
 });
 
 export const userProfileMock = createUser({
@@ -36,5 +38,65 @@ export const userProfileMock = createUser({
     subscribers: 1000000,
     subscribes: 1000,
     works: 10000,
-    status: "offline"
+    status: "offline",
+	date: "2021-09-15T14:57:06.504Z"
 });
+
+export const userCommunityMock = [
+	createUser({
+		id: 1,
+		firstName: "Тестовый",
+		secondName: "Пользователь1",
+		userName: "test_user",
+		srcImg: ava2,
+		description:
+			"тест Lorem ipsum dolor sit amet, consectetuer adipiscin Lorem ipsum dolor sit amet, consectetuer adipiscin",
+		subscribers: 1000000,
+		subscribes: 1000,
+		works: 10000,
+		status: "offline",
+		date: "2021-09-15T14:57:06.504Z"
+	}),
+	createUser({
+		id: 2,
+		firstName: "Тестовый",
+		secondName: "Пользователь2",
+		userName: "test_user",
+		srcImg: ava2,
+		description:
+			"тест Lorem ipsum dolor sit amet, consectetuer adipiscin Lorem ipsum dolor sit amet, consectetuer adipiscin",
+		subscribers: 1000000,
+		subscribes: 1000,
+		works: 10000,
+		status: "offline",
+		date: "2021-09-15T14:57:06.504Z"
+	}),
+	createUser({
+		id: 3,
+		firstName: "Тестовый",
+		secondName: "Пользователь3",
+		userName: "test_user",
+		srcImg: ava2,
+		description:
+			"тест Lorem ipsum dolor sit amet, consectetuer adipiscin Lorem ipsum dolor sit amet, consectetuer adipiscin",
+		subscribers: 1000000,
+		subscribes: 1000,
+		works: 10000,
+		status: "offline",
+		date: "2021-09-15T14:57:06.504Z"
+	}),
+	createUser({
+		id: 4,
+		firstName: "Тестовый",
+		secondName: "Пользователь3",
+		userName: "test_user",
+		srcImg: ava2,
+		description:
+			"тест Lorem ipsum dolor sit amet, consectetuer adipiscin Lorem ipsum dolor sit amet, consectetuer adipiscin",
+		subscribers: 1000000,
+		subscribes: 1000,
+		works: 10000,
+		status: "offline",
+		date: "2021-09-15T14:57:06.504Z"
+	}),
+]

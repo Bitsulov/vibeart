@@ -4,7 +4,7 @@ import { authReducer } from "features/authForm/model/authSlice.js";
 import { regReducer } from "features/regForm/model/regSlice.js";
 import { headerFormReducer } from "features/headerForm/model/headerFormSlice.js";
 import { notificationsPagesReducer } from "entities/notificationsPages/index.js";
-import { burgerReducer } from "features/burger/model/BurgerSlice.js";
+import { burgerReducer } from "features/burger/model/burgerSlice.js";
 import { footerLinksReducer } from "features/footerLinksList/model/footerLinksSlice.js";
 import { pageStatsReducer } from "entities/pageStats/model/pageStatsSlice.js";
 import { noticeReducer } from "features/notice/model/noticeSlice.js";

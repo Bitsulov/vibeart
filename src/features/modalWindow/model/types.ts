@@ -1,1 +1,1 @@
-export type ModalTypes = "sign" | "reg";
+export type ModalTypes = "sign" | "reg" | "communityInfo";
