@@ -30,7 +30,6 @@ const InputForm = ({
     defaultValue = null,
     ...props
 }: InputFormType) => {
-    // id is required
     const [inputClasses, setInputClasses] = useState<string>([classes.input, className].join(" "));
     const [placeholderClasses, setPlaceholderClasses] = useState<string>(
         [classes.placeholder, placeholderClassName].join(" ")

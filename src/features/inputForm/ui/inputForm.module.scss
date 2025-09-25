@@ -99,8 +99,8 @@
 }
 
 .placeholder.focus {
-    font-size: 10px;
-    transform: translateY(-8px);
+    font-size: 10px !important;
+    transform: translateY(-8px) !important;
 }
 
 @media (max-width: 450px) {
