@@ -1,7 +1,7 @@
 import classes from "./about.module.scss";
-import { InDevelopment } from "widgets/inDevelopment/index.js";
 import { Layout } from "widgets/layout/index.js";
 import { useLoadPageStatus } from "entities/pageStats/index.js";
+import { AboutInner } from "widgets/aboutInner/index.js";
 
 const About = () => {
     const isPageLoaded = useLoadPageStatus();
@@ -9,7 +9,7 @@ const About = () => {
     return (
         <Layout pageStatus={isPageLoaded}>
             <main className={classes.about}>
-                <InDevelopment />
+                <AboutInner />
             </main>
         </Layout>
     );

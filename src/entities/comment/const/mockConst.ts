@@ -1,5 +1,5 @@
 import { createComment } from "../model/createComment.js";
-import ava2 from "@/shared/icons/ava.jpg";
+import ava2 from "@/shared/icons/pivo.jpg";
 
 export const commentsMock = [
     createComment({

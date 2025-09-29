@@ -63,15 +63,6 @@
 	.formTextArea + .contactInputErrorText {
 		bottom: 1.5%;
 	}
-
-	.ErrorTextArea {
-		color: rgb(145, 0, 0);
-		border: 2px solid red;
-	}
-
-	.ErrorTextArea:focus {
-		border: 2px solid rgb(145, 0, 0);
-	}
 	
 	.formTextArea:focus {
 		transition: var(--main-transition);
@@ -81,6 +72,18 @@
 	
 	.formTextArea:focus::placeholder {
 		font-size: 0;
+	}
+
+	.ErrorTextArea:focus {
+		border: 2px solid rgb(145, 0, 0);
+	}
+	
+	.ErrorTextArea {
+		border: 2px solid red;
+	}
+
+	.ErrorTextArea::placeholder {
+		color: rgb(145, 0, 0);
 	}
 	
 	.formSubmit {
@@ -163,12 +166,4 @@
 			}
 		}
 	}
-}
-
-.errorInput {
-    border: 2px solid red !important;
-}
-
-.errorInput:focus {
-    border: 2px solid rgb(145, 0, 0) !important;
 }

@@ -1,5 +1,5 @@
 import { createAlbum } from "../model/createAlbum.js";
-import post1 from "@/shared/icons/post1.jpg";
+import post1 from "@/shared/icons/pivo.jpg";
 
 export const profileAlbumsMock = [
     createAlbum({ id: 1, userId: 3, communityId: null }),

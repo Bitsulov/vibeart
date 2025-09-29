@@ -1,5 +1,5 @@
 import { createChat } from "../model/createChat.js";
-import ava1 from "@/shared/icons/ava-person.jpg";
+import ava1 from "@/shared/icons/pivo.jpg";
 
 export const chatsMock = [
     createChat({

@@ -1,10 +1,10 @@
 import { createPost } from "../model/createPost.js";
 import { tagsMocks } from "entities/tag/index.js";
-import post1 from "@/shared/icons/post1.jpg";
-import post2 from "@/shared/icons/post2.jpg";
-import post3 from "@/shared/icons/post3.jpeg";
-import ava2 from "@/shared/icons/ava.jpg";
-import ava1 from "@/shared/icons/ava-person.jpg";
+import post1 from "@/shared/icons/pivo.jpg";
+import post2 from "@/shared/icons/pivo.jpg";
+import post3 from "@/shared/icons/pivo.jpg";
+import ava2 from "@/shared/icons/pivo.jpg";
+import ava1 from "@/shared/icons/pivo.jpg";
 
 export const galleryPostsMock = [
     createPost({

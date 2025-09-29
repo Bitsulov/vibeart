@@ -16,16 +16,34 @@ export function contactFormValidation(
     if (nameValue === "") {
         setNameErrorText("Это обязательное поле");
         setIsNameError(true);
+		if (emailValue !== "") {
+			setIsEmailError(false);
+		}
+		if (textValue !== "") {
+			setIsTextError(false);
+		}
         isError = true;
     }
     if (emailValue === "") {
         setEmailErrorText("Это обязательное поле");
         setIsEmailError(true);
+		if (nameValue !== "") {
+			setIsNameError(false);
+		}
+		if (textValue !== "") {
+			setIsTextError(false);
+		}
         isError = true;
     }
     if (textValue === "") {
         setTextErrorText("Это обязательное поле");
         setIsTextError(true);
+		if (nameValue !== "") {
+			setIsNameError(false);
+		}
+		if (emailValue !== "") {
+			setIsEmailError(false);
+		}
         isError = true;
     }
 	if(isError) return false;

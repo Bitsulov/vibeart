@@ -1,5 +1,5 @@
 import { createCommunity } from "../model/createCommunity.js";
-import kotik from "shared/icons/kotik.jpg";
+import kotik from "shared/icons/pivo.jpg";
 
 export const communitiesMock = [
     createCommunity({

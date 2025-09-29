@@ -13,7 +13,8 @@
 	gap: 0.5em;
 
 	.adminImg {
-		width: 50%;
+		width: 75px;
+		height: 75px;
 		border-radius: 50%;
 		transition: var(--main-transition);
 	}
@@ -43,19 +44,34 @@
 		.adminName {
 			font-size: 1.8em;
 		}
+
+		.adminImg {
+			width: 100px;
+			height: 100px;
+		}
 	}
 }
 
 @media (min-width: 550px) {
+	.adminList {
+		gap: 3em;
+	}
+
 	.adminItem {
 		.adminName {
 			font-size: 2em;
+		}
+
+		.adminImg {
+			width: 130px;
+			height: 130px;
 		}
 	}
 }
 
 @media (min-width: 700px) {
 	.adminList {
+		gap: 1.5em;
 		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	}
 }

@@ -1,6 +1,6 @@
 import { createUser } from "../model/createUser.js";
-import ava1 from "@/shared/icons/ava-person.jpg";
-import ava2 from "@/shared/icons/ava.jpg";
+import ava1 from "@/shared/icons/pivo.jpg";
+import ava2 from "@/shared/icons/pivo.jpg";
 
 export const userMock = createUser({
     id: 1,

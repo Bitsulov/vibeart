@@ -10,6 +10,7 @@
 
 .itemImg {
 	height: 80px;
+	overflow: hidden;
 	object-fit: cover;
 	flex-shrink: 0;
 	flex-basis: 28%;
