@@ -56,7 +56,7 @@ export const AboutInner = () => {
 						<div className={c.usersBlock}>
 							<h3 className={c.usersSubTitle}>Зрители</h3>
 							<p className={c.usersDescription}>
-								Чтобы открывать новые имена, вдохновляться и поддерживать авторов.
+								Открывать новые имена, вдохновляться и поддерживать авторов.
 							</p>
 						</div>
 						<div className={c.usersBlock}>
