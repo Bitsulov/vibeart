@@ -72,3 +72,5 @@ export const communityAlbumsMock = [
         isFirst: false
     })
 ];
+
+export const postAlbumMock = createAlbum({ id: 1, userId: 3, name: "Фентези", srcImg: post1, isFirst: false, communityId: null });

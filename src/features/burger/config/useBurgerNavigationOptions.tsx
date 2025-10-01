@@ -11,6 +11,7 @@ export const useBurgerNavigationOptions = () => {
         { text: "Уведомления", haveCounter: true, counter: noticesLength, href: "/notifications" },
         { text: "Сообщения", haveCounter: true, counter: chatsLength, href: "/messages" },
         { text: "Сообщества", haveCounter: false, href: "/communities" },
-        { text: "Профиль", haveCounter: false, href: `/profile/${userInfo.id}` }
+		{ text: "Галерея", haveCounter: false, href: "/gallery" },
+        { text: "Профиль", haveCounter: false, href: `/profile/${userInfo.id}` },
     ];
 };

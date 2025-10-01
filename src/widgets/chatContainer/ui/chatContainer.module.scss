@@ -28,6 +28,11 @@
     gap: 10px;
 }
 
+.chat__back {
+	height: 1.8em;
+	width: 1.8em;
+}
+
 .chat__userAvatar {
     width: 45px;
     height: 45px;
@@ -43,9 +48,12 @@
 .chat__userName {
     display: block;
     font-size: 1em;
-    text-overflow: ellipsis;
-    overflow: hidden;
     white-space: nowrap;
+
+	h2 {
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
 }
 
 .chat__userOnlineStatus {

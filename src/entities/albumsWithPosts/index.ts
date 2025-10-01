@@ -1,1 +1,1 @@
-export { profileAlbumsWithPostsMock, communityAlbumsWithPostsMock } from "./const/mockConst.js";
+export { profileAlbumsWithPostsMock, communityAlbumsWithPostsMock, postAlbumsWithPostsMock } from "./const/mockConst.js";

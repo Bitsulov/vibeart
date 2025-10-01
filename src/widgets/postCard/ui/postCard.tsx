@@ -8,12 +8,14 @@ import { ShareButton } from "features/shareButton/index.js";
 import { checkDateYear } from "shared/lib/dates.js";
 import { Link } from "react-router-dom";
 import type { TagType } from "entities/tag/index.js";
+import type { AlbumType } from "entities/album/index.js";
 
 interface PostCardPropsType {
     srcImg: string;
     srcAuthor: string;
     authorId: number;
     name: string;
+    album: AlbumType | null;
     title: string;
     description: string;
     date: string;
@@ -27,6 +29,7 @@ const PostCard = ({
     srcAuthor,
     authorId,
     name,
+    album,
     title,
     description,
     tags,
@@ -53,6 +56,7 @@ const PostCard = ({
                         </Link>
                     </p>
                 </div>
+                {album !== null && !album.isFirst ? <p className={classes.post__album}>в альбоме {album.name}</p> : ""}
                 <h2 className={classes.post__title}>{title}</h2>
                 <p className={classes.post__description}>{description}</p>
                 <TagList tags={tags} />

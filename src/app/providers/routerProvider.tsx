@@ -12,13 +12,16 @@ import { Error } from "pages/error/index.js";
 import type { ReactNode } from "react";
 import { Communities } from "pages/communities/index.js";
 import { Community } from "pages/community/index.js";
+import { Main } from "pages/main/index.js";
 
 const RouterProvider = (): ReactNode => {
     return (
         <Router>
             <Routes>
-                {/* Инфо и регистрация/вход */}
-                <Route path="/" element={<Home />} />
+				{/* Лендинг */}
+				<Route path="/" element={<Main />} />
+                {/* Регистрация/вход */}
+                <Route path="/auth" element={<Home />} />
                 {/* "Лента" */}
                 <Route path="/gallery" element={<Gallery />} />
                 {/* Профиль (свой или чужой) */}

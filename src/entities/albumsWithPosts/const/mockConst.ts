@@ -45,3 +45,5 @@ export const communityAlbumsWithPostsMock = [
     createAlbumsWithPosts({ id: 1, albumId: 4, postId: 19 }),
     createAlbumsWithPosts({ id: 1, albumId: 4, postId: 20 })
 ];
+
+export const postAlbumsWithPostsMock = createAlbumsWithPosts({ id: 1, albumId: 1, postId: 21 });

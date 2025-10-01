@@ -71,6 +71,17 @@
 	}
 }
 
+.copyImg {
+	width: .8em;
+	height: .8em;
+	transition: var(--main-transition);
+	cursor: pointer;
+}
+
+.copyImg:hover {
+	stroke: var(--active-hover);
+}
+
 @media (min-width: 350px) {
 	.communityTop {
 		.img {
@@ -337,5 +348,11 @@
 		max-width: 1100px;
 		width: 100%;
 		margin: 0 auto;
+	}
+
+	.copyImg {
+		margin-left: .2em;
+		width: 1em;
+		height: 1em;
 	}
 }

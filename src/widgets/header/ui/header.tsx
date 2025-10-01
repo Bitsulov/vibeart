@@ -12,7 +12,7 @@ const Header = () => {
 
     return (
         <header>
-            <Link className={classes.header__logo} to="/gallery">
+            <Link className={classes.header__logo} to="/">
                 <img src={logoBlack} alt="logo" className={classes.header__logoImg}></img>
                 <span className={classes.header__title}>VibeArt</span>
             </Link>

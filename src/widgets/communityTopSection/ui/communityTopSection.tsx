@@ -3,9 +3,10 @@ import { formatSubscribersRu } from "shared/lib/formatSubscribersRu.js";
 import classes from "./communityTopSection.module.scss";
 import { formatWorksRu } from "shared/lib/formatWorksRu.js";
 import { parseNumber } from "shared/lib/parseNumber.js";
-import { Users, Image } from "lucide-react";
+import { Users, Image, Copy } from "lucide-react";
 import { subscribeHandler } from "../model/subscribeHandler.js";
 import { useDispatch } from "react-redux";
+import { communityTagClickHandler } from "../model/communityTagHandler.js";
 
 interface CommunityTopSectionPropsType {
     title: string;
@@ -31,7 +32,7 @@ const CommunityTopSection = ({
             <img src={srcImg} alt={title} className={classes.img} />
             <div className={classes.communityTopInfo}>
                 <h1 className={classes.communityTopTitle}>{title}</h1>
-                <p className={classes.communityTopTag}>@{userName}</p>
+                <p className={classes.communityTopTag}>@{userName} <Copy className={classes.copyImg} onClick={e => communityTagClickHandler(e, dispatch, userName)} /></p>
                 <div className={classes.communityTopStats}>
                     <div className={classes.statsItem}>
                         <Users className={`${classes.statsImg} ${classes.subscribersImg}`} />

@@ -34,6 +34,12 @@
     color: #666;
 }
 
+.post__album {
+	margin-top: 1em;
+	font-size: 1.52em;
+    color: var(--main-text);
+}
+
 .post__authorLink {
     color: var(--active-color);
     text-decoration: none;
@@ -47,8 +53,8 @@
 
 .post__title {
     font-size: 2.4em;
-    margin: 0.8em 0;
-    color: #222;
+    margin: 0.5em 0;
+    color: var(--main-text);
 }
 
 .post__description {

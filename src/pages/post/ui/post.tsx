@@ -11,6 +11,8 @@ import { useSelector } from "react-redux";
 import { selectUserInfo } from "entities/user/index.js";
 import { Layout } from "widgets/layout/index.js";
 import { useLoadPageStatus } from "entities/pageStats/index.js";
+import { postAlbumMock } from "entities/album/index.js";
+import { postAlbumsWithPostsMock } from "entities/albumsWithPosts/index.js";
 
 const Post = () => {
     useHashScroll();
@@ -19,6 +21,8 @@ const Post = () => {
     const [comments, setComments] = useState(commentsMock);
     const [textAreaValue, setTextAreaValue] = useState("");
     const userData = useSelector(selectUserInfo);
+
+	const album = postAlbumsWithPostsMock.postId === postMock.id ? postAlbumMock : null;
 
     const defaultAddedObject = {
         id: Date.now(), // !!!
@@ -36,6 +40,7 @@ const Post = () => {
                     srcAuthor={postMock.srcAuthor}
                     authorId={postMock.authorId}
                     name={postMock.authorName}
+					album={album}
                     title={postMock.title}
                     description={postMock.description}
                     tags={postMock.tags}

@@ -11,6 +11,7 @@ import { sendMessageHandler } from "../model/sendMessageHandler.js";
 import { ChatSettingsButton } from "features/chatSettingsButton/index.js";
 import type { MessageType } from "entities/message/index.js";
 import type { UserType } from "entities/user/index.js";
+import { ArrowLeft } from "lucide-react";
 
 interface ChatContainerPropsType {
     messages: MessageType[];
@@ -29,6 +30,9 @@ const ChatContainer = ({ messages, setMessages, userInfo, ...props }: ChatContai
         <div className={classes.chat__container} {...props}>
             <div className={classes.chat__header}>
                 <div className={classes.chat__user}>
+					<Link to={"/messages"}>
+						<ArrowLeft className={classes.chat__back} />
+					</Link>
                     <Link to={`/profile/${userInfo.id}`}>
                         <img src={userInfo.srcImg} alt="Аватар" className={classes.chat__userAvatar}></img>
                     </Link>

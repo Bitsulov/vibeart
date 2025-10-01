@@ -61,6 +61,14 @@
     height: 27px;
 }
 
+.galleryImg {
+	transition: var(--main-transition);
+}
+
+.header__link:hover .galleryImg {
+	stroke: var(--active-hover);
+}
+
 .userAvatar {
     width: 40px;
     height: 40px;

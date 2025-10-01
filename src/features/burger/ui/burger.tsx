@@ -3,7 +3,7 @@ import classes from "./burger.module.scss";
 import { toggleBurgerHandler } from "../model/toggleBurgerHandler.js";
 import { useDispatch, useSelector } from "react-redux";
 import { selectBURGEROPENLINKSHEIGHT, selectBurgerLinksHeight, selectIsBurgerOpen } from "../model/selectors.js";
-import { setBurgerOpenLinksHeight, setBurgerLinksHeight, setIsBurgerOpen } from "../model/BurgerSlice.js";
+import { setBurgerOpenLinksHeight, setBurgerLinksHeight, setIsBurgerOpen } from "../model/burgerSlice.js";
 import { navigationBurgerClickHandler } from "../model/navigationBurgerClickHandler.js";
 import { BurgerNavigationList } from "../../burgerNavigationList/index.js";
 import { useBurgerNavigationOptions } from "../config/useBurgerNavigationOptions.jsx";
@@ -21,7 +21,7 @@ const Burger = ({ ...props }) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(setBurgerOpenLinksHeight(burgerMenuRef.current?.scrollHeight));
+        dispatch(setBurgerOpenLinksHeight(Number(burgerMenuRef.current?.scrollHeight) + 3));
         dispatch(setBurgerLinksHeight(0));
     }, []);
 
