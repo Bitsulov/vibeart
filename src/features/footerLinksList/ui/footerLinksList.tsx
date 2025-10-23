@@ -7,8 +7,11 @@ import { selectFooterLinksHeight, selectIsFooterLinksOpen, selectOPENFOOTERLINKS
 import { setOpenFooterLinksHeight, setFooterLinksHeight, setIsFooterLinksOpen } from "../model/footerLinksSlice.js";
 import { footerLinksWrapperHandler } from "../model/footerLinksWrapperHandler.js";
 import { footerLinksConfig as links } from "../config/footerLinksConfig.js";
+import { useTranslation } from "react-i18next";
 
 const FooterLinksList = () => {
+	const { t } = useTranslation();
+
     const footerLinksHeight = useSelector(selectFooterLinksHeight);
     const OPENFOOTERLINKSHEIGHT = useSelector(selectOPENFOOTERLINKSHEIGHT);
     const isFooterLinksOpen = useSelector(selectIsFooterLinksOpen);
@@ -29,7 +32,7 @@ const FooterLinksList = () => {
         <div className={classes.footer__links}>
             {links.slice(0, 2).map((link, i) => (
                 <Link key={`footerLink${i}`} to={link.href} className={classes.footer__linksLink}>
-                    {link.text}
+                    {t(link.textKey)}
                 </Link>
             ))}
             {links.length > 2 ? (
@@ -38,7 +41,7 @@ const FooterLinksList = () => {
                     onClick={e => toggleLinksHandler(e, dispatch, footerLinksHeight, OPENFOOTERLINKSHEIGHT)}
                 >
                     <div className={classes.moreWrapper}>
-                        <p className={classes.moreText}>Ещё</p>
+                        <p className={classes.moreText}>{t("More")}</p>
                         <div
                             id="arrow"
                             className={isFooterLinksOpen ? `${classes.arrow} ${classes.arrowRotated}` : classes.arrow}
@@ -56,7 +59,7 @@ const FooterLinksList = () => {
                     >
                         {links.slice(2).map((link, i) => (
                             <Link key={`hiddenLink${i}`} to={link.href} className={classes.hiddenLinksLink}>
-                                {link.text}
+                                {t(link.textKey)}
                             </Link>
                         ))}
                     </div>

@@ -3,6 +3,7 @@ import classes from "./profileButtonsUser.module.scss";
 import { toggleSubscribeHandler } from "../model/toggleSubscribeHandler.js";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface ProfileButtonsUserType {
     isOwnProfile: boolean;
@@ -18,6 +19,8 @@ const ProfileButtonsUser = ({
     userName,
     ...props
 }: ProfileButtonsUserType) => {
+	const { t } = useTranslation();
+
     const dispatch = useDispatch();
 
     return (
@@ -25,13 +28,13 @@ const ProfileButtonsUser = ({
             {isOwnProfile ? (
                 <div className={classes.info__buttonsOwn} {...props}>
                     <button className={`${classes.info__buttonsItem} ${classes.info__editProfileBtn}`}>
-                        Редактировать профиль
+                        {t("ProfileEdit")}
                     </button>
-                    <button className={`${classes.info__buttonsItem} ${classes.info__settingsBtn}`}>Настройки</button>
+                    <button className={`${classes.info__buttonsItem} ${classes.info__settingsBtn}`}>{t("Settings")}</button>
                     <button className={`${classes.info__buttonsItem} ${classes.info__addPostBtn}`}>
-                        Добавить пост
+					{t("ProfileAddPost")}
                     </button>
-                    <button className={`${classes.info__buttonsItem} ${classes.info__manageAlbumsBtn}`}>Альбомы</button>
+                    <button className={`${classes.info__buttonsItem} ${classes.info__manageAlbumsBtn}`}>{t("Albums")}</button>
                 </div>
             ) : (
                 <div className={classes.info__buttons} {...props}>
@@ -44,10 +47,10 @@ const ProfileButtonsUser = ({
                         id="subscribe"
                         onClick={e => toggleSubscribeHandler(e, dispatch, isSubscribe, setIsSubscribe, userName)}
                     >
-                        {isSubscribe ? "Отписаться" : "Подписаться"}
+                        {isSubscribe ? t("Unscribe") : t("Subscribe")}
                     </button>
                     <Link to="#" className={`${classes.info__buttonsItem} ${classes.info__messageBtn}`}>
-                        Написать
+                        {t("ProfileWrite")}
                     </Link>
                 </div>
             )}

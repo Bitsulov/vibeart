@@ -12,6 +12,7 @@ import { ChatSettingsButton } from "features/chatSettingsButton/index.js";
 import type { MessageType } from "entities/message/index.js";
 import type { UserType } from "entities/user/index.js";
 import { ArrowLeft } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface ChatContainerPropsType {
     messages: MessageType[];
@@ -20,6 +21,8 @@ interface ChatContainerPropsType {
 }
 
 const ChatContainer = ({ messages, setMessages, userInfo, ...props }: ChatContainerPropsType) => {
+	const { t } = useTranslation();
+
     const [inputValue, setInputValue] = useState("");
     const messagesEnd = useRef<HTMLDivElement | null>(null);
     const chat = useRef(null);
@@ -34,16 +37,16 @@ const ChatContainer = ({ messages, setMessages, userInfo, ...props }: ChatContai
 						<ArrowLeft className={classes.chat__back} />
 					</Link>
                     <Link to={`/profile/${userInfo.id}`}>
-                        <img src={userInfo.srcImg} alt="Аватар" className={classes.chat__userAvatar}></img>
+                        <img src={userInfo.srcImg} alt={t("Avatar")} className={classes.chat__userAvatar}></img>
                     </Link>
                     <div className={classes.chat__userInfo}>
                         <Link to={`/profile/${userInfo.id}`} className={classes.chat__userName}>
                             <h2>{`${userInfo.firstName} ${userInfo.secondName}`}</h2>
                         </Link>
                         {userInfo.status === "online" ? (
-                            <span className={`${classes.chat__userOnlineStatus} ${classes.online}`}>В сети</span>
+                            <span className={`${classes.chat__userOnlineStatus} ${classes.online}`}>{t("online")}</span>
                         ) : (
-                            <span className={classes.chat__userOnlineStatus}>Не в сети</span>
+                            <span className={classes.chat__userOnlineStatus}>{t("offline")}</span>
                         )}
                     </div>
                 </div>
@@ -87,7 +90,7 @@ const ChatContainer = ({ messages, setMessages, userInfo, ...props }: ChatContai
                         );
                     })
                 ) : (
-                    <h1 className={classes.chat__messagesTitle}>Вы еще не писали сообщения этому пользователю.</h1>
+                    <h1 className={classes.chat__messagesTitle}>{t("emptyChatTitle")}</h1>
                 )}
                 <div className={classes.chat__messagesEnd} ref={messagesEnd}></div>
             </div>

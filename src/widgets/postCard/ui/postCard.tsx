@@ -9,6 +9,7 @@ import { checkDateYear } from "shared/lib/dates.js";
 import { Link } from "react-router-dom";
 import type { TagType } from "entities/tag/index.js";
 import type { AlbumType } from "entities/album/index.js";
+import { useTranslation } from "react-i18next";
 
 interface PostCardPropsType {
     srcImg: string;
@@ -37,6 +38,8 @@ const PostCard = ({
     likes,
     reposts
 }: PostCardPropsType) => {
+	const { t } = useTranslation();
+
     const [resultDate, setResultDate] = useState("");
 
     useEffect(() => {
@@ -50,13 +53,13 @@ const PostCard = ({
                 <div className={classes.post__authorInfo}>
                     <img src={srcAuthor} alt={name} className={classes.post__avatar}></img>
                     <p className={classes.post__author}>
-                        от{" "}
+                        {t("by")}
                         <Link to={`/profile/${authorId}`} className={classes.post__authorLink}>
                             {name}
                         </Link>
                     </p>
                 </div>
-                {album !== null && !album.isFirst ? <p className={classes.post__album}>в альбоме {album.name}</p> : ""}
+                {album !== null && !album.isFirst ? <p className={classes.post__album}>{t("inAlbum", {name: album.name})}</p> : ""}
                 <h2 className={classes.post__title}>{title}</h2>
                 <p className={classes.post__description}>{description}</p>
                 <TagList tags={tags} />

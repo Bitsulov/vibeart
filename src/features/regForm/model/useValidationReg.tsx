@@ -1,8 +1,11 @@
 import type { RootState } from "app/store/index.js";
 import { setEmailRegError, setPasswordRegError, setPasswordAgainRegError, setErrorText } from "./regSlice.js";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const useValidationReg = () => {
+	const { t } = useTranslation();
+
     const emailValueReg = useSelector((state: RootState) => state.reg.emailValueReg);
     const passwordValueReg = useSelector((state: RootState) => state.reg.passwordValueReg);
     const passwordAgainValueReg = useSelector((state: RootState) => state.reg.passwordAgainValueReg);
@@ -19,35 +22,35 @@ const useValidationReg = () => {
             dispatch(setEmailRegError(true));
             dispatch(setPasswordRegError(true));
             dispatch(setPasswordAgainRegError(true));
-            dispatch(setErrorText("Заполните пустые поля"));
+            dispatch(setErrorText(t("FillEmptyFields")));
             return false;
         }
         if (email === "") {
             dispatch(setEmailRegError(true));
-            str.push("email");
+            str.push(t("email"));
             isEmpty = true;
         } else {
             dispatch(setEmailRegError(false));
         }
         if (password === "") {
             dispatch(setPasswordRegError(true));
-            str.push("пароль");
+            str.push(t("password"));
             isEmpty = true;
         } else {
             dispatch(setPasswordRegError(false));
         }
         if (passwordAgain === "") {
             dispatch(setPasswordAgainRegError(true));
-            str.push("повторный пароль");
+            str.push(t("passwordAgain"));
             isEmpty = true;
         } else {
             dispatch(setPasswordAgainRegError(false));
         }
         if (isEmpty) {
-            dispatch(setErrorText(`Заполните ${str.join(" и ")}`));
+            dispatch(setErrorText(`${t("Fill")} ${str.join(` ${t("and")} `)}`));
             return false;
         } else if (email.indexOf("--") !== -1 || password.indexOf("--") !== -1 || passwordAgain.indexOf("--") !== -1) {
-            dispatch(setErrorText("Произошла ошибка"));
+            dispatch(setErrorText(t("ErrorOccured")));
             return false;
         } else {
             dispatch(setEmailRegError(false));

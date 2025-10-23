@@ -1,11 +1,14 @@
+import { useTranslation } from "react-i18next";
 import classes from "./contactSection.module.scss";
 import { ContactForm } from "features/contactForm/index.js";
 
 const ContactSection = () => {
-       return (
+	const { t } = useTranslation();
+
+    return (
         <section className={classes.contactSection}>
-            <h1 className={classes.contactTitle}>Контакты</h1>
-            <h2 className={classes.contactSubtitle}>Свяжитесь с нами</h2>
+            <h1 className={classes.contactTitle}>{t("Contacts")}</h1>
+            <h2 className={classes.contactSubtitle}>{t("ConnectWithUs")}</h2>
             <ContactForm />
         </section>
     );

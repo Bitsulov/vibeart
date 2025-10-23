@@ -6,14 +6,15 @@ import {
     selectMessagesPageNotices
 } from "entities/notificationsPages/model/selectors.js";
 import { Link } from "react-router-dom";
-import { Image, Images } from "lucide-react";
+import { Images } from "lucide-react";
 
 interface HeaderNavigationDesktopType {
     avatar: string;
     userId: number;
+	fullName: string
 }
 
-const HeaderNavigationDesktop = ({ avatar, userId }: HeaderNavigationDesktopType) => {
+const HeaderNavigationDesktop = ({ avatar, userId, fullName }: HeaderNavigationDesktopType) => {
     const chatsLenght = useSelector(selectMessagesPageNotices);
     const noticesLength = useSelector(selectNotificationsPageNotices);
 
@@ -167,7 +168,7 @@ const HeaderNavigationDesktop = ({ avatar, userId }: HeaderNavigationDesktopType
 				<Images className={classes.galleryImg} />
 			</Link>
             <Link to={`/profile/${userId}`} className={classes.header__linksUser}>
-                {avatar && <img src={avatar} alt="User Avatar" className={classes.userAvatar}></img>}
+                {avatar && <img src={avatar} alt={fullName} className={classes.userAvatar}></img>}
             </Link>
         </nav>
     );

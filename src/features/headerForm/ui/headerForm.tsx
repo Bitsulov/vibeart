@@ -7,8 +7,11 @@ import { headerFormHandler } from "../model/headerFormHandler.js";
 import { headerInputHandler } from "../model/headerInputHandler.js";
 import { headerButtonHandler } from "../model/headerButtonHandler.js";
 import { selectSearchText } from "../model/selectors.js";
+import { useTranslation } from "react-i18next";
 
 const HeaderForm = () => {
+	const { t } = useTranslation();
+
     const dispatch = useDispatch();
     const searchRef = useRef(null);
     const searchText = useSelector(selectSearchText);
@@ -26,7 +29,7 @@ const HeaderForm = () => {
                 value={searchText}
                 className={classes.header__search}
                 type="text"
-                placeholder="Художник, пост или тег..."
+                placeholder={t("headerInputPlaceholder")}
             ></input>
             <Link
                 ref={searchRef}
@@ -34,7 +37,7 @@ const HeaderForm = () => {
                 className={classes.header__submit}
                 onClick={e => headerButtonHandler(e, dispatch, searchText, navigate)}
             >
-                <img src={searchIcon} alt="Найти" className={classes.header__submitImg}></img>
+                <img src={searchIcon} alt={t("Find")} className={classes.header__submitImg}></img>
             </Link>
         </form>
     );

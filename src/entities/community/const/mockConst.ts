@@ -12,7 +12,7 @@ export const communitiesMock = [
         srcImg: kotik,
         creatorId: 1,
         date: "2025-09-15T14:57:06.504Z",
-        countries: ["Россия"]
+        countries: ["Russia"]
     }),
     createCommunity({
         id: 2,
@@ -24,7 +24,7 @@ export const communitiesMock = [
         srcImg: kotik,
         creatorId: 2,
         date: "2025-09-10T13:57:06.504Z",
-        countries: ["США", "Россия"]
+        countries: ["United States", "Russia"]
     }),
     createCommunity({
         id: 3,
@@ -37,46 +37,46 @@ export const communitiesMock = [
         creatorId: 3,
         date: "2025-09-5T14:57:06.504Z",
         countries: [
-            "Великобритания",
-            "Германия",
-            "Дания",
-            "Франция",
-            "Норвегия",
-            "Швеция",
-            "Австрия",
-            "Беларусь",
-            "Бельгия",
-            "Ватикан",
-            "Венгрия",
-            "Греция",
-            "Ирландия",
-            "Исландия",
-            "Испания",
-            "Италия",
-            "Кипр",
-            "Латвия",
-            "Литва",
-            "Лихтенштейн",
-            "Люксембург",
-            "Мальта",
-            "Молдавия",
-            "Монако",
-            "Нидерланды",
-            "Польша",
-            "Португалия",
-            "Россия",
-            "Румыния",
-            "Сербия",
-            "Словакия",
-            "Словения",
-            "Турция",
-            "Украина",
-            "Финляндия",
-            "Хорватия",
-            "Черногория",
-            "Чехия",
-            "Швейцария",
-            "Эстония"
+            "United Kingdom",
+            "Germany",
+            "Denmark",
+            "France",
+            "Norway",
+            "Sweden",
+            "Austria",
+            "Belarus",
+            "Belgium",
+            "Vatican City",
+            "Hungary",
+            "Greece",
+            "Ireland",
+            "Iceland",
+            "Spain",
+            "Italy",
+            "Cyprus",
+            "Latvia",
+            "Lithuania",
+            "Liechtenstein",
+            "Luxembourg",
+            "Malta",
+            "Moldova",
+            "Monaco",
+            "Netherlands",
+            "Poland",
+            "Portugal",
+            "Russia",
+            "Romania",
+            "Serbia",
+            "Slovakia",
+            "Slovenia",
+            "Turkey",
+            "Ukraine",
+            "Finland",
+            "Croatia",
+            "Montenegro",
+            "Czech Republic",
+            "Switzerland",
+            "Estonia"
         ]
     }),
     createCommunity({
@@ -89,7 +89,7 @@ export const communitiesMock = [
         srcImg: kotik,
         creatorId: 4,
         date: "2025-01-15T14:57:06.504Z",
-        countries: ["Уганда"]
+        countries: ["Uganda"]
     }),
     createCommunity({
         id: 5,
@@ -101,7 +101,7 @@ export const communitiesMock = [
         srcImg: kotik,
         creatorId: 5,
         date: "2021-09-15T14:57:06.504Z",
-        countries: "Весь мир"
+        countries: "WholeWorld"
     })
 ];
 
@@ -115,5 +115,5 @@ export const communitieMock = createCommunity({
     srcImg: kotik,
     creatorId: 2,
     date: "2024-09-19T15:51:42.222Z",
-    countries: ["Россия", "Канада", "Китай", "США", "Бразилия", "Австралия", "Индия", "Аргентина", "Казахстан", "Алжир"]
+    countries: ["Russia", "Canada", "China", "United States", "Brazil", "Australia", "India", "Argentina", "Kazakhstan", "Algeria"]
 });

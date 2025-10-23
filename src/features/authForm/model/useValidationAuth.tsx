@@ -1,8 +1,11 @@
 import type { RootState } from "app/store/index.js";
 import { setEmailSignError, setPasswordSignError, setErrorText } from "./authSlice.js";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const useValidationAuth = () => {
+	const { t } = useTranslation();
+
     const emailValueSign = useSelector((state: RootState) => state.auth.emailValueSign);
     const passwordValueSign = useSelector((state: RootState) => state.auth.passwordValueSign);
 
@@ -14,20 +17,20 @@ const useValidationAuth = () => {
         if (email === "" && password === "") {
             dispatch(setEmailSignError(true));
             dispatch(setPasswordSignError(true));
-            dispatch(setErrorText("Заполните пустые поля"));
+            dispatch(setErrorText(t("FillEmptyFields")));
             return false;
         } else if (email === "") {
             dispatch(setEmailSignError(true));
             dispatch(setPasswordSignError(false));
-            dispatch(setErrorText("Заполните email"));
+            dispatch(setErrorText(t("FillEmail")));
             return false;
         } else if (password === "") {
             dispatch(setPasswordSignError(true));
             dispatch(setEmailSignError(false));
-            dispatch(setErrorText("Заполните пароль"));
+            dispatch(setErrorText(t("FillPassword")));
             return false;
         } else if (email.indexOf("--") !== -1 || password.indexOf("--") !== -1) {
-            dispatch(setErrorText("Произошла ошибка"));
+            dispatch(setErrorText(t("ErrorOccured")));
             return false;
         } else {
             dispatch(setEmailSignError(false));

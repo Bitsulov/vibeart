@@ -6,8 +6,11 @@ import { emailChangeHandler } from "../model/emailChangeHandler.js";
 import { passwordChangeHandler } from "../model/passwordChangeHandler.js";
 import { InputForm } from "../../inputForm/index.js";
 import type { RootState } from "app/store/index.js";
+import { useTranslation } from "react-i18next";
 
 const AuthForm = () => {
+	const { t } = useTranslation();
+
     const emailValueSign = useSelector((state: RootState) => state.auth.emailValueSign);
     const passwordValueSign = useSelector((state: RootState) => state.auth.passwordValueSign);
     const emailSignError = useSelector((state: RootState) => state.auth.emailSignError);
@@ -20,12 +23,12 @@ const AuthForm = () => {
 
     return (
         <section className={classes.authentication}>
-            <h2 className={classes.authentication__title}>Войти</h2>
+            <h2 className={classes.authentication__title}>{t("Enter")}</h2>
             <form className={classes.authentication__form} onSubmit={submitSign}>
                 <InputForm
                     id="emailAuthentication"
                     type="email"
-                    placeholder="Email"
+                    placeholder={t("Email")}
                     placeholderClassName={emailSignError ? classes.errorPlaceholder : ""}
                     value={emailValueSign}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => emailChangeHandler(e, dispatch)}
@@ -34,7 +37,7 @@ const AuthForm = () => {
                 <InputForm
                     id="passwordAuthentication"
                     type="password"
-                    placeholder="Пароль"
+                    placeholder={t("Password")}
                     placeholderClassName={passwordSignError ? classes.errorPlaceholder : ""}
                     minLength={6}
                     value={passwordValueSign}
@@ -49,7 +52,7 @@ const AuthForm = () => {
                     {errorText}
                 </p>
                 <button className={classes.authentication__submit} type="submit">
-                    Отправить
+                    {t("Send")}
                 </button>
             </form>
         </section>

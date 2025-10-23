@@ -3,6 +3,7 @@ import classes from "./galleryList.module.scss";
 import { GalleryItem } from "features/galleryItem/index.js";
 import { Link } from "react-router-dom";
 import type { PostType } from "entities/post/index.js";
+import { useTranslation } from "react-i18next";
 
 interface GalleryListPropsType {
     postsList: PostType[];
@@ -10,6 +11,8 @@ interface GalleryListPropsType {
 }
 
 const GalleryList = ({ postsList, queryText, ...props }: GalleryListPropsType) => {
+	const { t } = useTranslation();
+
     const [filteredList, setFilteredList] = useState<PostType[]>([]);
     const [showLoader, setShowLoader] = useState(true);
     const loaderRef = useRef(null);
@@ -66,9 +69,9 @@ const GalleryList = ({ postsList, queryText, ...props }: GalleryListPropsType) =
                 </div>
             ) : (
                 <h2 className={classes.gallery__title}>
-                    По запросу "{queryText}" ничего не найдено.{" "}
+                    {t("undefinedGalleryPosts", { queryText: queryText })}
                     <Link to="/gallery" className={classes.gallery__link}>
-                        Вернуться
+                        {t("return")}
                     </Link>
                 </h2>
             )}

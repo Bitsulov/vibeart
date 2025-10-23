@@ -2,6 +2,7 @@ import { parseNumber } from "shared/lib/parseNumber.js";
 import classes from "./communitiesItem.module.scss";
 import { Link } from "react-router-dom";
 import { formatSubscribersRu } from "shared/lib/formatSubscribersRu.js";
+import { useTranslation } from "react-i18next";
 
 interface CommunitiesItemPropsType {
 	id: number;
@@ -12,6 +13,8 @@ interface CommunitiesItemPropsType {
 }
 
 const CommunitiesItem = ({id, srcImg, title, description, subscribers}: CommunitiesItemPropsType) => {
+	const { t } = useTranslation();
+
 	return (
 		<div className={classes.item}>
 			<img className={classes.itemImg} src={srcImg} alt={title} />
@@ -21,8 +24,8 @@ const CommunitiesItem = ({id, srcImg, title, description, subscribers}: Communit
 					{description}
 				</p>
 				<div className={classes.itemBottom}>
-					<p className={classes.itemMembers}>{parseNumber(subscribers)} {formatSubscribersRu(subscribers)}</p>
-					<Link className={classes.itemLink} to={`/communities/${id}`}>Перейти</Link>
+					<p className={classes.itemMembers}>{parseNumber(subscribers)} {t("subscribersStr", {count: subscribers})}</p>
+					<Link className={classes.itemLink} to={`/communities/${id}`}>{t("GoTo")}</Link>
 				</div>
 			</div>
 		</div>

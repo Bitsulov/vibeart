@@ -5,6 +5,7 @@ import type { CommunityType } from "entities/community/index.js";
 import { globalOnChangeHandler } from "shared/lib/globalOnChangeHandler.js";
 import { closeSearchHandler } from "../model/closeSearchHandler.js";
 import { searchButtonHandler } from "../model/searchButtonHandler.js";
+import { useTranslation } from "react-i18next";
 
 interface CommunitySearchFormPropsType {
     fullCommunitiesList: CommunityType[];
@@ -12,6 +13,8 @@ interface CommunitySearchFormPropsType {
 }
 
 export const CommunitySearchForm = ({ fullCommunitiesList, setCommunitiesList }: CommunitySearchFormPropsType) => {
+	const { t } = useTranslation();
+
     const [isOpenSearch, setIsOpenSearch] = useState<boolean>(false);
     const [currentConstSearchText, setCurrentConstSearchText] = useState<string>("Найти");
     const [searchText, setSearchText] = useState<string>("Найти");
@@ -20,8 +23,8 @@ export const CommunitySearchForm = ({ fullCommunitiesList, setCommunitiesList }:
     const width = useWindowWidth();
 
     useEffect(() => {
-        width < 360 ? setCurrentConstSearchText("Найти") : setCurrentConstSearchText("Найти сообщество");
-        width < 500 ? setLabelText("Сообщество") : setLabelText("Название, описание, тег");
+        width < 360 ? setCurrentConstSearchText(t("Find")) : setCurrentConstSearchText(t("FindCommunity"));
+        width < 500 ? setLabelText(t("Community")) : setLabelText(t("CommunitySearchInputPlaceholder"));
     }, [width]);
 
     useEffect(() => {

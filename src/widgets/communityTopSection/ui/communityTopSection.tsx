@@ -7,6 +7,7 @@ import { Users, Image, Copy } from "lucide-react";
 import { subscribeHandler } from "../model/subscribeHandler.js";
 import { useDispatch } from "react-redux";
 import { communityTagClickHandler } from "../model/communityTagHandler.js";
+import { useTranslation } from "react-i18next";
 
 interface CommunityTopSectionPropsType {
     title: string;
@@ -24,6 +25,8 @@ const CommunityTopSection = ({
     srcImg,
     ...props
 }: CommunityTopSectionPropsType) => {
+	const { t } = useTranslation();
+
     const [isSubscribed, setIsSubscribed] = useState(false);
     const dispatch = useDispatch();
 
@@ -37,13 +40,13 @@ const CommunityTopSection = ({
                     <div className={classes.statsItem}>
                         <Users className={`${classes.statsImg} ${classes.subscribersImg}`} />
                         <p className={classes.statsText}>
-                            {parseNumber(subscribers)} {formatSubscribersRu(subscribers)}
+                            {parseNumber(subscribers)} {t("subscribersStr", {count: subscribers})}
                         </p>
                     </div>
                     <div className={classes.statsItem}>
                         <Image className={`${classes.statsImg} ${classes.subscribersImg}`} />
                         <p className={classes.statsText}>
-                            {parseNumber(works)} {formatWorksRu(works)}
+                            {parseNumber(works)} {t("worksStr", {count: works})}
                         </p>
                     </div>
                 </div>
@@ -52,7 +55,7 @@ const CommunityTopSection = ({
                 onClick={e => subscribeHandler(e, isSubscribed, setIsSubscribed, userName, dispatch)}
                 className={isSubscribed ? `${classes.subscribeButton} ${classes.unscribe}` : classes.subscribeButton}
             >
-                {isSubscribed ? "Отписаться" : "Подписаться"}
+                {isSubscribed ? t("Unscribe") : t("Subscribe")}
             </button>
         </section>
     );

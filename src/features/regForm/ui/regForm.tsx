@@ -6,8 +6,11 @@ import { passwordChangeHandler } from "../model/passwordChangeHandler.js";
 import { passwordAgainChangeHandler } from "../model/passwordAgainChangeHandler.js";
 import { InputForm } from "../../inputForm/index.js";
 import type { RootState } from "app/store/index.js";
+import { useTranslation } from "react-i18next";
 
 const RegForm = () => {
+	const { t } = useTranslation();
+
     const emailValueReg = useSelector((state: RootState) => state.reg.emailValueReg);
     const passwordValueReg = useSelector((state: RootState) => state.reg.passwordValueReg);
     const passwordAgainValueReg = useSelector((state: RootState) => state.reg.passwordAgainValueReg);
@@ -27,7 +30,7 @@ const RegForm = () => {
                 <InputForm
                     id="emailAuthentication"
                     type="email"
-                    placeholder="Email"
+                    placeholder={t("Email")}
                     placeholderClassName={emailRegError ? classes.errorPlaceholder : ""}
                     value={emailValueReg}
                     onChange={e => emailChangeHandler(e, dispatch)}
@@ -36,7 +39,7 @@ const RegForm = () => {
                 <InputForm
                     id="passwordAuthentication"
                     type="password"
-                    placeholder="Пароль"
+                    placeholder={t("Password")}
                     placeholderClassName={passwordRegError ? classes.errorPlaceholder : ""}
                     minLength={6}
                     value={passwordValueReg}
@@ -46,7 +49,7 @@ const RegForm = () => {
                 <InputForm
                     id="passwordAgainAuthentication"
                     type="password"
-                    placeholder="Повторите пароль"
+                    placeholder={t("RepeatPassword")}
                     placeholderClassName={passwordAgainRegError ? classes.errorPlaceholder : ""}
                     minLength={6}
                     value={passwordAgainValueReg}
@@ -61,7 +64,7 @@ const RegForm = () => {
                     {errorText}
                 </p>
                 <button className={classes.authentication__submit} type="submit">
-                    Отправить
+                    {t("Send")}
                 </button>
             </form>
         </section>

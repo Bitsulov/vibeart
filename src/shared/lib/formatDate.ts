@@ -1,4 +1,5 @@
 import { monthesRu } from "./monthesRu.js";
+import { t } from "i18next";
 
 export function formatDate(date: Date) {
     const currentDate = new Date();
@@ -6,12 +7,12 @@ export function formatDate(date: Date) {
     const isThisMonth = date.getMonth() === currentDate.getMonth();
     const isThisYear = date.getFullYear() === currentDate.getFullYear();
     if (!isThisYear) {
-        return `${date.getDate()} ${monthesRu[date.getMonth() + 1]} ${date.getFullYear()}`;
+        return `${date.getDate()} ${monthesRu()[date.getMonth() + 1]} ${date.getFullYear()}`;
     } else if (difDays === 0 && isThisMonth) {
-        return "Сегодня";
+        return t("Today");
     } else if (difDays === 1 && isThisMonth) {
-        return "Вчера";
+        return t("Yesterday");
     } else {
-        return `${date.getDate()} ${monthesRu[date.getMonth() + 1]}`;
+        return `${date.getDate()} ${monthesRu()[date.getMonth() + 1]}`;
     }
 }

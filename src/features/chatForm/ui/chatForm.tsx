@@ -1,6 +1,7 @@
 import type React from "react";
 import classes from "./chatForm.module.scss";
 import { globalOnChangeHandler } from "shared/lib/globalOnChangeHandler.js";
+import { useTranslation } from "react-i18next";
 
 interface ChatFormProps {
     inputValue: string;
@@ -9,6 +10,8 @@ interface ChatFormProps {
 }
 
 const ChatForm = ({ inputValue, setInputValue, onSubmit, ...props }: ChatFormProps) => {
+	const { t } = useTranslation();
+
     return (
         <form className={classes.chat__form} onSubmit={onSubmit} {...props}>
             <input
@@ -16,7 +19,7 @@ const ChatForm = ({ inputValue, setInputValue, onSubmit, ...props }: ChatFormPro
                 value={inputValue}
                 onChange={e => globalOnChangeHandler(e, setInputValue)}
                 type="text"
-                placeholder="Напишите сообщение..."
+                placeholder={t("messagesSendInputPlaceholder")}
             ></input>
             <input type="submit" value="" className={classes.chat__formSend}></input>
         </form>

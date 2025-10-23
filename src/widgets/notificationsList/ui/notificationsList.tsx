@@ -2,12 +2,15 @@ import classes from "./notificationsList.module.scss";
 import { formatTime } from "shared/lib/formatTime.js";
 import { NotificationItem } from "features/notificationItem/index.js";
 import type { NotificationType } from "entities/notification/index.js";
+import { useTranslation } from "react-i18next";
 
 interface NotificationsListPropsType {
     noticesList: NotificationType[];
 }
 
 const NotificationsList = ({ noticesList, ...props }: NotificationsListPropsType) => {
+	const { t } = useTranslation();
+
     return (
         <section className={classes.notifications__list} {...props}>
             {noticesList.length ? (
@@ -29,7 +32,7 @@ const NotificationsList = ({ noticesList, ...props }: NotificationsListPropsType
                     );
                 })
             ) : (
-                <h2 className={classes.notifications__subtitle}>Новых уведомлений нет</h2>
+                <h2 className={classes.notifications__subtitle}>{t("emptyNotificationsTitle")}</h2>
             )}
         </section>
     );

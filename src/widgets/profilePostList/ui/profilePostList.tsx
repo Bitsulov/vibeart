@@ -1,12 +1,15 @@
 import type { PostType } from "entities/post/index.js";
 import classes from "./profilePostList.module.scss";
 import { ProfilePostItem } from "features/profilePostItem/index.js";
+import { useTranslation } from "react-i18next";
 
 interface ProfilePostListPropsType {
     posts: PostType[];
 }
 
 const ProfilePostList = ({ posts, ...props }: ProfilePostListPropsType) => {
+	const { t } = useTranslation();
+
     return posts.length ? (
         <div className={classes.posts__list} {...props}>
             {posts.map(item => (
@@ -26,7 +29,7 @@ const ProfilePostList = ({ posts, ...props }: ProfilePostListPropsType) => {
         </div>
     ) : (
         <div className={classes.titleWrapper}>
-            <h2 className={classes.posts__title}>Здесь еще нет постов</h2>
+            <h2 className={classes.posts__title}>{t("profilePostListEmptyTitle")}</h2>
         </div>
     );
 };

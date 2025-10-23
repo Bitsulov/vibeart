@@ -17,7 +17,7 @@ const Header = () => {
                 <span className={classes.header__title}>VibeArt</span>
             </Link>
             <HeaderForm />
-            <HeaderNavigationDesktop avatar={userInfo.srcImg} userId={userInfo.id} />
+            <HeaderNavigationDesktop fullName={`${userInfo.firstName} ${userInfo.secondName}`} avatar={userInfo.srcImg} userId={userInfo.id} />
             <Burger />
         </header>
     );

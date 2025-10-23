@@ -56,7 +56,8 @@
         "strictNullChecks": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "noEmit": true
+        "noEmit": true,
+		"resolveJsonModule": true
     },
     "include": ["src"],
     "exclude": ["node_modules", "dist"]

@@ -4,16 +4,18 @@ import { InputForm } from "features/inputForm/index.js";
 import { globalOnChangeHandler } from "shared/lib/globalOnChangeHandler.js";
 import { contactFormSubmitHandler } from "../model/contactFormSubmitHandler.js";
 import { AlertCircle } from "lucide-react";
-import type { ErrorTextType } from "../model/types.js";
+import { useTranslation } from "react-i18next";
 
 const ContactForm = () => {
+	const { t } = useTranslation();
+
     const [nameValue, setNameValue] = useState<string>("");
     const [emailValue, setEmailValue] = useState<string>("");
     const [textValue, setTextValue] = useState<string>("");
 
-    const [nameErrorText, setNameErrorText] = useState<ErrorTextType>("Это обязательное поле");
-    const [emailErrorText, setEmailErrorText] = useState<ErrorTextType>("Это обязательное поле");
-    const [textErrorText, setTextErrorText] = useState<ErrorTextType>("Это обязательное поле");
+    const [nameErrorText, setNameErrorText] = useState<string>(t("RequiredField"));
+    const [emailErrorText, setEmailErrorText] = useState<string>(t("RequiredField"));
+    const [textErrorText, setTextErrorText] = useState<string>(t("RequiredField"));
 
     const [isNameError, setIsNameError] = useState<boolean>(false);
     const [isEmailError, setIsEmailError] = useState<boolean>(false);
@@ -41,7 +43,7 @@ const ContactForm = () => {
             <div className={classes.inputWrapper}>
                 <InputForm
                     id="name"
-                    placeholder="Имя"
+                    placeholder={t("Name")}
                     type="text"
                     value={nameValue}
                     className={
@@ -62,7 +64,7 @@ const ContactForm = () => {
             <div className={classes.inputWrapper}>
                 <InputForm
                     id="email"
-                    placeholder="Email"
+                    placeholder={t("Email")}
                     type="text"
                     value={emailValue}
                     className={
@@ -84,7 +86,7 @@ const ContactForm = () => {
                 <textarea
                     className={isTextError ? `${classes.formTextArea} ${classes.ErrorTextArea}` : classes.formTextArea}
                     id="text"
-                    placeholder="Сообщение"
+                    placeholder={t("Message")}
                     value={textValue}
                     onChange={e => globalOnChangeHandler(e, setTextValue)}
                 ></textarea>
@@ -95,7 +97,7 @@ const ContactForm = () => {
                     </>
                 )}
             </div>
-            <input type="submit" value="Отправить" className={classes.formSubmit} />
+            <input type="submit" value={t("Send")} className={classes.formSubmit} />
         </form>
     );
 };

@@ -3,6 +3,7 @@ import classes from "./profileUserInfo.module.scss";
 import { ProfileUserTag } from "features/profileUserTag/index.js";
 import { ProfileButtonsUser } from "features/profileButtonsUser/index.js";
 import { parseNumber } from "shared/lib/parseNumber.js";
+import { useTranslation } from "react-i18next";
 
 interface ProfileUserInfoPropsType {
     srcImg: string;
@@ -30,6 +31,8 @@ const ProfileUserInfo = ({
     setIsSubscribe,
     ...props
 }: ProfileUserInfoPropsType) => {
+	const { t } = useTranslation();
+
     return (
         <section className={classes.info} {...props}>
             <img src={srcImg} alt={userName} className={classes.info__avatar}></img>
@@ -44,15 +47,15 @@ const ProfileUserInfo = ({
             <p className={classes.info__description}>{description}</p>
             <div className={classes.info__stats}>
                 <span className={classes.statsSubscribers} title={String(subscribers)}>
-                    Подписчиков: {parseNumber(subscribers)}
+					{t("subscribers")}: {parseNumber(subscribers)}
                 </span>{" "}
                 <span className={classes.spliter}>|</span>{" "}
                 <span className={classes.statsSubscribes} title={String(subscribes)}>
-                    Подписки: {parseNumber(subscribes)}
+					{t("subscribes")}: {parseNumber(subscribes)}
                 </span>{" "}
                 <span className={classes.spliter}>|</span>{" "}
                 <span className={classes.statsWorks} title={String(works)}>
-                    Работ: {parseNumber(works)}
+					{t("works")}: {parseNumber(works)}
                 </span>
             </div>
         </section>

@@ -4,11 +4,14 @@ import { getErrorMessage } from "../lib/getErrorMessage.js";
 import { Layout } from "widgets/layout/index.js";
 import { ErrorInfo } from "widgets/errorInfo/index.js";
 import { useLoadPageStatus } from "entities/pageStats/index.js";
+import { useTranslation } from "react-i18next";
 
 const Error = () => {
+	const { t } = useTranslation();
+
     const isPageLoaded = useLoadPageStatus();
     const status = useGetErrorCode();
-    const message = getErrorMessage(+status);
+    const message = t(`errorCodes.${getErrorMessage(+status)}`);
 
     return (
         <Layout pageStatus={isPageLoaded}>

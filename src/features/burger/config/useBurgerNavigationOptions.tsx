@@ -8,10 +8,10 @@ export const useBurgerNavigationOptions = () => {
 	const userInfo = useSelector(selectUserInfo);
 
     return [
-        { text: "Уведомления", haveCounter: true, counter: noticesLength, href: "/notifications" },
-        { text: "Сообщения", haveCounter: true, counter: chatsLength, href: "/messages" },
-        { text: "Сообщества", haveCounter: false, href: "/communities" },
-		{ text: "Галерея", haveCounter: false, href: "/gallery" },
-        { text: "Профиль", haveCounter: false, href: `/profile/${userInfo.id}` },
+        { textKey: "Notices", haveCounter: true, counter: noticesLength, href: "/notifications" },
+        { textKey: "Messages", haveCounter: true, counter: chatsLength, href: "/messages" },
+        { textKey: "Communities", haveCounter: false, href: "/communities" },
+		{ textKey: "Gallery", haveCounter: false, href: "/gallery" },
+        { textKey: "Profile", haveCounter: false, href: `/profile/${userInfo.id}` },
     ];
 };
