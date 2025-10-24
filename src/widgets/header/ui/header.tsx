@@ -6,6 +6,7 @@ import { HeaderForm } from "features/headerForm/index.js";
 import { HeaderNavigationDesktop } from "features/headerNavigationDesktop/index.js";
 import { selectUserInfo } from "entities/user/model/selectors.js";
 import { useSelector } from "react-redux";
+import { LanguageChangerSelect } from "features/languageChangerSelect/index.js";
 
 const Header = () => {
     const userInfo = useSelector(selectUserInfo);
@@ -13,9 +14,10 @@ const Header = () => {
     return (
         <header>
             <Link className={classes.header__logo} to="/">
-                <img src={logoBlack} alt="logo" className={classes.header__logoImg}></img>
+                <img src={logoBlack} alt="VibeArt" className={classes.header__logoImg}></img>
                 <span className={classes.header__title}>VibeArt</span>
             </Link>
+			<LanguageChangerSelect />
             <HeaderForm />
             <HeaderNavigationDesktop fullName={`${userInfo.firstName} ${userInfo.secondName}`} avatar={userInfo.srcImg} userId={userInfo.id} />
             <Burger />

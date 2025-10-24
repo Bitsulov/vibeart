@@ -175,6 +175,11 @@ header {
 }
 
 @media (max-width: 480px) {
+	header {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
     .header__logoImg {
         margin-right: 0;
     }

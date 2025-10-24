@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.scss";
+import "flag-icons/css/flag-icons.min.css";
 import App from "app/App.js";
 
 const rootElement = document.getElementById("root");
