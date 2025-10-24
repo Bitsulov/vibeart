@@ -14,7 +14,7 @@ const CommunityCountriesList = ({ countriesList, ...props }: CommunityCountriesL
             {countriesList !== "WholeWorld" ? (
                 countriesList.map(country => (
                     <li key={country} className={classes.countryItem}>
-                        {country}
+                        {t(country)}
                     </li>
                 ))
             ) : (
