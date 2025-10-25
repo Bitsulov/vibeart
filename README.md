@@ -26,7 +26,7 @@
 ## 📦 Установка и запуск
 
 ```bash
-git clone https://github.com/Bitsulov/vibeart.git
+git clone https://github.com/Bitsulov/vibeart-frontend.git
 cd vibeart
 npm install
 npm run dev
